@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PDABProjekt.Views
 {
     /// <summary>
-    /// Interaction logic for NowyFilmView.xaml
+    /// Interaction logic for AddMovieView.xaml
     /// </summary>
-    public partial class NowyFilmView : JedenViewBase
+    public partial class AddMovieView : JedenViewBase
     {
-        public NowyFilmView()
+        public AddMovieView()
         {
             InitializeComponent();
         }

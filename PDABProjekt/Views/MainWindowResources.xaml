@@ -6,8 +6,8 @@
     <DataTemplate DataType="{x:Type vm:WszystkieFilmyViewModel}">
         <vw:WszystkieFilmyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyFilmViewModel}">
-        <vw:NowyFilmView/>
+    <DataTemplate DataType="{x:Type vm:AddMovieViewModel}">
+        <vw:AddMovieView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
         <vw:WszystkieSeanseView/>
