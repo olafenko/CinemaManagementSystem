@@ -215,28 +215,29 @@
     <Compile Include="Models\TypSali.cs">
       <DependentUpon>ModelKino.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Abstract\JedenViewModel.cs" />
+    <Compile Include="ViewModels\Abstract\AddViewModelBase.cs" />
+    <Compile Include="ViewModels\Abstract\DatabaseVMClass.cs" />
     <Compile Include="ViewModels\Abstract\RaportViewModelBase.cs" />
     <Compile Include="ViewModels\Abstract\WszystkieViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddMovieViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowaKategoriaWiekowaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowaSalaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyDystrybutorViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyGatunekViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyJezykViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyKrajViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyProducentViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyRezyserViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowySeansViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyStatusFilmuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyStatusSeansuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyTypBiletuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyTypEkranuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyTypNaglosnieniaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\NowyTypSaliViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowaKategoriaWiekowaViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowaSalaViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyDystrybutorViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyFilmViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyGatunekViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyJezykViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyKrajViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyProducentViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyRezyserViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowySeansViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyStatusFilmuViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyStatusSeansuViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyTypBiletuViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyTypEkranuViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyTypNaglosnieniaViewModel.cs" />
-    <Compile Include="ViewModels\NowyViewModels\NowyTypSaliViewModel.cs" />
     <Compile Include="ViewModels\RaportZapelnieniaSeansowViewModel.cs" />
     <Compile Include="ViewModels\RaportSprzedazyBiletowViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
@@ -271,8 +272,8 @@
     <Compile Include="Views\AddViews\NowyDystrybutorView.xaml.cs">
       <DependentUpon>NowyDystrybutorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyFilmView.xaml.cs">
-      <DependentUpon>NowyFilmView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddMovieView.xaml.cs">
+      <DependentUpon>AddMovieView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyGatunekView.xaml.cs">
       <DependentUpon>NowyGatunekView.xaml</DependentUpon>
@@ -428,7 +429,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyFilmView.xaml">
+    <Page Include="Views\AddViews\AddMovieView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
