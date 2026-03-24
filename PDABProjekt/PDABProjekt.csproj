@@ -181,6 +181,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelKino.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PABProjektEntitiesExtend.cs" />
     <Compile Include="Models\Producent.cs">
       <DependentUpon>ModelKino.tt</DependentUpon>
     </Compile>
