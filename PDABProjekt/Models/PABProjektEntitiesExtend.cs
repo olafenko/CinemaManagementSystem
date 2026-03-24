@@ -13,7 +13,7 @@ namespace PDABProjekt.Models
         public override int SaveChanges()
         {
 
-            var entries = ChangeTracker.Entries();
+            var entries = ChangeTracker.Entries().ToList();
 
 
             foreach (var entity in entries)
@@ -24,16 +24,18 @@ namespace PDABProjekt.Models
 
                     case EntityState.Added:
                         {
-                            entity.Property("KiedyDodal").CurrentValue = DateTime.Now;
-                            entity.Property("KtoDodal").CurrentValue = "admin";
-                            entity.Property("CzyAktywny").CurrentValue = true;
+                            if(entity.CurrentValues.PropertyNames.Contains("KiedyDodal")) entity.Property("KiedyDodal").CurrentValue = DateTime.Now;
+
+                            if (entity.CurrentValues.PropertyNames.Contains("KtoDodal"))  entity.Property("KtoDodal").CurrentValue = "admin";
+
+                            if (entity.CurrentValues.PropertyNames.Contains("CzyAktywny"))  entity.Property("CzyAktywny").CurrentValue = true;
                             break;
                         }
 
                     case EntityState.Modified:
                         {
-                            entity.Property("KiedyModyfikowal").CurrentValue = DateTime.Now;
-                            entity.Property("KtoModyfikowal").CurrentValue = "admin";
+                            if (entity.CurrentValues.PropertyNames.Contains("KiedyModyfikowal")) entity.Property("KiedyModyfikowal").CurrentValue = DateTime.Now;
+                            if (entity.CurrentValues.PropertyNames.Contains("KtoModyfikowal")) entity.Property("KtoModyfikowal").CurrentValue = "admin";
                             break;
                         }
 
@@ -42,9 +44,9 @@ namespace PDABProjekt.Models
 
                             entity.State = EntityState.Modified;
 
-                            entity.Property("KiedyWykasowal").CurrentValue = DateTime.Now;
-                            entity.Property("KtoWykasowal").CurrentValue = "admin";
-                            entity.Property("CzyAktywny").CurrentValue = false;
+                            if (entity.CurrentValues.PropertyNames.Contains("KiedyWykasowal")) entity.Property("KiedyWykasowal").CurrentValue = DateTime.Now;
+                            if (entity.CurrentValues.PropertyNames.Contains("KtoWykasowal")) entity.Property("KtoWykasowal").CurrentValue = "admin";
+                            if (entity.CurrentValues.PropertyNames.Contains("CzyAktywny")) entity.Property("CzyAktywny").CurrentValue = false;
                             break;
                         }
 

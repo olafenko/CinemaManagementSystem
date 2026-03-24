@@ -9,28 +9,23 @@ using System.Windows.Input;
 
 namespace PDABProjekt.ViewModels.Abstract
 {
-    public abstract class JedenViewModel<T> : WorkspaceViewModel
+    public abstract class JedenViewModel<T> : DatabaseVMClass
     {
 
-        #region BazaDanych
+        #region Fields
 
-        protected PABProjektEntities kinoEntities;
         protected T item;
 
         #endregion
 
         #region Konstruktor
 
-        public JedenViewModel()
-        {
-            kinoEntities = new PABProjektEntities();
-        }
+        public JedenViewModel() : base() { }
 
         #endregion
 
-        #region Command
+        #region Commands
 
-        //to jest komenda ktora zostanie podpieta pod przycisk zapisz i zamknij
         private BaseCommand _SaveAndCloseCommand;
         public ICommand SaveAndCloseCommand
         {
@@ -46,7 +41,7 @@ namespace PDABProjekt.ViewModels.Abstract
         private void SaveAndClose()
         {
             Save();
-            OnRequestClose();// zamyka zakladke
+            OnRequestClose();
         }
 
 
