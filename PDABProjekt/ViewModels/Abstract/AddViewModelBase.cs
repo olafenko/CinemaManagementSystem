@@ -9,26 +9,22 @@ using System.Windows.Input;
 
 namespace PDABProjekt.ViewModels.Abstract
 {
-    public abstract class AddViewModelBase<T> : WorkspaceViewModel
+    public abstract class AddViewModelBase<T> : DatabaseVMClass
     {
 
-        #region Database
+        #region Fields
 
-        protected PABProjektEntities kinoEntities;
         protected T item;
 
         #endregion
 
-        #region Constructor
+        #region Konstruktor
 
-        public AddViewModelBase()
-        {
-            kinoEntities = new PABProjektEntities();
-        }
+        public AddViewModelBase() : base() { }
 
         #endregion
 
-        #region Command
+        #region Commands
 
         private BaseCommand _SaveAndCloseCommand;
         public ICommand SaveAndCloseCommand

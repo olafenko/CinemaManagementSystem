@@ -80,7 +80,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieFilmyViewModel>())),
                 new CommandViewModel(
                     "Nowy Film",
-                    new BaseCommand(() => this.CreateView(new NowyFilmViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddMovieViewModel()))),
                 new CommandViewModel(
                     "Wszystkie seanse",
                     new BaseCommand(() => this.ShowAllView<WszystkieSeanseViewModel>())),
@@ -269,7 +269,7 @@ namespace PDABProjekt.ViewModels
             switch (name)
             {
                 case "FilmyAdd": {
-                        CreateView(new NowyFilmViewModel()); //otwiera okno do dodawania filmu
+                        CreateView(new AddMovieViewModel()); //otwiera okno do dodawania filmu
                         break;
                 }
 
