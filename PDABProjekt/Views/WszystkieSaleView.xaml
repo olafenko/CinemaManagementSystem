@@ -1,0 +1,25 @@
+﻿<local:WszystkieViewBase x:Class="PDABProjekt.Views.WszystkieSaleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDABProjekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="false" ItemsSource="{Binding List}" CanUserAddRows="False" SelectedItem="{Binding WybranaSala,Mode=TwoWay}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Numer sali" Binding="{Binding NumerSali}"/>
+                <DataGridTextColumn Header="Liczba miejs (max)" Binding="{Binding LiczbaMiejsc}"/>
+                <DataGridTextColumn Header="Ekran" Binding="{Binding NazwaEkranu}"/>
+                <DataGridTextColumn Header="Rozdzielczosc ekranu" Binding="{Binding RozdzielczoscEkranu}"/>
+                <DataGridTextColumn Header="Naglosnienie" Binding="{Binding NazwaNaglosnienia}"/>
+                <DataGridTextColumn Header="Typ sali" Binding="{Binding TypSali}"/>
+                <DataGridTextColumn Header="Uwagi" Binding="{Binding Uwagi}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

@@ -1,0 +1,31 @@
+﻿<local:WszystkieViewBase x:Class="PDABProjekt.Views.WszystkieFilmyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDABProjekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" CanUserAddRows="False" SelectedItem="{Binding WybranyFilm, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Tytul" Binding="{Binding Tytul}"/>
+                <DataGridTextColumn Header="Tytul oryginalny" Binding="{Binding TytulOryginalny}"/>
+                <DataGridTextColumn Header="Gatunek" Binding="{Binding NazwaGatunku}"/>
+                <DataGridTextColumn Header="Kategoria wiekowa" Binding="{Binding KategoriaWiekowa}"/>
+                <DataGridTextColumn Header="Czas trwania (min)" Binding="{Binding CzasTrwania}"/>
+                <DataGridTextColumn Header="Jezyk oryginalny audio" Binding="{Binding JezykOryginalny}"/>
+                <DataGridTextColumn Header="Dystrybutor" Binding="{Binding NazwaDystrybutora}"/>
+                <DataGridTextColumn Header="Rok produkcji" Binding="{Binding RokProdukcji}"/>
+                <DataGridTextColumn Header="Data premiery" Binding="{Binding DataPremiery, StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="Kraj produkcji" Binding="{Binding KrajProdukcji}"/>
+                <DataGridTextColumn Header="Producent" Binding="{Binding NazwaProducenta}"/>
+                <DataGridTextColumn Header="Rezyser" Binding="{Binding NazwaRezysera}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="Url plakatu" Binding="{Binding UrlPlakatu}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

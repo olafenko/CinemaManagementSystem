@@ -1,0 +1,237 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:PDABProjekt.ViewModels"                   
+                    xmlns:vw="clr-namespace:PDABProjekt.Views"
+                    >
+    <DataTemplate DataType="{x:Type vm:WszystkieFilmyViewModel}">
+        <vw:WszystkieFilmyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyFilmViewModel}">
+        <vw:NowyFilmView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
+        <vw:WszystkieSeanseView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowySeansViewModel}">
+        <vw:NowySeansView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
+        <vw:WszystkieGatunkiView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyDystrybutorzyViewModel}">
+        <vw:WszyscyDystrybutorzyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">
+        <vw:WszystkieJezykiView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieKategorieWiekoweViewModel}">
+        <vw:WszystkieKategorieWiekoweView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieKrajeViewModel}">
+        <vw:WszystkieKrajeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieStatusyFilmuViewModel}">
+        <vw:WszystkieStatusyFilmuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieStatusySeansuViewModel}">
+        <vw:WszystkieStatusySeansuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieTypyBiletuViewModel}">
+        <vw:WszystkieTypyBiletuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieTypyEkranuViewModel}">
+        <vw:WszystkieTypyEkranuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieTypyNaglosnieniaViewModel}">
+        <vw:WszystkieTypyNaglosnieniaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieTypySaliViewModel}">
+        <vw:WszystkieTypySaliView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyProducenciViewModel}">
+        <vw:WszyscyProducenciView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszyscyRezyserzyViewModel}">
+        <vw:WszyscyRezyserzyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieBiletyViewModel}">
+        <vw:WszystkieBiletyView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WszystkieSaleViewModel}">
+        <vw:WszystkieSaleView/>
+    </DataTemplate>
+    
+    
+  
+    <DataTemplate DataType="{x:Type vm:NowyGatunekViewModel}">
+        <vw:NowyGatunekView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyJezykViewModel}">
+        <vw:NowyJezykView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaKategoriaWiekowaViewModel}">
+        <vw:NowaKategoriaWiekowaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyKrajViewModel}">
+        <vw:NowyKrajView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyStatusFilmuViewModel}">
+        <vw:NowyStatusFilmuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyStatusSeansuViewModel}">
+        <vw:NowyStatusSeansuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTypBiletuViewModel}">
+        <vw:NowyTypBiletuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTypEkranuViewModel}">
+        <vw:NowyTypEkranuView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTypNaglosnieniaViewModel}">
+        <vw:NowyTypNaglosnieniaView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyTypSaliViewModel}">
+        <vw:NowyTypSaliView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowyDystrybutorViewModel}">
+        <vw:NowyDystrybutorView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:NowaSalaViewModel}">
+        <vw:NowaSalaView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:RaportSprzedazyBiletowViewModel}">
+        <vw:RaportSprzedazyBiletowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:RaportZapelnieniaSeansowViewModel}">
+        <vw:RaportZapelnieniaSeansowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:StatystykiOgolneViewModel}">
+        <vw:StatystykiOgolneView/>
+    </DataTemplate>
+
+
+
+    <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border 
+            Background="#2A2B2E" 
+            BorderBrush="#007ACC" 
+            BorderThickness="2" 
+            CornerRadius="5" 
+            Margin="4" 
+            Padding="4" 
+            SnapsToDevicePixels="True" 
+            >
+                        <TextBlock 
+              FontSize="14"
+              FontWeight="Bold"
+              Foreground="#ECECF1"             
+              HorizontalAlignment="Center"  
+              Text="{TemplateBinding Content}" 
+              />
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- 
+        This template ensures that content of a HeaderedContentControl 
+        fills the available vertical space. 
+        -->
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <DockPanel>
+                        <ContentPresenter 
+              DockPanel.Dock="Top"
+              ContentSource="Header" 
+              ContentTemplate="{TemplateBinding HeaderTemplate}" 
+              />
+                        <ContentPresenter 
+              ContentSource="Content" 
+              ContentTemplate="{TemplateBinding ContentTemplate}"                       
+              />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--
+  This style ensures that the borders in the main window are consistent.
+  -->
+    <Style x:Key="MainBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="WhiteSmoke" />
+        <Setter Property="BorderBrush" Value="LightGray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+
+
+        <!--
+  This template explains how to render the list of commands on the left
+  side in the main window (the 'Control Panel' area).
+  -->
+    
+    <!-- Jak maja generowac sie komendy w menu po lewej-->
+    <DataTemplate x:Key="CommandsTemplate">
+        <Button
+            Content="{Binding DisplayName}"
+            Command="{Binding Command}"
+            HorizontalContentAlignment="Left"
+            Margin="6,2,6,2"
+            Background="#343541"
+            BorderBrush="#4A90E2"
+            Foreground="White"
+            FontSize="14"
+            FontWeight="SemiBold"
+            Padding="6,2,0,2"             
+        />
+        
+    </DataTemplate>
+
+    <!-- 
+  This template explains how to render 
+  a tab item with a close button.
+  -->
+    <DataTemplate x:Key="ClosableTabItemTemplate">
+        <DockPanel Width="120">
+            <Button 
+        Command="{Binding Path=CloseCommand}"
+        Content="X"
+        Cursor="Hand"
+        DockPanel.Dock="Right"
+        Focusable="False"
+        FontFamily="Courier" 
+        FontSize="9"             
+        FontWeight="Bold"  
+        Margin="0,1,0,0"
+        Padding="0"
+        VerticalContentAlignment="Bottom"
+        Width="16" Height="16" 
+        />
+            <ContentPresenter 
+        Content="{Binding Path=DisplayName}"
+        VerticalAlignment="Center"
+        />
+        </DockPanel>
+    </DataTemplate>
+
+    <!--
+  This template explains how to render the 'Workspace' content area in the main window.
+  -->
+    <DataTemplate x:Key="WorkspacesTemplate">
+        <TabControl 
+      IsSynchronizedWithCurrentItem="True" 
+      ItemsSource="{Binding}"            
+      ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+      Margin="4"
+      Background="#2A2B2E"
+      />
+    </DataTemplate>
+</ResourceDictionary>

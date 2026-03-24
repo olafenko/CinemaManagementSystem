@@ -1,0 +1,21 @@
+﻿<local:WszystkieViewBase x:Class="PDABProjekt.Views.WszystkieTypyEkranuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDABProjekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Width="Auto" HorizontalAlignment="Left">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" CanUserAddRows="False" MaxHeight="350" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Typu ekranu" Binding="{Binding IdTypuEkranu}"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Maksymalna rodzielczosc" Binding="{Binding MaksymalnaRozdzielczosc}"/>
+                <DataGridCheckBoxColumn Header="Okulary 3D" Binding="{Binding CzyWymaganeOkulary3D}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

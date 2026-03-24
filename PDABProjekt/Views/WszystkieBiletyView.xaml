@@ -1,0 +1,29 @@
+﻿<local:WszystkieViewBase x:Class="PDABProjekt.Views.WszystkieBiletyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDABProjekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Seans" Binding="{Binding NazwaSeansu}"/>
+                <DataGridTextColumn Header="Data" Binding="{Binding DataSeansu}"/>
+                <DataGridTextColumn Header="Od" Binding="{Binding SeansOd}"/>
+                <DataGridTextColumn Header="Do" Binding="{Binding SeansDo}"/>
+                <DataGridTextColumn Header="Sala" Binding="{Binding NumerSali}"/>
+                <DataGridTextColumn Header="Rząd" Binding="{Binding NumerRzedu}"/>
+                <DataGridTextColumn Header="Miejsce" Binding="{Binding NumerMiejsca}"/>
+                <DataGridTextColumn Header="Typ miejsca" Binding="{Binding TypMiejsca}"/>
+                <DataGridTextColumn Header="Typ biletu" Binding="{Binding TypBiletu}"/>
+                <DataGridTextColumn Header="Rabat" Binding="{Binding Rabat}"/>
+                <DataGridTextColumn Header="Cena finalna" Binding="{Binding CenaFinalna}"/>
+                <DataGridTextColumn Header="Data sprzedaży" Binding="{Binding DataSprzedazy}"/>
+                <DataGridTextColumn Header="Anulowany" Binding="{Binding CzyAnulowany}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>

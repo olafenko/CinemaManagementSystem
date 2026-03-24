@@ -1,0 +1,1816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PABProjektModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bilet">
+          <Key>
+            <PropertyRef Name="IdBiletu" />
+          </Key>
+          <Property Name="IdBiletu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSeansu" Type="int" Nullable="false" />
+          <Property Name="IdMiejsca" Type="int" Nullable="false" />
+          <Property Name="IdTypuBiletu" Type="int" Nullable="false" />
+          <Property Name="Cena" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Rabat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DataSprzedazy" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CzyAnulowany" Type="bit" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+          <Property Name="CzyOplacony" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dystrybutor">
+          <Key>
+            <PropertyRef Name="IdDystrybutora" />
+          </Key>
+          <Property Name="IdDystrybutora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdKraju" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="date" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="date" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="date" />
+          <Property Name="TelefonKontaktowy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModelRozliczen" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProcentProwizji" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="CzyUmowaPodpisana" Type="bit" Nullable="false" />
+          <Property Name="NumerUmowy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UmowaOd" Type="datetime" />
+          <Property Name="UmowaDo" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="IdFilmu" />
+          </Key>
+          <Property Name="IdFilmu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tytul" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TytulOryginalny" Type="nvarchar" MaxLength="200" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzasTrwania" Type="int" Nullable="false" />
+          <Property Name="RokProdukcji" Type="int" Nullable="false" />
+          <Property Name="DataPremiery" Type="date" />
+          <Property Name="UrlPlakatu" Type="nvarchar" MaxLength="500" />
+          <Property Name="IdStatusuFilmu" Type="int" Nullable="false" />
+          <Property Name="IdKategoriiWiekowej" Type="int" Nullable="false" />
+          <Property Name="IdDystrybutora" Type="int" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+          <Property Name="IdJezykaOryginalnego" Type="int" Nullable="false" />
+          <Property Name="IdGatunku" Type="int" Nullable="false" />
+          <Property Name="IdProducenta" Type="int" Nullable="false" />
+          <Property Name="IdRezysera" Type="int" Nullable="false" />
+          <Property Name="IdKraju" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GatunekFilmu">
+          <Key>
+            <PropertyRef Name="IdGatunku" />
+          </Key>
+          <Property Name="IdGatunku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaGatunku" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Jezyk">
+          <Key>
+            <PropertyRef Name="IdJezyka" />
+          </Key>
+          <Property Name="IdJezyka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KodISO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="KategoriaWiekowa">
+          <Key>
+            <PropertyRef Name="IdKategoriiWiekowej" />
+          </Key>
+          <Property Name="IdKategoriiWiekowej" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaKategorii" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Kraj">
+          <Key>
+            <PropertyRef Name="IdKraju" />
+          </Key>
+          <Property Name="IdKraju" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MiejsceWSali">
+          <Key>
+            <PropertyRef Name="IdMiejsca" />
+          </Key>
+          <Property Name="IdMiejsca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSali" Type="int" Nullable="false" />
+          <Property Name="Rzad" Type="int" Nullable="false" />
+          <Property Name="Numer" Type="int" Nullable="false" />
+          <Property Name="TypMiejsca" Type="nvarchar" MaxLength="50" />
+          <Property Name="CzyAktywne" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Producent">
+          <Key>
+            <PropertyRef Name="IdProducenta" />
+          </Key>
+          <Property Name="IdProducenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IdKraju" Type="int" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="date" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="date" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="date" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Rezyser">
+          <Key>
+            <PropertyRef Name="IdRezysera" />
+          </Key>
+          <Property Name="IdRezysera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdKrajuPochodzenia" Type="int" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="IdSali" />
+          </Key>
+          <Property Name="IdSali" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumerSali" Type="int" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="int" Nullable="false" />
+          <Property Name="IdKina" Type="int" Nullable="false" />
+          <Property Name="IdTypuEkranu" Type="int" Nullable="false" />
+          <Property Name="IdTypuNaglosnienia" Type="int" Nullable="false" />
+          <Property Name="IdTypuSali" Type="int" Nullable="false" />
+          <Property Name="CzyAktywna" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime" />
+          <Property Name="Uwagi" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Seans">
+          <Key>
+            <PropertyRef Name="IdSeansu" />
+          </Key>
+          <Property Name="IdSeansu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFilmu" Type="int" Nullable="false" />
+          <Property Name="IdSali" Type="int" Nullable="false" />
+          <Property Name="IdStatusuSeansu" Type="int" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfilowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+          <Property Name="IdJezyka" Type="int" Nullable="false" />
+          <Property Name="CzyNapisy" Type="bit" Nullable="false" />
+          <Property Name="CzyLektor" Type="bit" Nullable="false" />
+          <Property Name="CzyDubbing" Type="bit" Nullable="false" />
+          <Property Name="DataSeansu" Type="date" Nullable="false" />
+          <Property Name="GodzinaOd" Type="time" Precision="7" Nullable="false" />
+          <Property Name="GodzinaDo" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusFilmu">
+          <Key>
+            <PropertyRef Name="IdStatusuFilmu" />
+          </Key>
+          <Property Name="IdStatusuFilmu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaStatusu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StatusSeansu">
+          <Key>
+            <PropertyRef Name="IdStatusuSeansu" />
+          </Key>
+          <Property Name="IdStatusuSeansu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="CzySprzedawacBilety" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypBiletu">
+          <Key>
+            <PropertyRef Name="IdTypuBiletu" />
+          </Key>
+          <Property Name="IdTypuBiletu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cena" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+          <Property Name="CzyPodlegaPromocji" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypEkranu">
+          <Key>
+            <PropertyRef Name="IdTypuEkranu" />
+          </Key>
+          <Property Name="IdTypuEkranu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+          <Property Name="MaksymalnaRozdzielczosc" Type="nvarchar" MaxLength="50" />
+          <Property Name="CzyWymaganeOkulary3D" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypNaglosnienia">
+          <Key>
+            <PropertyRef Name="IdTypuNaglosnienia" />
+          </Key>
+          <Property Name="IdTypuNaglosnienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="TypSali">
+          <Key>
+            <PropertyRef Name="IdTypuSali" />
+          </Key>
+          <Property Name="IdTypuSali" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar(max)" />
+          <Property Name="CzyAktywny" Type="bit" Nullable="false" />
+          <Property Name="KtoDodal" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KiedyDodal" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="KtoModyfikowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyModyfikowal" Type="datetime2" Precision="7" />
+          <Property Name="KtoWykasowal" Type="nvarchar" MaxLength="100" />
+          <Property Name="KiedyWykasowal" Type="datetime2" Precision="7" />
+        </EntityType>
+        <Association Name="FK_Bilet_MiejsceWSali">
+          <End Role="MiejsceWSali" Type="Self.MiejsceWSali" Multiplicity="1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MiejsceWSali">
+              <PropertyRef Name="IdMiejsca" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdMiejsca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_Seans">
+          <End Role="Seans" Type="Self.Seans" Multiplicity="1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seans">
+              <PropertyRef Name="IdSeansu" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdSeansu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_TypBiletu">
+          <End Role="TypBiletu" Type="Self.TypBiletu" Multiplicity="1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypBiletu">
+              <PropertyRef Name="IdTypuBiletu" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdTypuBiletu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dystrybutor_Kraj">
+          <End Role="Kraj" Type="Self.Kraj" Multiplicity="1" />
+          <End Role="Dystrybutor" Type="Self.Dystrybutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Dystrybutor">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Dystrybutor">
+          <End Role="Dystrybutor" Type="Self.Dystrybutor" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dystrybutor">
+              <PropertyRef Name="IdDystrybutora" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdDystrybutora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Gatunek">
+          <End Role="GatunekFilmu" Type="Self.GatunekFilmu" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GatunekFilmu">
+              <PropertyRef Name="IdGatunku" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdGatunku" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_JezykOryginalny">
+          <End Role="Jezyk" Type="Self.Jezyk" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jezyk">
+              <PropertyRef Name="IdJezyka" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdJezykaOryginalnego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_KategoriaWiekowa">
+          <End Role="KategoriaWiekowa" Type="Self.KategoriaWiekowa" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KategoriaWiekowa">
+              <PropertyRef Name="IdKategoriiWiekowej" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdKategoriiWiekowej" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Kraj">
+          <End Role="Kraj" Type="Self.Kraj" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Producent">
+          <End Role="Producent" Type="Self.Producent" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producent">
+              <PropertyRef Name="IdProducenta" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdProducenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Rezyser">
+          <End Role="Rezyser" Type="Self.Rezyser" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rezyser">
+              <PropertyRef Name="IdRezysera" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdRezysera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_StatusFilmu">
+          <End Role="StatusFilmu" Type="Self.StatusFilmu" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusFilmu">
+              <PropertyRef Name="IdStatusuFilmu" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdStatusuFilmu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MiejsceWSali_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="1" />
+          <End Role="MiejsceWSali" Type="Self.MiejsceWSali" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="IdSali" />
+            </Principal>
+            <Dependent Role="MiejsceWSali">
+              <PropertyRef Name="IdSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producent_Kraj">
+          <End Role="Kraj" Type="Self.Kraj" Multiplicity="1" />
+          <End Role="Producent" Type="Self.Producent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Producent">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezyser_Kraj">
+          <End Role="Kraj" Type="Self.Kraj" Multiplicity="1" />
+          <End Role="Rezyser" Type="Self.Rezyser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Rezyser">
+              <PropertyRef Name="IdKrajuPochodzenia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypEkranu">
+          <End Role="TypEkranu" Type="Self.TypEkranu" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypEkranu">
+              <PropertyRef Name="IdTypuEkranu" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuEkranu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypNaglosnienia">
+          <End Role="TypNaglosnienia" Type="Self.TypNaglosnienia" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypNaglosnienia">
+              <PropertyRef Name="IdTypuNaglosnienia" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuNaglosnienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypSali">
+          <End Role="TypSali" Type="Self.TypSali" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypSali">
+              <PropertyRef Name="IdTypuSali" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="IdFilmu" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdFilmu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Jezyk">
+          <End Role="Jezyk" Type="Self.Jezyk" Multiplicity="1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jezyk">
+              <PropertyRef Name="IdJezyka" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdJezyka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="IdSali" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_StatusSeansu">
+          <End Role="StatusSeansu" Type="Self.StatusSeansu" Multiplicity="1" />
+          <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusSeansu">
+              <PropertyRef Name="IdStatusuSeansu" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdStatusuSeansu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PABProjektModelStoreContainer">
+          <EntitySet Name="Bilet" EntityType="Self.Bilet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dystrybutor" EntityType="Self.Dystrybutor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GatunekFilmu" EntityType="Self.GatunekFilmu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jezyk" EntityType="Self.Jezyk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KategoriaWiekowa" EntityType="Self.KategoriaWiekowa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kraj" EntityType="Self.Kraj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MiejsceWSali" EntityType="Self.MiejsceWSali" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producent" EntityType="Self.Producent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rezyser" EntityType="Self.Rezyser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seans" EntityType="Self.Seans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusFilmu" EntityType="Self.StatusFilmu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusSeansu" EntityType="Self.StatusSeansu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypBiletu" EntityType="Self.TypBiletu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypEkranu" EntityType="Self.TypEkranu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypNaglosnienia" EntityType="Self.TypNaglosnienia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypSali" EntityType="Self.TypSali" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bilet_MiejsceWSali" Association="Self.FK_Bilet_MiejsceWSali">
+            <End Role="MiejsceWSali" EntitySet="MiejsceWSali" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_Seans" Association="Self.FK_Bilet_Seans">
+            <End Role="Seans" EntitySet="Seans" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_TypBiletu" Association="Self.FK_Bilet_TypBiletu">
+            <End Role="TypBiletu" EntitySet="TypBiletu" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dystrybutor_Kraj" Association="Self.FK_Dystrybutor_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Dystrybutor" EntitySet="Dystrybutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Dystrybutor" Association="Self.FK_Film_Dystrybutor">
+            <End Role="Dystrybutor" EntitySet="Dystrybutor" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Gatunek" Association="Self.FK_Film_Gatunek">
+            <End Role="GatunekFilmu" EntitySet="GatunekFilmu" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_JezykOryginalny" Association="Self.FK_Film_JezykOryginalny">
+            <End Role="Jezyk" EntitySet="Jezyk" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_KategoriaWiekowa" Association="Self.FK_Film_KategoriaWiekowa">
+            <End Role="KategoriaWiekowa" EntitySet="KategoriaWiekowa" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Kraj" Association="Self.FK_Film_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Producent" Association="Self.FK_Film_Producent">
+            <End Role="Producent" EntitySet="Producent" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Rezyser" Association="Self.FK_Film_Rezyser">
+            <End Role="Rezyser" EntitySet="Rezyser" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_StatusFilmu" Association="Self.FK_Film_StatusFilmu">
+            <End Role="StatusFilmu" EntitySet="StatusFilmu" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MiejsceWSali_Sala" Association="Self.FK_MiejsceWSali_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="MiejsceWSali" EntitySet="MiejsceWSali" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producent_Kraj" Association="Self.FK_Producent_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Producent" EntitySet="Producent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezyser_Kraj" Association="Self.FK_Rezyser_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Rezyser" EntitySet="Rezyser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypEkranu" Association="Self.FK_Sala_TypEkranu">
+            <End Role="TypEkranu" EntitySet="TypEkranu" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypNaglosnienia" Association="Self.FK_Sala_TypNaglosnienia">
+            <End Role="TypNaglosnienia" EntitySet="TypNaglosnienia" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypSali" Association="Self.FK_Sala_TypSali">
+            <End Role="TypSali" EntitySet="TypSali" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Film" Association="Self.FK_Seans_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Jezyk" Association="Self.FK_Seans_Jezyk">
+            <End Role="Jezyk" EntitySet="Jezyk" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Sala" Association="Self.FK_Seans_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_StatusSeansu" Association="Self.FK_Seans_StatusSeansu">
+            <End Role="StatusSeansu" EntitySet="StatusSeansu" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PABProjektModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bilet">
+          <Key>
+            <PropertyRef Name="IdBiletu" />
+          </Key>
+          <Property Name="IdBiletu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSeansu" Type="Int32" Nullable="false" />
+          <Property Name="IdMiejsca" Type="Int32" Nullable="false" />
+          <Property Name="IdTypuBiletu" Type="Int32" Nullable="false" />
+          <Property Name="Cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Rabat" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DataSprzedazy" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CzyAnulowany" Type="Boolean" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="MiejsceWSali" Relationship="Self.FK_Bilet_MiejsceWSali" FromRole="Bilet" ToRole="MiejsceWSali" />
+          <NavigationProperty Name="TypBiletu" Relationship="Self.FK_Bilet_TypBiletu" FromRole="Bilet" ToRole="TypBiletu" />
+          <NavigationProperty Name="Seans" Relationship="PABProjektModel.FK_Bilet_Seans" FromRole="Bilet" ToRole="Seans" />
+          <Property Name="CzyOplacony" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dystrybutor">
+          <Key>
+            <PropertyRef Name="IdDystrybutora" />
+          </Key>
+          <Property Name="IdDystrybutora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdKraju" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="0" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Dystrybutor" FromRole="Dystrybutor" ToRole="Film" />
+          <Property Name="TelefonKontaktowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModelRozliczen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProcentProwizji" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CzyUmowaPodpisana" Type="Boolean" Nullable="false" />
+          <Property Name="NumerUmowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UmowaOd" Type="DateTime" Precision="3" />
+          <Property Name="UmowaDo" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Kraj" Relationship="PABProjektModel.FK_Dystrybutor_Kraj" FromRole="Dystrybutor" ToRole="Kraj" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="IdFilmu" />
+          </Key>
+          <Property Name="IdFilmu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tytul" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TytulOryginalny" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzasTrwania" Type="Int32" Nullable="false" />
+          <Property Name="RokProdukcji" Type="Int32" Nullable="false" />
+          <Property Name="DataPremiery" Type="DateTime" Precision="0" />
+          <Property Name="UrlPlakatu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IdStatusuFilmu" Type="Int32" Nullable="false" />
+          <Property Name="IdKategoriiWiekowej" Type="Int32" Nullable="false" />
+          <Property Name="IdDystrybutora" Type="Int32" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Dystrybutor" Relationship="Self.FK_Film_Dystrybutor" FromRole="Film" ToRole="Dystrybutor" />
+          <NavigationProperty Name="KategoriaWiekowa" Relationship="Self.FK_Film_KategoriaWiekowa" FromRole="Film" ToRole="KategoriaWiekowa" />
+          <NavigationProperty Name="StatusFilmu" Relationship="Self.FK_Film_StatusFilmu" FromRole="Film" ToRole="StatusFilmu" />
+          <Property Name="IdJezykaOryginalnego" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Jezyk" Relationship="PABProjektModel.FK_Film_JezykOryginalny" FromRole="Film" ToRole="Jezyk" />
+          <NavigationProperty Name="Seans" Relationship="PABProjektModel.FK_Seans_Film" FromRole="Film" ToRole="Seans" />
+          <Property Name="IdGatunku" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="GatunekFilmu" Relationship="PABProjektModel.FK_Film_Gatunek" FromRole="Film" ToRole="GatunekFilmu" />
+          <Property Name="IdProducenta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Producent" Relationship="PABProjektModel.FK_Film_Producent" FromRole="Film" ToRole="Producent" />
+          <Property Name="IdRezysera" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rezyser" Relationship="PABProjektModel.FK_Film_Rezyser" FromRole="Film" ToRole="Rezyser" />
+          <Property Name="IdKraju" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kraj" Relationship="PABProjektModel.FK_Film_Kraj" FromRole="Film" ToRole="Kraj" />
+        </EntityType>
+        <EntityType Name="GatunekFilmu">
+          <Key>
+            <PropertyRef Name="IdGatunku" />
+          </Key>
+          <Property Name="IdGatunku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaGatunku" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Film_Gatunek" FromRole="GatunekFilmu" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Jezyk">
+          <Key>
+            <PropertyRef Name="IdJezyka" />
+          </Key>
+          <Property Name="IdJezyka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KodISO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Film_JezykOryginalny" FromRole="Jezyk" ToRole="Film" />
+          <NavigationProperty Name="Seans" Relationship="PABProjektModel.FK_Seans_Jezyk" FromRole="Jezyk" ToRole="Seans" />
+        </EntityType>
+        <EntityType Name="KategoriaWiekowa">
+          <Key>
+            <PropertyRef Name="IdKategoriiWiekowej" />
+          </Key>
+          <Property Name="IdKategoriiWiekowej" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaKategorii" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="3" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_KategoriaWiekowa" FromRole="KategoriaWiekowa" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Kraj">
+          <Key>
+            <PropertyRef Name="IdKraju" />
+          </Key>
+          <Property Name="IdKraju" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="3" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Dystrybutor" Relationship="PABProjektModel.FK_Dystrybutor_Kraj" FromRole="Kraj" ToRole="Dystrybutor" />
+          <NavigationProperty Name="Producent" Relationship="PABProjektModel.FK_Producent_Kraj" FromRole="Kraj" ToRole="Producent" />
+          <NavigationProperty Name="Rezyser" Relationship="PABProjektModel.FK_Rezyser_Kraj" FromRole="Kraj" ToRole="Rezyser" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Film_Kraj" FromRole="Kraj" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="MiejsceWSali">
+          <Key>
+            <PropertyRef Name="IdMiejsca" />
+          </Key>
+          <Property Name="IdMiejsca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSali" Type="Int32" Nullable="false" />
+          <Property Name="Rzad" Type="Int32" Nullable="false" />
+          <Property Name="Numer" Type="Int32" Nullable="false" />
+          <Property Name="TypMiejsca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywne" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Bilet" Relationship="Self.FK_Bilet_MiejsceWSali" FromRole="MiejsceWSali" ToRole="Bilet" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_MiejsceWSali_Sala" FromRole="MiejsceWSali" ToRole="Sala" />
+        </EntityType>
+        <EntityType Name="Producent">
+          <Key>
+            <PropertyRef Name="IdProducenta" />
+          </Key>
+          <Property Name="IdProducenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdKraju" Type="Int32" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="0" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="0" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kraj" Relationship="PABProjektModel.FK_Producent_Kraj" FromRole="Producent" ToRole="Kraj" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Film_Producent" FromRole="Producent" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Rezyser">
+          <Key>
+            <PropertyRef Name="IdRezysera" />
+          </Key>
+          <Property Name="IdRezysera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdKrajuPochodzenia" Type="Int32" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Kraj" Relationship="PABProjektModel.FK_Rezyser_Kraj" FromRole="Rezyser" ToRole="Kraj" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Film_Rezyser" FromRole="Rezyser" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Sala">
+          <Key>
+            <PropertyRef Name="IdSali" />
+          </Key>
+          <Property Name="IdSali" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumerSali" Type="Int32" Nullable="false" />
+          <Property Name="LiczbaMiejsc" Type="Int32" Nullable="false" />
+          <Property Name="IdKina" Type="Int32" Nullable="false" />
+          <Property Name="IdTypuEkranu" Type="Int32" Nullable="false" />
+          <Property Name="IdTypuNaglosnienia" Type="Int32" Nullable="false" />
+          <Property Name="IdTypuSali" Type="Int32" Nullable="false" />
+          <Property Name="CzyAktywna" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="3" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MiejsceWSali" Relationship="Self.FK_MiejsceWSali_Sala" FromRole="Sala" ToRole="MiejsceWSali" />
+          <NavigationProperty Name="TypEkranu" Relationship="Self.FK_Sala_TypEkranu" FromRole="Sala" ToRole="TypEkranu" />
+          <NavigationProperty Name="TypNaglosnienia" Relationship="Self.FK_Sala_TypNaglosnienia" FromRole="Sala" ToRole="TypNaglosnienia" />
+          <NavigationProperty Name="TypSali" Relationship="Self.FK_Sala_TypSali" FromRole="Sala" ToRole="TypSali" />
+          <NavigationProperty Name="Seans" Relationship="PABProjektModel.FK_Seans_Sala" FromRole="Sala" ToRole="Seans" />
+          <Property Name="Uwagi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StatusFilmu">
+          <Key>
+            <PropertyRef Name="IdStatusuFilmu" />
+          </Key>
+          <Property Name="IdStatusuFilmu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaStatusu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="3" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_StatusFilmu" FromRole="StatusFilmu" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="StatusSeansu">
+          <Key>
+            <PropertyRef Name="IdStatusuSeansu" />
+          </Key>
+          <Property Name="IdStatusuSeansu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="CzySprzedawacBilety" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Seans" Relationship="PABProjektModel.FK_Seans_StatusSeansu" FromRole="StatusSeansu" ToRole="Seans" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypBiletu">
+          <Key>
+            <PropertyRef Name="IdTypuBiletu" />
+          </Key>
+          <Property Name="IdTypuBiletu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cena" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="3" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Bilet" Relationship="Self.FK_Bilet_TypBiletu" FromRole="TypBiletu" ToRole="Bilet" />
+          <Property Name="CzyPodlegaPromocji" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypEkranu">
+          <Key>
+            <PropertyRef Name="IdTypuEkranu" />
+          </Key>
+          <Property Name="IdTypuEkranu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_Sala_TypEkranu" FromRole="TypEkranu" ToRole="Sala" />
+          <Property Name="MaksymalnaRozdzielczosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CzyWymaganeOkulary3D" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypNaglosnienia">
+          <Key>
+            <PropertyRef Name="IdTypuNaglosnienia" />
+          </Key>
+          <Property Name="IdTypuNaglosnienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_Sala_TypNaglosnienia" FromRole="TypNaglosnienia" ToRole="Sala" />
+        </EntityType>
+        <EntityType Name="TypSali">
+          <Key>
+            <PropertyRef Name="IdTypuSali" />
+          </Key>
+          <Property Name="IdTypuSali" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfikowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Sala" Relationship="Self.FK_Sala_TypSali" FromRole="TypSali" ToRole="Sala" />
+        </EntityType>
+        <Association Name="FK_Bilet_MiejsceWSali">
+          <End Role="MiejsceWSali" Type="Self.MiejsceWSali" Multiplicity="1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MiejsceWSali">
+              <PropertyRef Name="IdMiejsca" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdMiejsca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilet_TypBiletu">
+          <End Role="TypBiletu" Type="Self.TypBiletu" Multiplicity="1" />
+          <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypBiletu">
+              <PropertyRef Name="IdTypuBiletu" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdTypuBiletu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Dystrybutor">
+          <End Role="Dystrybutor" Type="Self.Dystrybutor" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dystrybutor">
+              <PropertyRef Name="IdDystrybutora" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdDystrybutora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_KategoriaWiekowa">
+          <End Role="KategoriaWiekowa" Type="Self.KategoriaWiekowa" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KategoriaWiekowa">
+              <PropertyRef Name="IdKategoriiWiekowej" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdKategoriiWiekowej" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_StatusFilmu">
+          <End Role="StatusFilmu" Type="Self.StatusFilmu" Multiplicity="1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusFilmu">
+              <PropertyRef Name="IdStatusuFilmu" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdStatusuFilmu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MiejsceWSali_Sala">
+          <End Role="Sala" Type="Self.Sala" Multiplicity="1" />
+          <End Role="MiejsceWSali" Type="Self.MiejsceWSali" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="IdSali" />
+            </Principal>
+            <Dependent Role="MiejsceWSali">
+              <PropertyRef Name="IdSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypEkranu">
+          <End Role="TypEkranu" Type="Self.TypEkranu" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypEkranu">
+              <PropertyRef Name="IdTypuEkranu" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuEkranu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypNaglosnienia">
+          <End Role="TypNaglosnienia" Type="Self.TypNaglosnienia" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypNaglosnienia">
+              <PropertyRef Name="IdTypuNaglosnienia" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuNaglosnienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sala_TypSali">
+          <End Role="TypSali" Type="Self.TypSali" Multiplicity="1" />
+          <End Role="Sala" Type="Self.Sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypSali">
+              <PropertyRef Name="IdTypuSali" />
+            </Principal>
+            <Dependent Role="Sala">
+              <PropertyRef Name="IdTypuSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PABProjektEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bilet" EntityType="Self.Bilet" />
+          <EntitySet Name="Dystrybutor" EntityType="Self.Dystrybutor" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="GatunekFilmu" EntityType="Self.GatunekFilmu" />
+          <EntitySet Name="Jezyk" EntityType="Self.Jezyk" />
+          <EntitySet Name="KategoriaWiekowa" EntityType="Self.KategoriaWiekowa" />
+          <EntitySet Name="Kraj" EntityType="Self.Kraj" />
+          <EntitySet Name="MiejsceWSali" EntityType="Self.MiejsceWSali" />
+          <EntitySet Name="Producent" EntityType="Self.Producent" />
+          <EntitySet Name="Rezyser" EntityType="Self.Rezyser" />
+          <EntitySet Name="Sala" EntityType="Self.Sala" />
+          <EntitySet Name="StatusFilmu" EntityType="Self.StatusFilmu" />
+          <EntitySet Name="StatusSeansu" EntityType="Self.StatusSeansu" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TypBiletu" EntityType="Self.TypBiletu" />
+          <EntitySet Name="TypEkranu" EntityType="Self.TypEkranu" />
+          <EntitySet Name="TypNaglosnienia" EntityType="Self.TypNaglosnienia" />
+          <EntitySet Name="TypSali" EntityType="Self.TypSali" />
+          <AssociationSet Name="FK_Bilet_MiejsceWSali" Association="Self.FK_Bilet_MiejsceWSali">
+            <End Role="MiejsceWSali" EntitySet="MiejsceWSali" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilet_TypBiletu" Association="Self.FK_Bilet_TypBiletu">
+            <End Role="TypBiletu" EntitySet="TypBiletu" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Dystrybutor" Association="Self.FK_Film_Dystrybutor">
+            <End Role="Dystrybutor" EntitySet="Dystrybutor" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_KategoriaWiekowa" Association="Self.FK_Film_KategoriaWiekowa">
+            <End Role="KategoriaWiekowa" EntitySet="KategoriaWiekowa" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_StatusFilmu" Association="Self.FK_Film_StatusFilmu">
+            <End Role="StatusFilmu" EntitySet="StatusFilmu" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MiejsceWSali_Sala" Association="Self.FK_MiejsceWSali_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="MiejsceWSali" EntitySet="MiejsceWSali" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypEkranu" Association="Self.FK_Sala_TypEkranu">
+            <End Role="TypEkranu" EntitySet="TypEkranu" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypNaglosnienia" Association="Self.FK_Sala_TypNaglosnienia">
+            <End Role="TypNaglosnienia" EntitySet="TypNaglosnienia" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sala_TypSali" Association="Self.FK_Sala_TypSali">
+            <End Role="TypSali" EntitySet="TypSali" />
+            <End Role="Sala" EntitySet="Sala" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_JezykOryginalny" Association="PABProjektModel.FK_Film_JezykOryginalny">
+            <End Role="Jezyk" EntitySet="Jezyk" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <EntitySet Name="Seans" EntityType="PABProjektModel.Seans" />
+          <AssociationSet Name="FK_Bilet_Seans" Association="PABProjektModel.FK_Bilet_Seans">
+            <End Role="Seans" EntitySet="Seans" />
+            <End Role="Bilet" EntitySet="Bilet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Film" Association="PABProjektModel.FK_Seans_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Jezyk" Association="PABProjektModel.FK_Seans_Jezyk">
+            <End Role="Jezyk" EntitySet="Jezyk" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_Sala" Association="PABProjektModel.FK_Seans_Sala">
+            <End Role="Sala" EntitySet="Sala" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seans_StatusSeansu" Association="PABProjektModel.FK_Seans_StatusSeansu">
+            <End Role="StatusSeansu" EntitySet="StatusSeansu" />
+            <End Role="Seans" EntitySet="Seans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dystrybutor_Kraj" Association="PABProjektModel.FK_Dystrybutor_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Dystrybutor" EntitySet="Dystrybutor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producent_Kraj" Association="PABProjektModel.FK_Producent_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Producent" EntitySet="Producent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezyser_Kraj" Association="PABProjektModel.FK_Rezyser_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Rezyser" EntitySet="Rezyser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Gatunek" Association="PABProjektModel.FK_Film_Gatunek">
+            <End Role="GatunekFilmu" EntitySet="GatunekFilmu" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Producent" Association="PABProjektModel.FK_Film_Producent">
+            <End Role="Producent" EntitySet="Producent" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Rezyser" Association="PABProjektModel.FK_Film_Rezyser">
+            <End Role="Rezyser" EntitySet="Rezyser" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Kraj" Association="PABProjektModel.FK_Film_Kraj">
+            <End Role="Kraj" EntitySet="Kraj" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Film_JezykOryginalny">
+          <End Type="PABProjektModel.Jezyk" Role="Jezyk" Multiplicity="1" />
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jezyk">
+              <PropertyRef Name="IdJezyka" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdJezykaOryginalnego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Seans">
+          <Key>
+            <PropertyRef Name="IdSeansu" />
+          </Key>
+          <Property Name="IdSeansu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFilmu" Type="Int32" Nullable="false" />
+          <Property Name="IdSali" Type="Int32" Nullable="false" />
+          <Property Name="IdStatusuSeansu" Type="Int32" Nullable="false" />
+          <Property Name="CzyAktywny" Type="Boolean" Nullable="false" />
+          <Property Name="KtoDodal" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyDodal" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="KtoModyfilowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyModyfikowal" Type="DateTime" Precision="7" />
+          <Property Name="KtoWykasowal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KiedyWykasowal" Type="DateTime" Precision="7" />
+          <Property Name="IdJezyka" Type="Int32" Nullable="false" />
+          <Property Name="CzyNapisy" Type="Boolean" Nullable="false" />
+          <Property Name="CzyLektor" Type="Boolean" Nullable="false" />
+          <Property Name="CzyDubbing" Type="Boolean" Nullable="false" />
+          <Property Name="DataSeansu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GodzinaOd" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="GodzinaDo" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Bilet" Relationship="PABProjektModel.FK_Bilet_Seans" FromRole="Seans" ToRole="Bilet" />
+          <NavigationProperty Name="Film" Relationship="PABProjektModel.FK_Seans_Film" FromRole="Seans" ToRole="Film" />
+          <NavigationProperty Name="Jezyk" Relationship="PABProjektModel.FK_Seans_Jezyk" FromRole="Seans" ToRole="Jezyk" />
+          <NavigationProperty Name="Sala" Relationship="PABProjektModel.FK_Seans_Sala" FromRole="Seans" ToRole="Sala" />
+          <NavigationProperty Name="StatusSeansu" Relationship="PABProjektModel.FK_Seans_StatusSeansu" FromRole="Seans" ToRole="StatusSeansu" />
+        </EntityType>
+        <Association Name="FK_Bilet_Seans">
+          <End Type="PABProjektModel.Seans" Role="Seans" Multiplicity="1" />
+          <End Type="PABProjektModel.Bilet" Role="Bilet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seans">
+              <PropertyRef Name="IdSeansu" />
+            </Principal>
+            <Dependent Role="Bilet">
+              <PropertyRef Name="IdSeansu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Film">
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="1" />
+          <End Type="PABProjektModel.Seans" Role="Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="IdFilmu" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdFilmu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Jezyk">
+          <End Type="PABProjektModel.Jezyk" Role="Jezyk" Multiplicity="1" />
+          <End Type="PABProjektModel.Seans" Role="Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jezyk">
+              <PropertyRef Name="IdJezyka" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdJezyka" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_Sala">
+          <End Type="PABProjektModel.Sala" Role="Sala" Multiplicity="1" />
+          <End Type="PABProjektModel.Seans" Role="Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sala">
+              <PropertyRef Name="IdSali" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdSali" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seans_StatusSeansu">
+          <End Type="PABProjektModel.StatusSeansu" Role="StatusSeansu" Multiplicity="1" />
+          <End Type="PABProjektModel.Seans" Role="Seans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusSeansu">
+              <PropertyRef Name="IdStatusuSeansu" />
+            </Principal>
+            <Dependent Role="Seans">
+              <PropertyRef Name="IdStatusuSeansu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dystrybutor_Kraj">
+          <End Type="PABProjektModel.Kraj" Role="Kraj" Multiplicity="1" />
+          <End Type="PABProjektModel.Dystrybutor" Role="Dystrybutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Dystrybutor">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producent_Kraj">
+          <End Type="PABProjektModel.Kraj" Role="Kraj" Multiplicity="1" />
+          <End Type="PABProjektModel.Producent" Role="Producent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Producent">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezyser_Kraj">
+          <End Type="PABProjektModel.Kraj" Role="Kraj" Multiplicity="1" />
+          <End Type="PABProjektModel.Rezyser" Role="Rezyser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Rezyser">
+              <PropertyRef Name="IdKrajuPochodzenia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Gatunek">
+          <End Type="PABProjektModel.GatunekFilmu" Role="GatunekFilmu" Multiplicity="1" />
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GatunekFilmu">
+              <PropertyRef Name="IdGatunku" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdGatunku" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Producent">
+          <End Type="PABProjektModel.Producent" Role="Producent" Multiplicity="1" />
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producent">
+              <PropertyRef Name="IdProducenta" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdProducenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Rezyser">
+          <End Type="PABProjektModel.Rezyser" Role="Rezyser" Multiplicity="1" />
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rezyser">
+              <PropertyRef Name="IdRezysera" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdRezysera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Kraj">
+          <End Type="PABProjektModel.Kraj" Role="Kraj" Multiplicity="1" />
+          <End Type="PABProjektModel.Film" Role="Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kraj">
+              <PropertyRef Name="IdKraju" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="IdKraju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PABProjektModelStoreContainer" CdmEntityContainer="PABProjektEntities">
+          <EntitySetMapping Name="Bilet">
+            <EntityTypeMapping TypeName="PABProjektModel.Bilet">
+              <MappingFragment StoreEntitySet="Bilet">
+                <ScalarProperty Name="CzyOplacony" ColumnName="CzyOplacony" />
+                <ScalarProperty Name="IdBiletu" ColumnName="IdBiletu" />
+                <ScalarProperty Name="IdSeansu" ColumnName="IdSeansu" />
+                <ScalarProperty Name="IdMiejsca" ColumnName="IdMiejsca" />
+                <ScalarProperty Name="IdTypuBiletu" ColumnName="IdTypuBiletu" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Rabat" ColumnName="Rabat" />
+                <ScalarProperty Name="DataSprzedazy" ColumnName="DataSprzedazy" />
+                <ScalarProperty Name="CzyAnulowany" ColumnName="CzyAnulowany" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dystrybutor">
+            <EntityTypeMapping TypeName="PABProjektModel.Dystrybutor">
+              <MappingFragment StoreEntitySet="Dystrybutor">
+                <ScalarProperty Name="UmowaDo" ColumnName="UmowaDo" />
+                <ScalarProperty Name="UmowaOd" ColumnName="UmowaOd" />
+                <ScalarProperty Name="NumerUmowy" ColumnName="NumerUmowy" />
+                <ScalarProperty Name="CzyUmowaPodpisana" ColumnName="CzyUmowaPodpisana" />
+                <ScalarProperty Name="ProcentProwizji" ColumnName="ProcentProwizji" />
+                <ScalarProperty Name="ModelRozliczen" ColumnName="ModelRozliczen" />
+                <ScalarProperty Name="TelefonKontaktowy" ColumnName="TelefonKontaktowy" />
+                <ScalarProperty Name="IdDystrybutora" ColumnName="IdDystrybutora" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="IdKraju" ColumnName="IdKraju" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film">
+            <EntityTypeMapping TypeName="PABProjektModel.Film">
+              <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="IdKraju" ColumnName="IdKraju" />
+                <ScalarProperty Name="IdRezysera" ColumnName="IdRezysera" />
+                <ScalarProperty Name="IdProducenta" ColumnName="IdProducenta" />
+                <ScalarProperty Name="IdGatunku" ColumnName="IdGatunku" />
+                <ScalarProperty Name="IdJezykaOryginalnego" ColumnName="IdJezykaOryginalnego" />
+                <ScalarProperty Name="IdFilmu" ColumnName="IdFilmu" />
+                <ScalarProperty Name="Tytul" ColumnName="Tytul" />
+                <ScalarProperty Name="TytulOryginalny" ColumnName="TytulOryginalny" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzasTrwania" ColumnName="CzasTrwania" />
+                <ScalarProperty Name="RokProdukcji" ColumnName="RokProdukcji" />
+                <ScalarProperty Name="DataPremiery" ColumnName="DataPremiery" />
+                <ScalarProperty Name="UrlPlakatu" ColumnName="UrlPlakatu" />
+                <ScalarProperty Name="IdStatusuFilmu" ColumnName="IdStatusuFilmu" />
+                <ScalarProperty Name="IdKategoriiWiekowej" ColumnName="IdKategoriiWiekowej" />
+                <ScalarProperty Name="IdDystrybutora" ColumnName="IdDystrybutora" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GatunekFilmu">
+            <EntityTypeMapping TypeName="PABProjektModel.GatunekFilmu">
+              <MappingFragment StoreEntitySet="GatunekFilmu">
+                <ScalarProperty Name="IdGatunku" ColumnName="IdGatunku" />
+                <ScalarProperty Name="NazwaGatunku" ColumnName="NazwaGatunku" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jezyk">
+            <EntityTypeMapping TypeName="PABProjektModel.Jezyk">
+              <MappingFragment StoreEntitySet="Jezyk">
+                <ScalarProperty Name="IdJezyka" ColumnName="IdJezyka" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="KodISO" ColumnName="KodISO" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KategoriaWiekowa">
+            <EntityTypeMapping TypeName="PABProjektModel.KategoriaWiekowa">
+              <MappingFragment StoreEntitySet="KategoriaWiekowa">
+                <ScalarProperty Name="IdKategoriiWiekowej" ColumnName="IdKategoriiWiekowej" />
+                <ScalarProperty Name="NazwaKategorii" ColumnName="NazwaKategorii" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kraj">
+            <EntityTypeMapping TypeName="PABProjektModel.Kraj">
+              <MappingFragment StoreEntitySet="Kraj">
+                <ScalarProperty Name="IdKraju" ColumnName="IdKraju" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MiejsceWSali">
+            <EntityTypeMapping TypeName="PABProjektModel.MiejsceWSali">
+              <MappingFragment StoreEntitySet="MiejsceWSali">
+                <ScalarProperty Name="IdMiejsca" ColumnName="IdMiejsca" />
+                <ScalarProperty Name="IdSali" ColumnName="IdSali" />
+                <ScalarProperty Name="Rzad" ColumnName="Rzad" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="TypMiejsca" ColumnName="TypMiejsca" />
+                <ScalarProperty Name="CzyAktywne" ColumnName="CzyAktywne" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producent">
+            <EntityTypeMapping TypeName="PABProjektModel.Producent">
+              <MappingFragment StoreEntitySet="Producent">
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="IdProducenta" ColumnName="IdProducenta" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="IdKraju" ColumnName="IdKraju" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rezyser">
+            <EntityTypeMapping TypeName="PABProjektModel.Rezyser">
+              <MappingFragment StoreEntitySet="Rezyser">
+                <ScalarProperty Name="IdRezysera" ColumnName="IdRezysera" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="IdKrajuPochodzenia" ColumnName="IdKrajuPochodzenia" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sala">
+            <EntityTypeMapping TypeName="PABProjektModel.Sala">
+              <MappingFragment StoreEntitySet="Sala">
+                <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+                <ScalarProperty Name="IdSali" ColumnName="IdSali" />
+                <ScalarProperty Name="NumerSali" ColumnName="NumerSali" />
+                <ScalarProperty Name="LiczbaMiejsc" ColumnName="LiczbaMiejsc" />
+                <ScalarProperty Name="IdKina" ColumnName="IdKina" />
+                <ScalarProperty Name="IdTypuEkranu" ColumnName="IdTypuEkranu" />
+                <ScalarProperty Name="IdTypuNaglosnienia" ColumnName="IdTypuNaglosnienia" />
+                <ScalarProperty Name="IdTypuSali" ColumnName="IdTypuSali" />
+                <ScalarProperty Name="CzyAktywna" ColumnName="CzyAktywna" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusFilmu">
+            <EntityTypeMapping TypeName="PABProjektModel.StatusFilmu">
+              <MappingFragment StoreEntitySet="StatusFilmu">
+                <ScalarProperty Name="IdStatusuFilmu" ColumnName="IdStatusuFilmu" />
+                <ScalarProperty Name="NazwaStatusu" ColumnName="NazwaStatusu" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusSeansu">
+            <EntityTypeMapping TypeName="PABProjektModel.StatusSeansu">
+              <MappingFragment StoreEntitySet="StatusSeansu">
+                <ScalarProperty Name="CzySprzedawacBilety" ColumnName="CzySprzedawacBilety" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="IdStatusuSeansu" ColumnName="IdStatusuSeansu" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PABProjektModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypBiletu">
+            <EntityTypeMapping TypeName="PABProjektModel.TypBiletu">
+              <MappingFragment StoreEntitySet="TypBiletu">
+                <ScalarProperty Name="CzyPodlegaPromocji" ColumnName="CzyPodlegaPromocji" />
+                <ScalarProperty Name="IdTypuBiletu" ColumnName="IdTypuBiletu" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Cena" ColumnName="Cena" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypEkranu">
+            <EntityTypeMapping TypeName="PABProjektModel.TypEkranu">
+              <MappingFragment StoreEntitySet="TypEkranu">
+                <ScalarProperty Name="CzyWymaganeOkulary3D" ColumnName="CzyWymaganeOkulary3D" />
+                <ScalarProperty Name="MaksymalnaRozdzielczosc" ColumnName="MaksymalnaRozdzielczosc" />
+                <ScalarProperty Name="IdTypuEkranu" ColumnName="IdTypuEkranu" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypNaglosnienia">
+            <EntityTypeMapping TypeName="PABProjektModel.TypNaglosnienia">
+              <MappingFragment StoreEntitySet="TypNaglosnienia">
+                <ScalarProperty Name="IdTypuNaglosnienia" ColumnName="IdTypuNaglosnienia" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypSali">
+            <EntityTypeMapping TypeName="PABProjektModel.TypSali">
+              <MappingFragment StoreEntitySet="TypSali">
+                <ScalarProperty Name="IdTypuSali" ColumnName="IdTypuSali" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoModyfikowal" ColumnName="KtoModyfikowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seans">
+            <EntityTypeMapping TypeName="PABProjektModel.Seans">
+              <MappingFragment StoreEntitySet="Seans">
+                <ScalarProperty Name="GodzinaDo" ColumnName="GodzinaDo" />
+                <ScalarProperty Name="GodzinaOd" ColumnName="GodzinaOd" />
+                <ScalarProperty Name="DataSeansu" ColumnName="DataSeansu" />
+                <ScalarProperty Name="CzyDubbing" ColumnName="CzyDubbing" />
+                <ScalarProperty Name="CzyLektor" ColumnName="CzyLektor" />
+                <ScalarProperty Name="CzyNapisy" ColumnName="CzyNapisy" />
+                <ScalarProperty Name="IdJezyka" ColumnName="IdJezyka" />
+                <ScalarProperty Name="KiedyWykasowal" ColumnName="KiedyWykasowal" />
+                <ScalarProperty Name="KtoWykasowal" ColumnName="KtoWykasowal" />
+                <ScalarProperty Name="KiedyModyfikowal" ColumnName="KiedyModyfikowal" />
+                <ScalarProperty Name="KtoModyfilowal" ColumnName="KtoModyfilowal" />
+                <ScalarProperty Name="KiedyDodal" ColumnName="KiedyDodal" />
+                <ScalarProperty Name="KtoDodal" ColumnName="KtoDodal" />
+                <ScalarProperty Name="CzyAktywny" ColumnName="CzyAktywny" />
+                <ScalarProperty Name="IdStatusuSeansu" ColumnName="IdStatusuSeansu" />
+                <ScalarProperty Name="IdSali" ColumnName="IdSali" />
+                <ScalarProperty Name="IdFilmu" ColumnName="IdFilmu" />
+                <ScalarProperty Name="IdSeansu" ColumnName="IdSeansu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿<local:WszystkieViewBase x:Class="PDABProjekt.Views.WszyscyDystrybutorzyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PDABProjekt.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" CanUserAddRows="False" SelectedItem="{Binding WybranyDystrybutor, Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="95"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}" Width="80"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding NazwaKraju}" Width="80"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="100"/>
+                <DataGridTextColumn Header="Telefon kontaktowy" Binding="{Binding Telefon}" Width="120"/>
+                <DataGridCheckBoxColumn Header="Umowa podpisana" Binding="{Binding CzyUmowaPodpisana}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nr umowy" Binding="{Binding NumerUmowy}"/>
+                <DataGridTextColumn Header="Umowa od" Binding="{Binding UmowaOd}"/>
+                <DataGridTextColumn Header="Umowa do" Binding="{Binding UmowaDo}"/>
+                <DataGridTextColumn Header="Model rozliczeń" Binding="{Binding ModelRozliczen}"/>
+                <DataGridTextColumn Header="% Prowizji" Binding="{Binding ProcentProwizji}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:WszystkieViewBase>
