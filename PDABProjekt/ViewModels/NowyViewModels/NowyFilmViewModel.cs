@@ -403,9 +403,7 @@ namespace PDABProjekt.ViewModels
 
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.Film.Add(item);
             kinoEntities.SaveChanges();
          

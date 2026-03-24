@@ -181,6 +181,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelKino.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PABProjektEntitiesExtend.cs" />
     <Compile Include="Models\Producent.cs">
       <DependentUpon>ModelKino.tt</DependentUpon>
     </Compile>
@@ -257,117 +258,117 @@
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypyEkranuViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypySaliViewModel.cs" />
-    <Compile Include="Views\JedenViewBase.cs" />
+    <Compile Include="Views\Abstract\JedenViewBase.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowaKategoriaWiekowaView.xaml.cs">
+    <Compile Include="Views\AddViews\NowaKategoriaWiekowaView.xaml.cs">
       <DependentUpon>NowaKategoriaWiekowaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowaSalaView.xaml.cs">
+    <Compile Include="Views\AddViews\NowaSalaView.xaml.cs">
       <DependentUpon>NowaSalaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyDystrybutorView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyDystrybutorView.xaml.cs">
       <DependentUpon>NowyDystrybutorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyFilmView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyFilmView.xaml.cs">
       <DependentUpon>NowyFilmView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyGatunekView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyGatunekView.xaml.cs">
       <DependentUpon>NowyGatunekView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyJezykView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyJezykView.xaml.cs">
       <DependentUpon>NowyJezykView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyKrajView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyKrajView.xaml.cs">
       <DependentUpon>NowyKrajView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowySeansView.xaml.cs">
+    <Compile Include="Views\AddViews\NowySeansView.xaml.cs">
       <DependentUpon>NowySeansView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyStatusFilmuView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyStatusFilmuView.xaml.cs">
       <DependentUpon>NowyStatusFilmuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyStatusSeansuView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyStatusSeansuView.xaml.cs">
       <DependentUpon>NowyStatusSeansuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyTypBiletuView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyTypBiletuView.xaml.cs">
       <DependentUpon>NowyTypBiletuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyTypEkranuView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyTypEkranuView.xaml.cs">
       <DependentUpon>NowyTypEkranuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyTypNaglosnieniaView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyTypNaglosnieniaView.xaml.cs">
       <DependentUpon>NowyTypNaglosnieniaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NowyTypSaliView.xaml.cs">
+    <Compile Include="Views\AddViews\NowyTypSaliView.xaml.cs">
       <DependentUpon>NowyTypSaliView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RaportViewBase.cs" />
-    <Compile Include="Views\RaportZapelnieniaSeansowView.xaml.cs">
+    <Compile Include="Views\Abstract\RaportViewBase.cs" />
+    <Compile Include="Views\BusinessViews\RaportZapelnieniaSeansowView.xaml.cs">
       <DependentUpon>RaportZapelnieniaSeansowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RaportSprzedazyBiletowView.xaml.cs">
+    <Compile Include="Views\BusinessViews\RaportSprzedazyBiletowView.xaml.cs">
       <DependentUpon>RaportSprzedazyBiletowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\StatystykiOgolneView.xaml.cs">
+    <Compile Include="Views\BusinessViews\StatystykiOgolneView.xaml.cs">
       <DependentUpon>StatystykiOgolneView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszyscyDystrybutorzyView.xaml.cs">
+    <Compile Include="Views\AllViews\WszyscyDystrybutorzyView.xaml.cs">
       <DependentUpon>WszyscyDystrybutorzyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszyscyProducenciView.xaml.cs">
+    <Compile Include="Views\AllViews\WszyscyProducenciView.xaml.cs">
       <DependentUpon>WszyscyProducenciView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszyscyRezyserzyView.xaml.cs">
+    <Compile Include="Views\AllViews\WszyscyRezyserzyView.xaml.cs">
       <DependentUpon>WszyscyRezyserzyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieBiletyView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieBiletyView.xaml.cs">
       <DependentUpon>WszystkieBiletyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieFilmyView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieFilmyView.xaml.cs">
       <DependentUpon>WszystkieFilmyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieGatunkiView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieGatunkiView.xaml.cs">
       <DependentUpon>WszystkieGatunkiView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieJezykiView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieJezykiView.xaml.cs">
       <DependentUpon>WszystkieJezykiView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieKategorieWiekoweView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieKategorieWiekoweView.xaml.cs">
       <DependentUpon>WszystkieKategorieWiekoweView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieKrajeView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieKrajeView.xaml.cs">
       <DependentUpon>WszystkieKrajeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieMiejscaWSaliView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieMiejscaWSaliView.xaml.cs">
       <DependentUpon>WszystkieMiejscaWSaliView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieSaleView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieSaleView.xaml.cs">
       <DependentUpon>WszystkieSaleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieSeanseView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieSeanseView.xaml.cs">
       <DependentUpon>WszystkieSeanseView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieStatusyFilmuView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieStatusyFilmuView.xaml.cs">
       <DependentUpon>WszystkieStatusyFilmuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieStatusySeansuView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieStatusySeansuView.xaml.cs">
       <DependentUpon>WszystkieStatusySeansuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieTypyBiletuView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieTypyBiletuView.xaml.cs">
       <DependentUpon>WszystkieTypyBiletuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieTypyEkranuView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieTypyEkranuView.xaml.cs">
       <DependentUpon>WszystkieTypyEkranuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieTypyNaglosnieniaView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieTypyNaglosnieniaView.xaml.cs">
       <DependentUpon>WszystkieTypyNaglosnieniaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieTypySaliView.xaml.cs">
+    <Compile Include="Views\AllViews\WszystkieTypySaliView.xaml.cs">
       <DependentUpon>WszystkieTypySaliView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WszystkieViewBase.cs" />
+    <Compile Include="Views\Abstract\WszystkieViewBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -415,151 +416,148 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowaKategoriaWiekowaView.xaml">
+    <Page Include="Views\AddViews\NowaKategoriaWiekowaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowaSalaView.xaml">
+    <Page Include="Views\AddViews\NowaSalaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyDystrybutorView.xaml">
+    <Page Include="Views\AddViews\NowyDystrybutorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyFilmView.xaml">
+    <Page Include="Views\AddViews\NowyFilmView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyGatunekView.xaml">
+    <Page Include="Views\AddViews\NowyGatunekView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyJezykView.xaml">
+    <Page Include="Views\AddViews\NowyJezykView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyKrajView.xaml">
+    <Page Include="Views\AddViews\NowyKrajView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowySeansView.xaml">
+    <Page Include="Views\AddViews\NowySeansView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyStatusFilmuView.xaml">
+    <Page Include="Views\AddViews\NowyStatusFilmuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyStatusSeansuView.xaml">
+    <Page Include="Views\AddViews\NowyStatusSeansuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyTypBiletuView.xaml">
+    <Page Include="Views\AddViews\NowyTypBiletuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyTypEkranuView.xaml">
+    <Page Include="Views\AddViews\NowyTypEkranuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyTypNaglosnieniaView.xaml">
+    <Page Include="Views\AddViews\NowyTypNaglosnieniaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NowyTypSaliView.xaml">
+    <Page Include="Views\AddViews\NowyTypSaliView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RaportZapelnieniaSeansowView.xaml">
+    <Page Include="Views\BusinessViews\RaportZapelnieniaSeansowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RaportSprzedazyBiletowView.xaml">
+    <Page Include="Views\BusinessViews\RaportSprzedazyBiletowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\StatystykiOgolneView.xaml">
+    <Page Include="Views\BusinessViews\StatystykiOgolneView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszyscyDystrybutorzyView.xaml">
+    <Page Include="Views\AllViews\WszyscyDystrybutorzyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszyscyProducenciView.xaml">
+    <Page Include="Views\AllViews\WszyscyProducenciView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszyscyRezyserzyView.xaml">
+    <Page Include="Views\AllViews\WszyscyRezyserzyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieBiletyView.xaml">
+    <Page Include="Views\AllViews\WszystkieBiletyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieFilmyView.xaml">
+    <Page Include="Views\AllViews\WszystkieFilmyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieGatunkiView.xaml">
+    <Page Include="Views\AllViews\WszystkieGatunkiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieJezykiView.xaml">
+    <Page Include="Views\AllViews\WszystkieJezykiView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieKategorieWiekoweView.xaml">
+    <Page Include="Views\AllViews\WszystkieKategorieWiekoweView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieKrajeView.xaml">
+    <Page Include="Views\AllViews\WszystkieKrajeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieMiejscaWSaliView.xaml">
+    <Page Include="Views\AllViews\WszystkieMiejscaWSaliView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieSaleView.xaml">
+    <Page Include="Views\AllViews\WszystkieSaleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieSeanseView.xaml">
+    <Page Include="Views\AllViews\WszystkieSeanseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieStatusyFilmuView.xaml">
+    <Page Include="Views\AllViews\WszystkieStatusyFilmuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieStatusySeansuView.xaml">
+    <Page Include="Views\AllViews\WszystkieStatusySeansuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieTypyBiletuView.xaml">
+    <Page Include="Views\AllViews\WszystkieTypyBiletuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieTypyEkranuView.xaml">
+    <Page Include="Views\AllViews\WszystkieTypyEkranuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieTypyNaglosnieniaView.xaml">
+    <Page Include="Views\AllViews\WszystkieTypyNaglosnieniaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WszystkieTypySaliView.xaml">
+    <Page Include="Views\AllViews\WszystkieTypySaliView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\NowyViews\" />
-    <Folder Include="Views\WszystkieViews\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Models\ModelKino.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
