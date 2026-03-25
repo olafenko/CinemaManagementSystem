@@ -242,23 +242,23 @@
     <Compile Include="ViewModels\RaportSprzedazyBiletowViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\StatystykiOgolneViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszyscyDystrybutorzyViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszyscyProducenciViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszyscyRezyserzyViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieBiletyViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\AllMoviesViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieGatunkiViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieJezykiViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieKategorieWiekoweViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieKrajeViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieSaleViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieSeanseViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieStatusyFilmuViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieStatusySeansuViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypyBiletuViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypyEkranuViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieTypySaliViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszyscyDystrybutorzyViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszyscyProducenciViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszyscyRezyserzyViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieGatunkiViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieJezykiViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieKategorieWiekoweViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieKrajeViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieSaleViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusyFilmuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusySeansuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyBiletuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyEkranuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\WszystkieTypySaliViewModel.cs" />
     <Compile Include="Views\Abstract\JedenViewBase.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -327,8 +327,8 @@
     <Compile Include="Views\AllViews\WszystkieBiletyView.xaml.cs">
       <DependentUpon>WszystkieBiletyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AllViews\WszystkieFilmyView.xaml.cs">
-      <DependentUpon>WszystkieFilmyView.xaml</DependentUpon>
+    <Compile Include="Views\AllViews\AllMoviesView.xaml.cs">
+      <DependentUpon>AllMoviesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AllViews\WszystkieGatunkiView.xaml.cs">
       <DependentUpon>WszystkieGatunkiView.xaml</DependentUpon>
@@ -501,7 +501,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AllViews\WszystkieFilmyView.xaml">
+    <Page Include="Views\AllViews\AllMoviesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

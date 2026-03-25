@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for WszystkieFilmyView.xaml
     /// </summary>
-    public partial class WszystkieFilmyView : WszystkieViewBase
+    public partial class AllMoviesView : WszystkieViewBase
     {
-        public WszystkieFilmyView()
+        public AllMoviesView()
         {
             InitializeComponent();
         }

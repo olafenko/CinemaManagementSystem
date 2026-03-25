@@ -25,7 +25,7 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Lista
+        #region List
         public override void Load()
         {
             List = new ObservableCollection<FilmForAllView>(
@@ -57,22 +57,22 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Wlasciwosci
+        #region Properties
 
-        private FilmForAllView _WybranyFilm;
-        public FilmForAllView WybranyFilm
+        private FilmForAllView _PickedMovie;
+        public FilmForAllView PickedMovie
         {
             get
             {
-                return _WybranyFilm;
+                return _PickedMovie;
             }
 
             set 
             {
-                if (_WybranyFilm != value)
+                if (_PickedMovie != value)
                 {
-                    _WybranyFilm = value;
-                    Messenger.Default.Send(_WybranyFilm);
+                    _PickedMovie = value;
+                    Messenger.Default.Send(_PickedMovie);
                     OnRequestClose();
                 }
             }
@@ -82,7 +82,7 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Sortowanie i filtrowanie
+        #region Sorting and filtering
 
         public override List<string> GetComboBoxSortList()
         {
@@ -110,6 +110,11 @@ namespace PDABProjekt.ViewModels
                 case "Status":
                     {
                         List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.Status));
+                        break;
+                    }
+                case "Kategoria wiekowa":
+                    {
+                        List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.KategoriaWiekowa));
                         break;
                     }
             }
@@ -152,7 +157,16 @@ namespace PDABProjekt.ViewModels
                         }
                     case "Rok produkcji":
                         {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.RokProdukcji != null && f.RokProdukcji == int.Parse(FindTextBox)));
+
+                            if (int.TryParse(FindTextBox, out int searchedYear))
+                            {
+                                List = new ObservableCollection<FilmForAllView>(List.Where(f => f.RokProdukcji != null && f.RokProdukcji == searchedYear));
+                            } else
+                            {
+                                List = new ObservableCollection<FilmForAllView>();
+                            }
+
+                           
                             break;
                         }
                     case "Język":

@@ -4,7 +4,7 @@
                     xmlns:vw="clr-namespace:PDABProjekt.Views"
                     >
     <DataTemplate DataType="{x:Type vm:AllMoviesViewModel}">
-        <vw:WszystkieFilmyView/>
+        <vw:AllMoviesView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddMovieViewModel}">
         <vw:AddMovieView/>
