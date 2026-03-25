@@ -3,7 +3,7 @@
                     xmlns:vm="clr-namespace:PDABProjekt.ViewModels"                   
                     xmlns:vw="clr-namespace:PDABProjekt.Views"
                     >
-    <DataTemplate DataType="{x:Type vm:WszystkieFilmyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllMoviesViewModel}">
         <vw:WszystkieFilmyView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddMovieViewModel}">

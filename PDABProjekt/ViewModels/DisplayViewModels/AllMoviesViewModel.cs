@@ -13,12 +13,12 @@ using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieFilmyViewModel : WszystkieViewModel<FilmForAllView>
+    public class AllMoviesViewModel : WszystkieViewModel<FilmForAllView>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public WszystkieFilmyViewModel()
+        public AllMoviesViewModel()
         {
             base.DisplayName = "Filmy";
         }
@@ -30,7 +30,7 @@ namespace PDABProjekt.ViewModels
         {
             List = new ObservableCollection<FilmForAllView>(
 
-                kinoEntities.Film.Where(film => film.CzyAktywny == true).ToList()
+                kinoEntities.Film.Where(film => film.CzyAktywny == true)
                 .Select(film => new FilmForAllView
                 {
                     Id = film.IdFilmu,
@@ -51,7 +51,7 @@ namespace PDABProjekt.ViewModels
                     Opis = film.Opis
 
                 }
-                )
+                ).ToList()
             );
         }
 

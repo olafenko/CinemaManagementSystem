@@ -246,7 +246,7 @@
     <Compile Include="ViewModels\WszystkieViewModels\WszyscyProducenciViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszyscyRezyserzyViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieBiletyViewModel.cs" />
-    <Compile Include="ViewModels\WszystkieViewModels\WszystkieFilmyViewModel.cs" />
+    <Compile Include="ViewModels\WszystkieViewModels\AllMoviesViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieGatunkiViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieJezykiViewModel.cs" />
     <Compile Include="ViewModels\WszystkieViewModels\WszystkieKategorieWiekoweViewModel.cs" />

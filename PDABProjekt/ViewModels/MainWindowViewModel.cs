@@ -77,7 +77,7 @@ namespace PDABProjekt.ViewModels
             {
                 new CommandViewModel(
                     "Wszystkie filmy",
-                    new BaseCommand(() => this.ShowAllView<WszystkieFilmyViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllMoviesViewModel>())),
                 new CommandViewModel(
                     "Nowy Film",
                     new BaseCommand(() => this.CreateView(new AddMovieViewModel()))),
@@ -360,7 +360,7 @@ namespace PDABProjekt.ViewModels
 
                 case "FilmyShow":
                     {
-                        CreateView(new WszystkieFilmyViewModel());
+                        CreateView(new AllMoviesViewModel());
                         break;
                     }
                 case "SaleShow":
