@@ -221,7 +221,7 @@
     <Compile Include="ViewModels\Abstract\DisplayAllViewModelBase.cs" />
     <Compile Include="ViewModels\AddViewModels\AddMovieViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddAgeCategoryViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowaSalaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddHallViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyDystrybutorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyGatunekViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyJezykViewModel.cs" />
@@ -266,8 +266,8 @@
     <Compile Include="Views\AddViews\AddAgeCategoryView.xaml.cs">
       <DependentUpon>AddAgeCategoryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowaSalaView.xaml.cs">
-      <DependentUpon>NowaSalaView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddHallView.xaml.cs">
+      <DependentUpon>AddHallView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyDystrybutorView.xaml.cs">
       <DependentUpon>NowyDystrybutorView.xaml</DependentUpon>
@@ -421,7 +421,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowaSalaView.xaml">
+    <Page Include="Views\AddViews\AddHallView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

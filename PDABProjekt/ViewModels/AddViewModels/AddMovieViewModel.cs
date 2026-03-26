@@ -327,7 +327,7 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Dictionatries ComboBox's
+        #region Dictionatries ComboBoxe's
 
         public List<KategoriaWiekowa> AgeCategories { get; private set; }
         public List<Jezyk> Languages { get; private set; }

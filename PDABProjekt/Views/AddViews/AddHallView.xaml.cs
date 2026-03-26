@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowaSalaView.xaml
     /// </summary>
-    public partial class NowaSalaView : JedenViewBase
+    public partial class AddHallView : JedenViewBase
     {
-        public NowaSalaView()
+        public AddHallView()
         {
             InitializeComponent();
         }

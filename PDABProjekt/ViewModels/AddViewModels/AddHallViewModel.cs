@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowaSalaViewModel : AddViewModelBase<Sala>
+    public class AddHallViewModel : AddViewModelBase<Sala>
     {
 
 
-        #region Konstruktor
-        public NowaSalaViewModel()
+        #region Constructor
+        public AddHallViewModel()
         {
             base.DisplayName = "Sala";
             item = new Sala();
+
+            LoadDictionaries();
+
         }
         #endregion
 
@@ -25,9 +28,9 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Wlasciwosci
+        #region Properties
 
-        public int NumerSali
+        public int HallNumber
         {
             get
             {
@@ -44,7 +47,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public int LiczbaMiejsc
+        public int SeatsCount
         {
             get
             {
@@ -61,7 +64,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public int IdTypuEkranu
+        public int ScreenTypeId
         {
             get
             {
@@ -78,7 +81,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public int IdTypuNaglosnienia
+        public int SoundSystemTypeId
         {
             get
             {
@@ -95,7 +98,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public int IdTypuSali
+        public int HallTypeId
         {
             get
             {
@@ -112,52 +115,33 @@ namespace PDABProjekt.ViewModels
             }
         }
 
+        #endregion
 
-        //comboboxy
-
-        public IQueryable<TypEkranu> TypyEkranuItems
-        {
-            get
-            {
-                return (
-                    kinoEntities.TypEkranu.Where(e => e.CzyAktywny).ToList().AsQueryable()
-                    );
-            }
-        }
-
-        public IQueryable<TypNaglosnienia> TypyNaglosnieniaItems
-        {
-            get
-            {
-                return (
-                    kinoEntities.TypNaglosnienia.Where(n => n.CzyAktywny).ToList().AsQueryable()
-                    );
-            }
-        }
-        public IQueryable<TypSali> TypySaliItems
-        {
-            get
-            {
-                return (
-                    kinoEntities.TypSali.Where(s => s.CzyAktywny).ToList().AsQueryable()
-                    );
-            }
-        }
-
+        #region Dictionatries ComboBoxe's
+        public List<TypEkranu> ScreenTypes { get; set; }
+        public List<TypNaglosnienia> SoundSystemTypes { get; set; }
+        public List<TypSali> HallTypes { get; set; }
 
         #endregion
 
         #region Helpers
 
+        private void LoadDictionaries()
+        {
+            ScreenTypes = kinoEntities.TypEkranu.Where(e => e.CzyAktywny).ToList();
+            SoundSystemTypes = kinoEntities.TypNaglosnienia.Where(n => n.CzyAktywny).ToList();
+            HallTypes = kinoEntities.TypSali.Where(s => s.CzyAktywny).ToList();
+
+        }
+
         public override void Save()
         {
-            item.CzyAktywna = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.Sala.Add(item);
             kinoEntities.SaveChanges();
 
         }
+
         #endregion
 
     }
