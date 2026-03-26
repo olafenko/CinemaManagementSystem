@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieSaleViewModel : WszystkieViewModel<SalaForAllView>
+    public class WszystkieSaleViewModel : DisplayAllViewModelBase<SalaForAllView>
     {
 
         #region Konstruktor

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieStatusySeansuViewModel : WszystkieViewModel<StatusSeansu>
+    public class WszystkieStatusySeansuViewModel : DisplayAllViewModelBase<StatusSeansu>
     {
         #region Konstruktor
 

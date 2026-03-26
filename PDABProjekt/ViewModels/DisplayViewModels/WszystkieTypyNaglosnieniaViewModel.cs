@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieTypyNaglosnieniaViewModel : WszystkieViewModel<TypNaglosnienia>
+    public class WszystkieTypyNaglosnieniaViewModel : DisplayAllViewModelBase<TypNaglosnienia>
     {
 
         #region Konstruktor

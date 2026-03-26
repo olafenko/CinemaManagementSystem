@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieTypyEkranuViewModel : WszystkieViewModel<TypEkranu>
+    public class WszystkieTypyEkranuViewModel : DisplayAllViewModelBase<TypEkranu>
     {
 
         #region Konstruktor

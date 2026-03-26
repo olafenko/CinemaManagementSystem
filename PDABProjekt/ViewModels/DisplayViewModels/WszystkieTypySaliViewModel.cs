@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieTypySaliViewModel : WszystkieViewModel<TypSali>
+    public class WszystkieTypySaliViewModel : DisplayAllViewModelBase<TypSali>
     {
         #region Konstruktor
 

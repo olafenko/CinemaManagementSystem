@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllMoviesViewModel : WszystkieViewModel<FilmForAllView>
+    public class AllMoviesViewModel : DisplayAllViewModelBase<FilmForAllView>
     {
 
         #region Constructor

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieJezykiViewModel : WszystkieViewModel<Jezyk>
+    public class WszystkieJezykiViewModel : DisplayAllViewModelBase<Jezyk>
     {
 
         #region Konstruktor

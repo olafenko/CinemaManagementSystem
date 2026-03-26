@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieTypyBiletuViewModel : WszystkieViewModel<TypBiletu>
+    public class WszystkieTypyBiletuViewModel : DisplayAllViewModelBase<TypBiletu>
     {
         #region Konstruktor
 

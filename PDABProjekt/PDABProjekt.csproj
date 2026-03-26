@@ -218,7 +218,7 @@
     <Compile Include="ViewModels\Abstract\AddViewModelBase.cs" />
     <Compile Include="ViewModels\Abstract\DatabaseVMClass.cs" />
     <Compile Include="ViewModels\Abstract\RaportViewModelBase.cs" />
-    <Compile Include="ViewModels\Abstract\WszystkieViewModel.cs" />
+    <Compile Include="ViewModels\Abstract\DisplayAllViewModelBase.cs" />
     <Compile Include="ViewModels\AddViewModels\AddMovieViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowaKategoriaWiekowaViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowaSalaViewModel.cs" />
