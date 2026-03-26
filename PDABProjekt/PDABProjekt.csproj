@@ -227,7 +227,7 @@
     <Compile Include="ViewModels\AddViewModels\AddLanguageViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddCountryViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddProducerViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyRezyserViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddDirectorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowySeansViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyStatusFilmuViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyStatusSeansuViewModel.cs" />
@@ -260,6 +260,9 @@
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypySaliViewModel.cs" />
     <Compile Include="Views\Abstract\JedenViewBase.cs" />
+    <Compile Include="Views\AddViews\AddDirectorView.xaml.cs">
+      <DependentUpon>AddDirectorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddViews\AddProducerView.xaml.cs">
       <DependentUpon>AddProducerView.xaml</DependentUpon>
     </Compile>
@@ -411,6 +414,10 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddViews\AddDirectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddViews\AddProducerView.xaml">
       <SubType>Designer</SubType>

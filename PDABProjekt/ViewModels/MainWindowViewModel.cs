@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using PDABProjekt.Helper;
 using PDABProjekt.Models;
-using PDABProjekt.ViewModels.NowyViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -179,6 +178,9 @@ namespace PDABProjekt.ViewModels
                    new CommandViewModel(
                     "Reżyserzy",
                     new BaseCommand(() => this.ShowAllView<WszyscyRezyserzyViewModel>())),
+                   new CommandViewModel(
+                     "Nowy reżyser",
+                     new BaseCommand(() => this.CreateView(new AddDirectorViewModel()))),
 
             };
         }
@@ -303,6 +305,12 @@ namespace PDABProjekt.ViewModels
                 case "ProducenciAdd":
                     {
                         CreateView(new AddProducerViewModel()); 
+                        break;
+                    }
+
+                case "ReżyserzyAdd":
+                    {
+                        CreateView(new AddDirectorViewModel());
                         break;
                     }
                 case "KrajeAdd":

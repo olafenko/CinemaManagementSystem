@@ -102,6 +102,9 @@
     <DataTemplate DataType="{x:Type vm:AddProducerViewModel}">
         <vw:AddProducerView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddDirectorViewModel}">
+        <vw:AddDirectorView/>
+    </DataTemplate>
 
 
     <DataTemplate DataType="{x:Type vm:RaportSprzedazyBiletowViewModel}">
