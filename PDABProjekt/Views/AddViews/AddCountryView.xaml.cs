@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyKrajView.xaml
     /// </summary>
-    public partial class NowyKrajView : JedenViewBase
+    public partial class AddCountryView : JedenViewBase
     {
-        public NowyKrajView()
+        public AddCountryView()
         {
             InitializeComponent();
         }

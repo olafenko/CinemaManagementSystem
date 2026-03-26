@@ -225,7 +225,7 @@
     <Compile Include="ViewModels\AddViewModels\AddDistributorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddGenreViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddLanguageViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyKrajViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddCountryViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyProducentViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyRezyserViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowySeansViewModel.cs" />
@@ -281,8 +281,8 @@
     <Compile Include="Views\AddViews\AddLanguageView.xaml.cs">
       <DependentUpon>AddLanguageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyKrajView.xaml.cs">
-      <DependentUpon>NowyKrajView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddCountryView.xaml.cs">
+      <DependentUpon>AddCountryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowySeansView.xaml.cs">
       <DependentUpon>NowySeansView.xaml</DependentUpon>
@@ -441,7 +441,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyKrajView.xaml">
+    <Page Include="Views\AddViews\AddCountryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

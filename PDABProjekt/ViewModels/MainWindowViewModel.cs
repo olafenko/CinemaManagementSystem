@@ -133,7 +133,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieKrajeViewModel>())),
                  new CommandViewModel(
                      "Nowy kraj",
-                     new BaseCommand(() => this.CreateView(new NowyKrajViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddCountryViewModel()))),
                  new CommandViewModel(
                     "Statusy filmu",
                     new BaseCommand(() => this.ShowAllView<WszystkieStatusyFilmuViewModel>())),
@@ -304,7 +304,7 @@ namespace PDABProjekt.ViewModels
                     }
                 case "KrajeAdd":
                     {
-                        CreateView(new NowyKrajViewModel()); 
+                        CreateView(new AddCountryViewModel()); 
                         break;
                     }
                 case "JezykiAdd":

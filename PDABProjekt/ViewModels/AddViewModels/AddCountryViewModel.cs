@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyKrajViewModel : AddViewModelBase<Kraj>
+    public class AddCountryViewModel : AddViewModelBase<Kraj>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyKrajViewModel() : base() {
+        public AddCountryViewModel() : base() {
 
             base.DisplayName = "Nowy kraj";
             item = new Kraj();
@@ -24,9 +24,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string NazwaKraju
+        public string Name
         {
             get
             {
@@ -37,7 +37,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => item.Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
@@ -45,13 +45,15 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
+        #region Helpers
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.Kraj.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 }
