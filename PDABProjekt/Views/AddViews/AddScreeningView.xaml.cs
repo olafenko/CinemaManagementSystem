@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowySeansView.xaml
     /// </summary>
-    public partial class NowySeansView : JedenViewBase
+    public partial class AddScreeningView : JedenViewBase
     {
-        public NowySeansView()
+        public AddScreeningView()
         {
             InitializeComponent();
         }

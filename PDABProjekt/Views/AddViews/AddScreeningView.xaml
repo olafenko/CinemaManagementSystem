@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PDABProjekt.Views"
-             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="PDABProjekt.Views.NowySeansView"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="PDABProjekt.Views.AddScreeningView"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Padding="10" Background="#202123">
@@ -30,56 +30,56 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" Content="Film: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="0" Margin="0,10" FontWeight="Bold" Text="{Binding Path=TytulFilmu, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="..." Grid.Column="2" Grid.Row="0" Margin="0,10" Command="{Binding ShowFilmy}"/>
+            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="0" Margin="0,10" FontWeight="Bold" Text="{Binding Path=MovieTitle, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="..." Grid.Column="2" Grid.Row="0" Margin="0,10" Command="{Binding ShowMovies}"/>
 
             <Label Grid.Column="0" Grid.Row="1" Content="Gatunek filmu: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="1" Margin="0,10" FontWeight="Bold" Text="{Binding Path=GatunekFilmu, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="1" Margin="0,10" FontWeight="Bold" Text="{Binding Path=MovieGenre, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="2" Content="Czas trwania filmu: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="2" Margin="0,10" FontWeight="Bold" Text="{Binding Path=CzasTrwaniaFilmu, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="2" Margin="0,10" FontWeight="Bold" Text="{Binding Path=MovieDuration, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="3" Content="Sala: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="3" Margin="0,10" FontWeight="Bold" Text="{Binding Path=NumerSali, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="..." Grid.Column="2" Grid.Row="3" Margin="0,10" Command="{Binding ShowSale}"/>
+            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="3" Margin="0,10" FontWeight="Bold" Text="{Binding Path=HallNumber, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="..." Grid.Column="2" Grid.Row="3" Margin="0,10" Command="{Binding ShowHalls}"/>
 
             <Label Grid.Column="0" Grid.Row="4" Content="Typ sali: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="4" Margin="0,10" FontWeight="Bold" Text="{Binding Path=TypSali, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox IsEnabled="False" Grid.Column="1" Grid.Row="4" Margin="0,10" FontWeight="Bold" Text="{Binding Path=HallType, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label  Grid.Column="0" Grid.Row="5" Content="Status seansu: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
             <ComboBox  Grid.Column="1" Grid.Row="5" Margin="0,10" Foreground="Black"
-                ItemsSource="{Binding StatusySeansuItems}"
+                ItemsSource="{Binding ScreeningStatuses}"
                 DisplayMemberPath="Nazwa"
                 SelectedValuePath="IdStatusuSeansu"
-                SelectedValue="{Binding IdStatusuSeansu, Mode=TwoWay}"/>
+                SelectedValue="{Binding ScreeningStatusId, Mode=TwoWay}"/>
 
             <Label  Grid.Column="0" Grid.Row="6" Content="Język: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
             <ComboBox  Grid.Column="1" Grid.Row="6" Margin="0,10" Foreground="Black"
-        ItemsSource="{Binding JezykiItems}"
+        ItemsSource="{Binding Languages}"
         DisplayMemberPath="Nazwa"
         SelectedValuePath="IdJezyka"
-        SelectedValue="{Binding IdJezyka, Mode=TwoWay}"/>
+        SelectedValue="{Binding LanguageId, Mode=TwoWay}"/>
 
             <Rectangle Grid.Column="3" Grid.RowSpan="8" VerticalAlignment="Stretch" Width="0.5" Fill="White"/>
 
             <Label Grid.Column="4" Grid.Row="0" Content="Data seansu: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <DatePicker Grid.Column="5" Grid.Row="0" Margin="0,10" Foreground="Black" SelectedDate="{Binding DataSeansu}"/>
+            <DatePicker Grid.Column="5" Grid.Row="0" Margin="0,10" Foreground="Black" SelectedDate="{Binding ScreeningDate}"/>
 
             <Label  Grid.Column="4" Grid.Row="1" Content="Godzina od: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <syncfusion:SfTimePicker AllowNull="False" Grid.Column="5" Grid.Row="1" Width="120" HorizontalAlignment="Left" Value="{Binding GodzinaOdUi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <syncfusion:SfTimePicker AllowNull="False" Grid.Column="5" Grid.Row="1" Width="120" HorizontalAlignment="Left" Value="{Binding StartTimeFromUI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label  Grid.Column="4" Grid.Row="2" Content="Godzina do: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <syncfusion:SfTimePicker IsEnabled="False" AllowNull="False" Grid.Column="5" Grid.Row="2" Width="120" HorizontalAlignment="Left" Value="{Binding GodzinaDoUi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <syncfusion:SfTimePicker IsEnabled="False" AllowNull="False" Grid.Column="5" Grid.Row="2" Width="120" HorizontalAlignment="Left" Value="{Binding EndTimeFromUI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
            
 
             <Label Grid.Column="4" Grid.Row="3" Content="Napisy " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <CheckBox Grid.Column="5" Grid.Row="3" Margin="0,10" Foreground="Black" IsChecked="{Binding CzyNapisy, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="5" Grid.Row="3" Margin="0,10" Foreground="Black" IsChecked="{Binding Subtitles, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
             <Label Grid.Column="4" Grid.Row="4" Content="Dubbing " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <CheckBox Grid.Column="5" Grid.Row="4" Margin="0,10" Foreground="Black" IsChecked="{Binding CzyDubbing, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="5" Grid.Row="4" Margin="0,10" Foreground="Black" IsChecked="{Binding Dubbing, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
             <Label Grid.Column="4" Grid.Row="5" Content="Lektor " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <CheckBox Grid.Column="5" Grid.Row="5" Margin="0,10" Foreground="Black" IsChecked="{Binding CzyLektor, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="5" Grid.Row="5" Margin="0,10" Foreground="Black" IsChecked="{Binding Lector, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
            
         </Grid>

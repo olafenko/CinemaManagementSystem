@@ -85,7 +85,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieSeanseViewModel>())),
                 new CommandViewModel(
                     "Nowy Seans",
-                    new BaseCommand(() => this.CreateView(new NowySeansViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddScreeningViewModel()))),
                 new CommandViewModel(
                     "Dystrybutorzy",
                     new BaseCommand(() => this.ShowAllView<WszyscyDystrybutorzyViewModel>())),
@@ -298,7 +298,7 @@ namespace PDABProjekt.ViewModels
 
                 case "SeanseAdd":
                     {
-                        CreateView(new NowySeansViewModel());
+                        CreateView(new AddScreeningViewModel());
                         break;
                     }
 

@@ -12,8 +12,8 @@
     <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
         <vw:WszystkieSeanseView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowySeansViewModel}">
-        <vw:NowySeansView/>
+    <DataTemplate DataType="{x:Type vm:AddScreeningViewModel}">
+        <vw:AddScreeningView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
         <vw:WszystkieGatunkiView/>
