@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszyscyRezyserzyViewModel : WszystkieViewModel<RezyserForAllView>
+    public class WszyscyRezyserzyViewModel : DisplayAllViewModelBase<RezyserForAllView>
     {
 
         #region Konstruktor

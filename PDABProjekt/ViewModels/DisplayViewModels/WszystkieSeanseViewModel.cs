@@ -12,7 +12,7 @@ using System.Windows.Documents;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieSeanseViewModel : WszystkieViewModel<SeansForAllView>
+    public class WszystkieSeanseViewModel : DisplayAllViewModelBase<SeansForAllView>
     {
 
         #region Konstruktor

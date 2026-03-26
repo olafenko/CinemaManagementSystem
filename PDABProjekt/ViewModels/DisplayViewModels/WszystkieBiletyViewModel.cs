@@ -11,7 +11,7 @@ using System.Windows.Documents;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieBiletyViewModel : WszystkieViewModel<BiletForAllView>
+    public class WszystkieBiletyViewModel : DisplayAllViewModelBase<BiletForAllView>
     {
 
         #region Konstruktor

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieKategorieWiekoweViewModel : WszystkieViewModel<KategoriaWiekowa>
+    public class WszystkieKategorieWiekoweViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
     {
 
 

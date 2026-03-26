@@ -11,12 +11,12 @@ using System.Windows.Input;
 
 namespace PDABProjekt.ViewModels.Abstract
 {
-    public abstract class WszystkieViewModel<T> : WorkspaceViewModel
+    public abstract class DisplayAllViewModelBase<T> : DatabaseVMClass
     {
 
-        #region BazaDanych
+        #region Constructor
 
-        protected readonly PABProjektEntities kinoEntities;
+        public DisplayAllViewModelBase() : base() { }
 
         #endregion
 
@@ -46,7 +46,7 @@ namespace PDABProjekt.ViewModels.Abstract
         }
         private void Add()
         {
-            Messenger.Default.Send(DisplayName + "Add"); // ten messenger jest z mvvm light i wysyla on komunikat do MainWindowViewModel, która wywoła zakladke
+            Messenger.Default.Send(DisplayName + "Add");
         }
 
 
@@ -79,17 +79,9 @@ namespace PDABProjekt.ViewModels.Abstract
 
         #endregion
 
-        #region Konstruktor
+       
 
-        public WszystkieViewModel()
-        {
-            kinoEntities = new PABProjektEntities();
-
-        }
-
-        #endregion
-
-        #region Sortowanie i szukanie
+        #region Sort and find
 
         private BaseCommand _SortCommand;
 
@@ -105,11 +97,9 @@ namespace PDABProjekt.ViewModels.Abstract
        
         }
 
-        //to jest pole po czym sortowac
         public string SortField { get; set; }
 
 
-        //to jest prop, do pobierania po czym bedziemy sortowac
         public List<string> SortComboBoxItems
         {
 
@@ -120,9 +110,9 @@ namespace PDABProjekt.ViewModels.Abstract
 
         }
 
-        public abstract void Sort(); // tu bedziemy decydowac jak sortowac
+        public abstract void Sort(); 
 
-        public abstract List<string> GetComboBoxSortList(); // tu bedziemy decydowac po czym sortowac
+        public abstract List<string> GetComboBoxSortList();
 
 
 
@@ -139,13 +129,10 @@ namespace PDABProjekt.ViewModels.Abstract
 
         }
 
-        //to jest pole po czym sortowac
         public string FindField { get; set; }
 
-        //to jest pole w ktorym zapisuje sie poczatek slowa wyszukiwanego
         public string FindTextBox { get; set; }
 
-        //to jest prop, do pobierania po czym bedziemy wyszukiwac
         public List<string> FindComboBoxItems
         {
 
@@ -156,8 +143,8 @@ namespace PDABProjekt.ViewModels.Abstract
 
         }
 
-        public abstract void Find(); // tu bedziemy decydowac jak  szukamy
-        public abstract List<string> GetComboBoxFindList(); // tu bedziemy decydowac po czym mozna filtrowac
+        public abstract void Find(); 
+        public abstract List<string> GetComboBoxFindList(); 
 
         #endregion
 

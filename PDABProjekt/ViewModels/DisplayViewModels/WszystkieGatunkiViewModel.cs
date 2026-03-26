@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieGatunkiViewModel : WszystkieViewModel<GatunekFilmu>
+    public class WszystkieGatunkiViewModel : DisplayAllViewModelBase<GatunekFilmu>
     {
 
 
