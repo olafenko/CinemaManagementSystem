@@ -8,25 +8,23 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyDystrybutorViewModel : AddViewModelBase<Dystrybutor>
+    public class AddDistributorViewModel : AddViewModelBase<Dystrybutor>
     {
 
-        #region Konstruktor
-        public NowyDystrybutorViewModel()
+        #region Constructor
+        public AddDistributorViewModel()
         {
             base.DisplayName = "Dystrybutor";
             item = new Dystrybutor();
+
+            LoadDictionaries();
         }
         #endregion
 
 
-        #region Commands
+        #region Properties
 
-        #endregion
-
-        #region Wlasciwosci
-
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -43,7 +41,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public int IdKraju
+        public int CountryId
         {
             get
             {
@@ -77,7 +75,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public string TelefonKontaktowy
+        public string ContantPhone
         {
             get
             {
@@ -94,7 +92,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public string ModelRozliczen
+        public string SettlementModel
         {
             get
             {
@@ -111,7 +109,7 @@ namespace PDABProjekt.ViewModels
             }
         }
       
-        public decimal? ProcentProwizji
+        public decimal? CommisionPercentage
         {
             get
             {
@@ -128,7 +126,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public bool CzyUmowaPodpisana
+        public bool IsContractSigned
         {
             get
             {
@@ -145,7 +143,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public string NumerUmowy
+        public string ContractNumber
         {
             get
             {
@@ -162,7 +160,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public DateTime? UmowaOd
+        public DateTime? ContractDateFrom
         {
             get
             {
@@ -179,7 +177,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public DateTime? UmowaDo
+        public DateTime? ContractDateUntil
         {
             get
             {
@@ -196,33 +194,28 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-      
-        //comboboxy
+        #endregion
 
-        public IQueryable<Kraj> KrajeItems
-        {
-            get
-            {
-                return (
-                    kinoEntities.Kraj.Where(k => k.CzyAktywny).ToList().AsQueryable()
-                    );
-            }
-        }
+        #region Dictionatries ComboBoxe's
 
+        public List<Kraj> Countries { get; set; }
 
         #endregion
 
         #region Helpers
 
+        public override void LoadDictionaries()
+        {
+            Countries = kinoEntities.Kraj.Where(k => k.CzyAktywny).ToList();
+        }
+
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.Dystrybutor.Add(item);
             kinoEntities.SaveChanges();
 
         }
+
         #endregion
 
     }

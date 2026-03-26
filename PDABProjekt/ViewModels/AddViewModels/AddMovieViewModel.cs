@@ -343,7 +343,7 @@ namespace PDABProjekt.ViewModels
 
         #region Helpers
 
-        private void LoadDictionaries()
+        public override void LoadDictionaries()
         {
             AgeCategories = kinoEntities.KategoriaWiekowa.Where(k => k.CzyAktywny).ToList();
             Languages = kinoEntities.Jezyk.Where(j => j.CzyAktywny).ToList();

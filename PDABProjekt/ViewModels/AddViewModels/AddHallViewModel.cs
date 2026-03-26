@@ -126,7 +126,7 @@ namespace PDABProjekt.ViewModels
 
         #region Helpers
 
-        private void LoadDictionaries()
+        public override void LoadDictionaries()
         {
             ScreenTypes = kinoEntities.TypEkranu.Where(e => e.CzyAktywny).ToList();
             SoundSystemTypes = kinoEntities.TypNaglosnienia.Where(n => n.CzyAktywny).ToList();

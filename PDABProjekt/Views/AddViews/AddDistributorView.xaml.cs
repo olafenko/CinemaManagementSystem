@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyDystrybutorView.xaml
     /// </summary>
-    public partial class NowyDystrybutorView : JedenViewBase
+    public partial class AddDistributorView : JedenViewBase
     {
-        public NowyDystrybutorView()
+        public AddDistributorView()
         {
             InitializeComponent();
         }

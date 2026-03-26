@@ -93,8 +93,8 @@
     <DataTemplate DataType="{x:Type vm:NowyTypSaliViewModel}">
         <vw:NowyTypSaliView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyDystrybutorViewModel}">
-        <vw:NowyDystrybutorView/>
+    <DataTemplate DataType="{x:Type vm:AddDistributorViewModel}">
+        <vw:AddDistributorView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddHallViewModel}">
         <vw:AddHallView/>

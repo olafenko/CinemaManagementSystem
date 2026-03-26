@@ -1,4 +1,4 @@
-﻿<local:JedenViewBase x:Class="PDABProjekt.Views.NowyDystrybutorView"
+﻿<local:JedenViewBase x:Class="PDABProjekt.Views.AddDistributorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,41 +28,41 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" Content="Nazwa: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="0,10" Foreground="Black" Text="{Binding Nazwa, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="0,10" Foreground="Black" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="1" Content="Email: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
             <TextBox Grid.Column="1" Grid.Row="1" Margin="0,10" Foreground="Black" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="2" Content="Telefon kontaktowy: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="0,10" Foreground="Black" Text="{Binding TelefonKontaktowy, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="0,10" Foreground="Black" Text="{Binding ContantPhone, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="3" Content="Kraj: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
             <ComboBox  Grid.Column="1" Grid.Row="3" Margin="0,10" Foreground="Black"
-                     ItemsSource="{Binding KrajeItems}"
+                     ItemsSource="{Binding Countries}"
                      DisplayMemberPath="Nazwa"
                      SelectedValuePath="IdKraju"
-                     SelectedValue="{Binding IdKraju, Mode=TwoWay}"/>
+                     SelectedValue="{Binding CountryId, Mode=TwoWay}"/>
 
       
             <Rectangle Grid.Column="3" Grid.RowSpan="8" VerticalAlignment="Stretch" Width="0.5" Fill="White"/>
 
             <Label Grid.Column="4" Grid.Row="0" Content="Umowa podpisana " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <CheckBox Grid.Column="5" Grid.Row="0" Margin="0,10" Foreground="Black" IsChecked="{Binding CzyUmowaPodpisana, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+            <CheckBox Grid.Column="5" Grid.Row="0" Margin="0,10" Foreground="Black" IsChecked="{Binding IsContractSigned, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
 
             <Label Grid.Column="4" Grid.Row="1" Content="Model rozliczeń: " Margin="0,10" FontWeight="Bold" Foreground="#f0f0f0"/>
-            <TextBox Grid.Column="5" Grid.Row="1" Margin="0,10" Foreground="Black" Text="{Binding ModelRozliczen, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="5" Grid.Row="1" Margin="0,10" Foreground="Black" Text="{Binding SettlementModel, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="4" Grid.Row="2" Content="Procent prowizji: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <TextBox Grid.Column="5" Grid.Row="2" Margin="0,10" Foreground="Black" Text="{Binding ProcentProwizji, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="5" Grid.Row="2" Margin="0,10" Foreground="Black" Text="{Binding CommisionPercentage, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="4" Grid.Row="3" Content="Numer umowy: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <TextBox Grid.Column="5" Grid.Row="3" Margin="0,10" Foreground="Black" Text="{Binding NumerUmowy, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="5" Grid.Row="3" Margin="0,10" Foreground="Black" Text="{Binding ContractNumber, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="4" Grid.Row="4" Content="Umowa od: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <DatePicker Grid.Column="5" Grid.Row="4" Margin="0,10" Foreground="Black" SelectedDate="{Binding UmowaOd, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker Grid.Column="5" Grid.Row="4" Margin="0,10" Foreground="Black" SelectedDate="{Binding ContractDateFrom, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="4" Grid.Row="5" Content="Umowa do: " Margin="0,10" FontWeight="Bold" Foreground="White"/>
-            <DatePicker Grid.Column="5" Grid.Row="5" Margin="0,10" Foreground="Black" SelectedDate="{Binding UmowaDo, UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker Grid.Column="5" Grid.Row="5" Margin="0,10" Foreground="Black" SelectedDate="{Binding ContractDateUntil, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
     </Border>

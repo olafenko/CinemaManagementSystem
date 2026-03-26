@@ -24,7 +24,7 @@ namespace PDABProjekt.ViewModels.Abstract
 
         #endregion
 
-        #region Commands
+        #region Commands and functions
 
         private BaseCommand _SaveAndCloseCommand;
         public ICommand SaveAndCloseCommand
@@ -42,6 +42,11 @@ namespace PDABProjekt.ViewModels.Abstract
         {
             Save();
             OnRequestClose();
+        }
+
+        public virtual void LoadDictionaries()
+        {
+
         }
 
 

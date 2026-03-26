@@ -92,7 +92,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszyscyDystrybutorzyViewModel>())),
                 new CommandViewModel(
                     "Nowy Dystrybutor",
-                    new BaseCommand(() => this.CreateView(new NowyDystrybutorViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddDistributorViewModel()))),
                  new CommandViewModel(
                     "Sale",
                     new BaseCommand(() => this.ShowAllView<WszystkieSaleViewModel>())),
@@ -275,7 +275,7 @@ namespace PDABProjekt.ViewModels
 
                 case "DystrybutorzyAdd":
                     {
-                        CreateView(new NowyDystrybutorViewModel()); 
+                        CreateView(new AddDistributorViewModel()); 
                         break;
                     }
 
