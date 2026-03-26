@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowaKategoriaWiekowaViewModel : AddViewModelBase<KategoriaWiekowa>
+    public class AddAgeCategoryViewModel : AddViewModelBase<KategoriaWiekowa>
     {
 
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowaKategoriaWiekowaViewModel() : base() {
+        public AddAgeCategoryViewModel() : base() {
 
             base.DisplayName = "Nowa kategoria wiekowa";
             item = new KategoriaWiekowa();
@@ -25,10 +25,10 @@ namespace PDABProjekt.ViewModels
 
 
 
-        #region Wlasciwosci
+        #region Properties
 
 
-        public string NazwaKategorii 
+        public string CategoryName 
         { 
             get
             {
@@ -45,7 +45,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -69,9 +69,6 @@ namespace PDABProjekt.ViewModels
 
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.KategoriaWiekowa.Add(item);
             kinoEntities.SaveChanges();
         }

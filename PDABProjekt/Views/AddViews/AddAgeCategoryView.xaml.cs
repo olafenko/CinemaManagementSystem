@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowaKategoriaWiekowaView.xaml
     /// </summary>
-    public partial class NowaKategoriaWiekowaView : JedenViewBase
+    public partial class AddAgeCategoryView : JedenViewBase
     {
-        public NowaKategoriaWiekowaView()
+        public AddAgeCategoryView()
         {
             InitializeComponent();
         }

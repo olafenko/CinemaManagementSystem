@@ -220,7 +220,7 @@
     <Compile Include="ViewModels\Abstract\RaportViewModelBase.cs" />
     <Compile Include="ViewModels\Abstract\DisplayAllViewModelBase.cs" />
     <Compile Include="ViewModels\AddViewModels\AddMovieViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowaKategoriaWiekowaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddAgeCategoryViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowaSalaViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyDystrybutorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyGatunekViewModel.cs" />
@@ -249,7 +249,7 @@
     <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieGatunkiViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieJezykiViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieKategorieWiekoweViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllAgeCategoriesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieKrajeViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSaleViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
@@ -263,8 +263,8 @@
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowaKategoriaWiekowaView.xaml.cs">
-      <DependentUpon>NowaKategoriaWiekowaView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddAgeCategoryView.xaml.cs">
+      <DependentUpon>AddAgeCategoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowaSalaView.xaml.cs">
       <DependentUpon>NowaSalaView.xaml</DependentUpon>
@@ -336,8 +336,8 @@
     <Compile Include="Views\AllViews\WszystkieJezykiView.xaml.cs">
       <DependentUpon>WszystkieJezykiView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AllViews\WszystkieKategorieWiekoweView.xaml.cs">
-      <DependentUpon>WszystkieKategorieWiekoweView.xaml</DependentUpon>
+    <Compile Include="Views\AllViews\AllAgeCategoriesView.xaml.cs">
+      <DependentUpon>AllAgeCategoriesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AllViews\WszystkieKrajeView.xaml.cs">
       <DependentUpon>WszystkieKrajeView.xaml</DependentUpon>
@@ -417,7 +417,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowaKategoriaWiekowaView.xaml">
+    <Page Include="Views\AddViews\AddAgeCategoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -513,7 +513,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AllViews\WszystkieKategorieWiekoweView.xaml">
+    <Page Include="Views\AllViews\AllAgeCategoriesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

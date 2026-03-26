@@ -24,8 +24,8 @@
     <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">
         <vw:WszystkieJezykiView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieKategorieWiekoweViewModel}">
-        <vw:WszystkieKategorieWiekoweView/>
+    <DataTemplate DataType="{x:Type vm:AllAgeCategoriesViewModel}">
+        <vw:AllAgeCategoriesView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieKrajeViewModel}">
         <vw:WszystkieKrajeView/>
@@ -69,8 +69,8 @@
     <DataTemplate DataType="{x:Type vm:NowyJezykViewModel}">
         <vw:NowyJezykView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowaKategoriaWiekowaViewModel}">
-        <vw:NowaKategoriaWiekowaView/>
+    <DataTemplate DataType="{x:Type vm:AddAgeCategoryViewModel}">
+        <vw:AddAgeCategoryView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyKrajViewModel}">
         <vw:NowyKrajView/>

@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class WszystkieKategorieWiekoweViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
+    public class AllAgeCategoriesViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
     {
 
 
-        #region Konstruktor
+        #region Constructor
 
-        public WszystkieKategorieWiekoweViewModel()
+        public AllAgeCategoriesViewModel()
         {
             base.DisplayName = "Kategorie wiekowe";
         }
 
         #endregion
 
-        #region Lista
+        #region Llist
         public override void Load()
         {
             List = new ObservableCollection<KategoriaWiekowa>(
@@ -32,7 +32,7 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Sortowanie i filtrowanie
+        #region Sorting and filtering
 
         public override List<string> GetComboBoxSortList()
         {

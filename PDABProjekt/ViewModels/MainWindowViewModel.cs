@@ -124,10 +124,10 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new NowyJezykViewModel()))),
                  new CommandViewModel(
                     "Kategorie wiekowe",
-                    new BaseCommand(() => this.ShowAllView<WszystkieKategorieWiekoweViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllAgeCategoriesViewModel>())),
                   new CommandViewModel(
                      "Nowa kategoria wiekowa",
-                     new BaseCommand(() => this.CreateView(new NowaKategoriaWiekowaViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddAgeCategoryViewModel()))),
                  new CommandViewModel(
                     "Kraje",
                     new BaseCommand(() => this.ShowAllView<WszystkieKrajeViewModel>())),
@@ -315,7 +315,7 @@ namespace PDABProjekt.ViewModels
 
                 case "Kategorie wiekoweAdd":
                     {
-                        CreateView(new NowaKategoriaWiekowaViewModel());
+                        CreateView(new AddAgeCategoryViewModel());
                         break;
                     }
 

@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for WszystkieKategorieWiekoweView.xaml
     /// </summary>
-    public partial class WszystkieKategorieWiekoweView : WszystkieViewBase
+    public partial class AllAgeCategoriesView : WszystkieViewBase
     {
-        public WszystkieKategorieWiekoweView()
+        public AllAgeCategoriesView()
         {
             InitializeComponent();
         }
