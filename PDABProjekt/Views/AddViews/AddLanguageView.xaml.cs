@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyJezykView.xaml
     /// </summary>
-    public partial class NowyJezykView : JedenViewBase
+    public partial class AddLanguageView : JedenViewBase
     {
-        public NowyJezykView()
+        public AddLanguageView()
         {
             InitializeComponent();
         }

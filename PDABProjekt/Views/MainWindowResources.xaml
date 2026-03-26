@@ -66,8 +66,8 @@
     <DataTemplate DataType="{x:Type vm:AddGenreViewModel}">
         <vw:AddGenreView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyJezykViewModel}">
-        <vw:NowyJezykView/>
+    <DataTemplate DataType="{x:Type vm:AddLanguageViewModel}">
+        <vw:AddLanguageView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddAgeCategoryViewModel}">
         <vw:AddAgeCategoryView/>

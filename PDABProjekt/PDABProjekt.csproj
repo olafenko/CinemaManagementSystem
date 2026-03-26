@@ -224,7 +224,7 @@
     <Compile Include="ViewModels\AddViewModels\AddHallViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddDistributorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddGenreViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyJezykViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddLanguageViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyKrajViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyProducentViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyRezyserViewModel.cs" />
@@ -278,8 +278,8 @@
     <Compile Include="Views\AddViews\AddGenreView.xaml.cs">
       <DependentUpon>AddGenreView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyJezykView.xaml.cs">
-      <DependentUpon>NowyJezykView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddLanguageView.xaml.cs">
+      <DependentUpon>AddLanguageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyKrajView.xaml.cs">
       <DependentUpon>NowyKrajView.xaml</DependentUpon>
@@ -437,7 +437,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyJezykView.xaml">
+    <Page Include="Views\AddViews\AddLanguageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

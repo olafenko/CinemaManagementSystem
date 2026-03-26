@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyJezykViewModel : AddViewModelBase<Jezyk>
+    public class AddLanguageViewModel : AddViewModelBase<Jezyk>
     {
 
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyJezykViewModel() : base() {
+        public AddLanguageViewModel() : base() {
 
-            base.DisplayName = "Nowy jezyk";
+            base.DisplayName = "Nowy język";
             item = new Jezyk();
 
         }
@@ -24,9 +24,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -37,12 +37,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => item.Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string KodISO
+        public string CodeISO
         {
             get
             {
@@ -53,20 +53,22 @@ namespace PDABProjekt.ViewModels
                 if (item.KodISO != value)
                 {
                     item.KodISO = value;
-                    OnPropertyChanged(() => item.KodISO);
+                    OnPropertyChanged(() => CodeISO);
                 }
             }
         }
 
         #endregion
 
+        #region Helpers
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.Jezyk.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 }
