@@ -75,7 +75,7 @@ namespace PDABProjekt.ViewModels
             }
         }
 
-        public string ContantPhone
+        public string ContactPhone
         {
             get
             {
@@ -109,7 +109,7 @@ namespace PDABProjekt.ViewModels
             }
         }
       
-        public decimal? CommisionPercentage
+        public decimal? CommissionPercentage
         {
             get
             {

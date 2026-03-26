@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyGatunekViewModel : AddViewModelBase<GatunekFilmu>
+    public class AddGenreViewModel : AddViewModelBase<GatunekFilmu>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyGatunekViewModel() : base() {
+        public AddGenreViewModel() : base() {
 
             base.DisplayName = "Nowy gatunek";
             item = new GatunekFilmu();
@@ -23,9 +23,9 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string NazwaGatunku
+        public string Name
         {
             get
             {
@@ -36,12 +36,12 @@ namespace PDABProjekt.ViewModels
                 if (item.NazwaGatunku != value)
                 {
                     item.NazwaGatunku = value;
-                    OnPropertyChanged(() => NazwaGatunku);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -52,19 +52,23 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
         #endregion
+
+        #region Helpers
+
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.GatunekFilmu.Add(item);
             kinoEntities.SaveChanges();
         }
     }
+
+        #endregion
+
+
 }

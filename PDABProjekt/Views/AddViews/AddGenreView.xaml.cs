@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyGatunekView.xaml
     /// </summary>
-    public partial class NowyGatunekView : JedenViewBase
+    public partial class AddGenreView : JedenViewBase
     {
-        public NowyGatunekView()
+        public AddGenreView()
         {
             InitializeComponent();
         }

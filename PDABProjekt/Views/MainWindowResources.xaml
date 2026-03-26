@@ -63,8 +63,8 @@
     
     
   
-    <DataTemplate DataType="{x:Type vm:NowyGatunekViewModel}">
-        <vw:NowyGatunekView/>
+    <DataTemplate DataType="{x:Type vm:AddGenreViewModel}">
+        <vw:AddGenreView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyJezykViewModel}">
         <vw:NowyJezykView/>

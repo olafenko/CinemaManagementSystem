@@ -115,7 +115,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieGatunkiViewModel>())),
                 new CommandViewModel(
                     "Nowy gatunek",
-                    new BaseCommand(() => this.CreateView(new NowyGatunekViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddGenreViewModel()))),
                  new CommandViewModel(
                     "Języki",
                     new BaseCommand(() => this.ShowAllView<WszystkieJezykiViewModel>())),
@@ -287,7 +287,7 @@ namespace PDABProjekt.ViewModels
 
                 case "Gatunki filmoweAdd":
                     {
-                        CreateView(new NowyGatunekViewModel()); //otwiera okno do dodawania gatunku
+                        CreateView(new AddGenreViewModel()); //otwiera okno do dodawania gatunku
                         break;
                     }
 
