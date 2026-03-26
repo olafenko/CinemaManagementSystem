@@ -174,6 +174,9 @@ namespace PDABProjekt.ViewModels
                     "Producenci",
                     new BaseCommand(() => this.ShowAllView<WszyscyProducenciViewModel>())),
                    new CommandViewModel(
+                     "Nowy producent",
+                     new BaseCommand(() => this.CreateView(new AddProducerViewModel()))),
+                   new CommandViewModel(
                     "Reżyserzy",
                     new BaseCommand(() => this.ShowAllView<WszyscyRezyserzyViewModel>())),
 
@@ -269,7 +272,7 @@ namespace PDABProjekt.ViewModels
             switch (name)
             {
                 case "FilmyAdd": {
-                        CreateView(new AddMovieViewModel()); //otwiera okno do dodawania filmu
+                        CreateView(new AddMovieViewModel());
                         break;
                 }
 
@@ -281,25 +284,25 @@ namespace PDABProjekt.ViewModels
 
                 case "SaleAdd":
                     {
-                        CreateView(new AddHallViewModel()); //otwiera okno do dodawania filmu
+                        CreateView(new AddHallViewModel());
                         break;
                     }
 
                 case "Gatunki filmoweAdd":
                     {
-                        CreateView(new AddGenreViewModel()); //otwiera okno do dodawania gatunku
+                        CreateView(new AddGenreViewModel());
                         break;
                     }
 
                 case "SeanseAdd":
                     {
-                        CreateView(new NowySeansViewModel()); //otwiera okno do dodawania seansu
+                        CreateView(new NowySeansViewModel());
                         break;
                     }
 
                 case "ProducenciAdd":
                     {
-                        CreateView(new NowyProducentViewModel()); 
+                        CreateView(new AddProducerViewModel()); 
                         break;
                     }
                 case "KrajeAdd":

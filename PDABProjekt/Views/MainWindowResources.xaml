@@ -99,6 +99,10 @@
     <DataTemplate DataType="{x:Type vm:AddHallViewModel}">
         <vw:AddHallView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddProducerViewModel}">
+        <vw:AddProducerView/>
+    </DataTemplate>
+
 
     <DataTemplate DataType="{x:Type vm:RaportSprzedazyBiletowViewModel}">
         <vw:RaportSprzedazyBiletowView/>

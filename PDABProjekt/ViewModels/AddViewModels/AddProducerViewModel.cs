@@ -8,24 +8,25 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyProducentViewModel : AddViewModelBase<Producent>
+    public class AddProducerViewModel : AddViewModelBase<Producent>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyProducentViewModel() : base()
+        public AddProducerViewModel() : base()
         {
             base.DisplayName = "Nowy producent";
             item = new Producent();
+            LoadDictionaries();
 
         }
 
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -36,12 +37,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -52,21 +53,62 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
+        public int CountryId
+        {
+            get
+            {
+                return item.IdKraju;
+            }
+            set
+            {
+                if (item.IdKraju != value)
+                {
+                    item.IdKraju = value;
+                    OnPropertyChanged(() => CountryId);
+                }
+            }
+        }
+
+
+
         #endregion
+
+        #region Dictionaries ComboBoxe's
+
+        public List<Kraj> Countries { get; set; }
+
+
+        #endregion
+
+
+
+
+        #region Helpers
+
+        public override void LoadDictionaries()
+        {
+
+            Countries = kinoEntities.Kraj.Where(k => k.CzyAktywny).ToList();
+
+
+        }
+
 
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.Producent.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
 
     }
 }
