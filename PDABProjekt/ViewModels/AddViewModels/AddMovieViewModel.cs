@@ -62,7 +62,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Tytul != value)
                 {
                     item.Tytul = value;
-                    OnPropertyChanged(() => item.Tytul);
+                    OnPropertyChanged(() => Title);
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace PDABProjekt.ViewModels
                 if (item.TytulOryginalny != value)
                 {
                     item.TytulOryginalny = value;
-                    OnPropertyChanged(() => item.TytulOryginalny);
+                    OnPropertyChanged(() => OriginalTitle);
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace PDABProjekt.ViewModels
                 if (item.CzasTrwania != value)
                 {
                     item.CzasTrwania = value;
-                    OnPropertyChanged(() => item.CzasTrwania);
+                    OnPropertyChanged(() => DurationTime);
                 }
             }
         }
@@ -113,7 +113,7 @@ namespace PDABProjekt.ViewModels
                 if (item.RokProdukcji != value) { 
                 
                     item.RokProdukcji = value;
-                    OnPropertyChanged(() => item.RokProdukcji);
+                    OnPropertyChanged(() => ProductionYear);
                 }
             }
         }
@@ -131,7 +131,7 @@ namespace PDABProjekt.ViewModels
                 if (item.DataPremiery != value)
                 {
                     item.DataPremiery = value;
-                    OnPropertyChanged(() => item.DataPremiery);
+                    OnPropertyChanged(() => PremiereDate);
                 }
             }
         }
@@ -148,7 +148,7 @@ namespace PDABProjekt.ViewModels
                 if (item.UrlPlakatu != value)
                 {
                     item.UrlPlakatu = value;
-                    OnPropertyChanged(() => item.UrlPlakatu);
+                    OnPropertyChanged(() => PosterUrl);
                 }
             }
         }
@@ -165,7 +165,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => item.Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
@@ -182,7 +182,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdGatunku != value)
                 {
                     item.IdGatunku = value;
-                    OnPropertyChanged(() => item.IdGatunku);
+                    OnPropertyChanged(() => GenreId);
                 }
             }
         }
@@ -199,7 +199,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdKategoriiWiekowej != value)
                 {
                     item.IdKategoriiWiekowej = value;
-                    OnPropertyChanged(() => item.IdKategoriiWiekowej);
+                    OnPropertyChanged(() => AgeCategoryId);
                 }
             }
         }
@@ -216,7 +216,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdJezykaOryginalnego != value)
                 {
                     item.IdJezykaOryginalnego = value;
-                    OnPropertyChanged(() => item.IdJezykaOryginalnego);
+                    OnPropertyChanged(() => OriginalLanguageId);
                 }
             }
         }
@@ -233,7 +233,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdDystrybutora != value)
                 {
                     item.IdDystrybutora = value;
-                    OnPropertyChanged(() => item.IdDystrybutora);
+                    OnPropertyChanged(() => DistributorId);
                 }
             }
         }
@@ -250,7 +250,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdStatusuFilmu != value)
                 {
                     item.IdStatusuFilmu = value;
-                    OnPropertyChanged(() => item.IdStatusuFilmu);
+                    OnPropertyChanged(() => StatusId);
                 }
             }
         }
@@ -267,7 +267,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdProducenta != value)
                 {
                     item.IdProducenta = value;
-                    OnPropertyChanged(() => item.IdProducenta);
+                    OnPropertyChanged(() => ProducerId);
                 }
             }
         }
@@ -284,7 +284,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdRezysera != value)
                 {
                     item.IdRezysera = value;
-                    OnPropertyChanged(() => item.IdRezysera);
+                    OnPropertyChanged(() => DirectorId);
                 }
             }
         }
@@ -301,7 +301,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdKraju != value)
                 {
                     item.IdKraju = value;
-                    OnPropertyChanged(() => item.IdKraju);
+                    OnPropertyChanged(() => CountryId);
                 }
             }
         }

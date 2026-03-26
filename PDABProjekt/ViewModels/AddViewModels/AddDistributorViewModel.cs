@@ -36,7 +36,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => item.Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdKraju != value)
                 {
                     item.IdKraju = value;
-                    OnPropertyChanged(() => item.IdKraju);
+                    OnPropertyChanged(() => CountryId);
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Email != value)
                 {
                     item.Email = value;
-                    OnPropertyChanged(() => item.Email);
+                    OnPropertyChanged(() => Email);
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace PDABProjekt.ViewModels
                 if (item.TelefonKontaktowy != value)
                 {
                     item.TelefonKontaktowy = value;
-                    OnPropertyChanged(() => item.TelefonKontaktowy);
+                    OnPropertyChanged(() => ContactPhone);
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace PDABProjekt.ViewModels
                 if (item.ModelRozliczen != value)
                 {
                     item.ModelRozliczen = value;
-                    OnPropertyChanged(() => item.ModelRozliczen);
+                    OnPropertyChanged(() => SettlementModel);
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace PDABProjekt.ViewModels
                 if (item.ProcentProwizji != value)
                 {
                     item.ProcentProwizji = value;
-                    OnPropertyChanged(() => item.ProcentProwizji);
+                    OnPropertyChanged(() => CommissionPercentage);
                 }
             }
         }
@@ -138,7 +138,7 @@ namespace PDABProjekt.ViewModels
                 if (item.CzyUmowaPodpisana != value)
                 {
                     item.CzyUmowaPodpisana = value;
-                    OnPropertyChanged(() => item.CzyUmowaPodpisana);
+                    OnPropertyChanged(() => IsContractSigned);
                 }
             }
         }
@@ -155,7 +155,7 @@ namespace PDABProjekt.ViewModels
                 if (item.NumerUmowy != value)
                 {
                     item.NumerUmowy = value;
-                    OnPropertyChanged(() => item.NumerUmowy);
+                    OnPropertyChanged(() => ContractNumber);
                 }
             }
         }
@@ -172,7 +172,7 @@ namespace PDABProjekt.ViewModels
                 if (item.UmowaOd != value)
                 {
                     item.UmowaOd = value;
-                    OnPropertyChanged(() => item.UmowaOd);
+                    OnPropertyChanged(() => ContractDateFrom);
                 }
             }
         }
@@ -189,7 +189,7 @@ namespace PDABProjekt.ViewModels
                 if (item.UmowaDo != value)
                 {
                     item.UmowaDo = value;
-                    OnPropertyChanged(() => item.UmowaDo);
+                    OnPropertyChanged(() => ContractDateUntil);
                 }
             }
         }

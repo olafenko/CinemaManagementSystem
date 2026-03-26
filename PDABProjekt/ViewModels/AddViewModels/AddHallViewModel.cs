@@ -42,7 +42,7 @@ namespace PDABProjekt.ViewModels
                 if (item.NumerSali != value)
                 {
                     item.NumerSali = value;
-                    OnPropertyChanged(() => item.NumerSali);
+                    OnPropertyChanged(() => HallNumber);
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace PDABProjekt.ViewModels
                 if (item.LiczbaMiejsc != value)
                 {
                     item.LiczbaMiejsc = value;
-                    OnPropertyChanged(() => item.LiczbaMiejsc);
+                    OnPropertyChanged(() => SeatsCount);
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdTypuEkranu != value)
                 {
                     item.IdTypuEkranu = value;
-                    OnPropertyChanged(() => item.IdTypuEkranu);
+                    OnPropertyChanged(() => ScreenTypeId);
                 }
             }
         }
@@ -93,7 +93,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdTypuNaglosnienia != value)
                 {
                     item.IdTypuNaglosnienia = value;
-                    OnPropertyChanged(() => item.IdTypuNaglosnienia);
+                    OnPropertyChanged(() => SoundSystemTypeId);
                 }
             }
         }
@@ -110,7 +110,7 @@ namespace PDABProjekt.ViewModels
                 if (item.IdTypuSali != value)
                 {
                     item.IdTypuSali = value;
-                    OnPropertyChanged(() => item.IdTypuSali);
+                    OnPropertyChanged(() => HallTypeId);
                 }
             }
         }

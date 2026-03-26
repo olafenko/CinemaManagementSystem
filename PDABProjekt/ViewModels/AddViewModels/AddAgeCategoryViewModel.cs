@@ -40,7 +40,7 @@ namespace PDABProjekt.ViewModels
                 if (item.NazwaKategorii != value)
                 {
                     item.NazwaKategorii = value;
-                    OnPropertyChanged(() => item.NazwaKategorii);
+                    OnPropertyChanged(() => CategoryName);
                 }
             }
         }
@@ -57,7 +57,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => item.Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
