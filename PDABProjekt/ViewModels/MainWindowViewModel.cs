@@ -111,7 +111,7 @@ namespace PDABProjekt.ViewModels
             {
                 new CommandViewModel(
                     "Gatunki",
-                    new BaseCommand(() => this.ShowAllView<WszystkieGatunkiViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllGenresViewModel>())),
                 new CommandViewModel(
                     "Nowy gatunek",
                     new BaseCommand(() => this.CreateView(new AddGenreViewModel()))),

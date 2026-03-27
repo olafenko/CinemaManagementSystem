@@ -15,7 +15,7 @@
     <DataTemplate DataType="{x:Type vm:AddScreeningViewModel}">
         <vw:AddScreeningView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllGenresViewModel}">
         <vw:WszystkieGatunkiView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AllDistributorsViewModel}">
