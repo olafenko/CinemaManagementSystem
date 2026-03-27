@@ -159,7 +159,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddScreenTypeViewModel()))),
                   new CommandViewModel(
                     "Typy nagłośnienia",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyNaglosnieniaViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllSoundSystemTypesViewModel>())),
                    new CommandViewModel(
                      "Nowy typ nagłośnienia",
                      new BaseCommand(() => this.CreateView(new AddSoundSystemTypeViewModel()))),
