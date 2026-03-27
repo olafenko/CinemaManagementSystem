@@ -117,7 +117,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.CreateView(new AddGenreViewModel()))),
                  new CommandViewModel(
                     "Języki",
-                    new BaseCommand(() => this.ShowAllView<WszystkieJezykiViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllLanguagesViewModel>())),
                  new CommandViewModel(
                      "Nowy język",
                      new BaseCommand(() => this.CreateView(new AddLanguageViewModel()))),
