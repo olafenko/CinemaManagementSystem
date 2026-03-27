@@ -12,8 +12,8 @@
     <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
         <vw:WszystkieSeanseView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowySeansViewModel}">
-        <vw:NowySeansView/>
+    <DataTemplate DataType="{x:Type vm:AddScreeningViewModel}">
+        <vw:AddScreeningView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
         <vw:WszystkieGatunkiView/>
@@ -24,8 +24,8 @@
     <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">
         <vw:WszystkieJezykiView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieKategorieWiekoweViewModel}">
-        <vw:WszystkieKategorieWiekoweView/>
+    <DataTemplate DataType="{x:Type vm:AllAgeCategoriesViewModel}">
+        <vw:AllAgeCategoriesView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieKrajeViewModel}">
         <vw:WszystkieKrajeView/>
@@ -63,42 +63,49 @@
     
     
   
-    <DataTemplate DataType="{x:Type vm:NowyGatunekViewModel}">
-        <vw:NowyGatunekView/>
+    <DataTemplate DataType="{x:Type vm:AddGenreViewModel}">
+        <vw:AddGenreView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyJezykViewModel}">
-        <vw:NowyJezykView/>
+    <DataTemplate DataType="{x:Type vm:AddLanguageViewModel}">
+        <vw:AddLanguageView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowaKategoriaWiekowaViewModel}">
-        <vw:NowaKategoriaWiekowaView/>
+    <DataTemplate DataType="{x:Type vm:AddAgeCategoryViewModel}">
+        <vw:AddAgeCategoryView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyKrajViewModel}">
-        <vw:NowyKrajView/>
+    <DataTemplate DataType="{x:Type vm:AddCountryViewModel}">
+        <vw:AddCountryView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyStatusFilmuViewModel}">
-        <vw:NowyStatusFilmuView/>
+    <DataTemplate DataType="{x:Type vm:AddMovieStatusViewModel}">
+        <vw:AddMovieStatusView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyStatusSeansuViewModel}">
-        <vw:NowyStatusSeansuView/>
+    <DataTemplate DataType="{x:Type vm:AddScreeningStatusViewModel}">
+        <vw:AddScreeningStatusView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypBiletuViewModel}">
-        <vw:NowyTypBiletuView/>
+    <DataTemplate DataType="{x:Type vm:AddTicketTypeViewModel}">
+        <vw:AddTicketTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypEkranuViewModel}">
-        <vw:NowyTypEkranuView/>
+    <DataTemplate DataType="{x:Type vm:AddScreenTypeViewModel}">
+        <vw:AddScreenTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypNaglosnieniaViewModel}">
-        <vw:NowyTypNaglosnieniaView/>
+    <DataTemplate DataType="{x:Type vm:AddSoundSystemTypeViewModel}">
+        <vw:AddSoundSystemTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypSaliViewModel}">
-        <vw:NowyTypSaliView/>
+    <DataTemplate DataType="{x:Type vm:AddHallTypeViewModel}">
+        <vw:AddHallTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyDystrybutorViewModel}">
-        <vw:NowyDystrybutorView/>
+    <DataTemplate DataType="{x:Type vm:AddDistributorViewModel}">
+        <vw:AddDistributorView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowaSalaViewModel}">
-        <vw:NowaSalaView/>
+    <DataTemplate DataType="{x:Type vm:AddHallViewModel}">
+        <vw:AddHallView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddProducerViewModel}">
+        <vw:AddProducerView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AddDirectorViewModel}">
+        <vw:AddDirectorView/>
+    </DataTemplate>
+
 
     <DataTemplate DataType="{x:Type vm:RaportSprzedazyBiletowViewModel}">
         <vw:RaportSprzedazyBiletowView/>

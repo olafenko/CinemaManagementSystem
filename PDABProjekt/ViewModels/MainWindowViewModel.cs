@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using PDABProjekt.Helper;
 using PDABProjekt.Models;
-using PDABProjekt.ViewModels.NowyViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -86,19 +85,19 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieSeanseViewModel>())),
                 new CommandViewModel(
                     "Nowy Seans",
-                    new BaseCommand(() => this.CreateView(new NowySeansViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddScreeningViewModel()))),
                 new CommandViewModel(
                     "Dystrybutorzy",
                     new BaseCommand(() => this.ShowAllView<WszyscyDystrybutorzyViewModel>())),
                 new CommandViewModel(
                     "Nowy Dystrybutor",
-                    new BaseCommand(() => this.CreateView(new NowyDystrybutorViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddDistributorViewModel()))),
                  new CommandViewModel(
                     "Sale",
                     new BaseCommand(() => this.ShowAllView<WszystkieSaleViewModel>())),
                    new CommandViewModel(
                     "Nowa Sala",
-                    new BaseCommand(() => this.CreateView(new NowaSalaViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddHallViewModel()))),
                  new CommandViewModel(
                     "Bilety",
                     new BaseCommand(() => this.ShowAllView<WszystkieBiletyViewModel>())),                            
@@ -115,67 +114,73 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieGatunkiViewModel>())),
                 new CommandViewModel(
                     "Nowy gatunek",
-                    new BaseCommand(() => this.CreateView(new NowyGatunekViewModel()))),
+                    new BaseCommand(() => this.CreateView(new AddGenreViewModel()))),
                  new CommandViewModel(
                     "Języki",
                     new BaseCommand(() => this.ShowAllView<WszystkieJezykiViewModel>())),
                  new CommandViewModel(
                      "Nowy język",
-                     new BaseCommand(() => this.CreateView(new NowyJezykViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddLanguageViewModel()))),
                  new CommandViewModel(
                     "Kategorie wiekowe",
-                    new BaseCommand(() => this.ShowAllView<WszystkieKategorieWiekoweViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllAgeCategoriesViewModel>())),
                   new CommandViewModel(
                      "Nowa kategoria wiekowa",
-                     new BaseCommand(() => this.CreateView(new NowaKategoriaWiekowaViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddAgeCategoryViewModel()))),
                  new CommandViewModel(
                     "Kraje",
                     new BaseCommand(() => this.ShowAllView<WszystkieKrajeViewModel>())),
                  new CommandViewModel(
                      "Nowy kraj",
-                     new BaseCommand(() => this.CreateView(new NowyKrajViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddCountryViewModel()))),
                  new CommandViewModel(
                     "Statusy filmu",
                     new BaseCommand(() => this.ShowAllView<WszystkieStatusyFilmuViewModel>())),
                   new CommandViewModel(
                      "Nowy status filmu",
-                     new BaseCommand(() => this.CreateView(new NowyStatusFilmuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddMovieStatusViewModel()))),
                   new CommandViewModel(
                     "Statusy seansu",
                     new BaseCommand(() => this.ShowAllView<WszystkieStatusySeansuViewModel>())),
                   new CommandViewModel(
                      "Nowy status seansu",
-                     new BaseCommand(() => this.CreateView(new NowyStatusSeansuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddScreeningStatusViewModel()))),
                   new CommandViewModel(
                     "Typy biletów",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyBiletuViewModel>())),
                   new CommandViewModel(
                      "Nowy typ biletu",
-                     new BaseCommand(() => this.CreateView(new NowyTypBiletuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddTicketTypeViewModel()))),
                   new CommandViewModel(
                     "Typy ekranów",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyEkranuViewModel>())),
                   new CommandViewModel(
                      "Nowy typ ekranu",
-                     new BaseCommand(() => this.CreateView(new NowyTypEkranuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddScreenTypeViewModel()))),
                   new CommandViewModel(
                     "Typy nagłośnienia",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyNaglosnieniaViewModel>())),
                    new CommandViewModel(
                      "Nowy typ nagłośnienia",
-                     new BaseCommand(() => this.CreateView(new NowyTypNaglosnieniaViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddSoundSystemTypeViewModel()))),
                   new CommandViewModel(
                     "Typy sal",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypySaliViewModel>())),
                   new CommandViewModel(
                      "Nowy typ sali",
-                     new BaseCommand(() => this.CreateView(new NowyTypSaliViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddHallTypeViewModel()))),
                    new CommandViewModel(
                     "Producenci",
                     new BaseCommand(() => this.ShowAllView<WszyscyProducenciViewModel>())),
                    new CommandViewModel(
+                     "Nowy producent",
+                     new BaseCommand(() => this.CreateView(new AddProducerViewModel()))),
+                   new CommandViewModel(
                     "Reżyserzy",
                     new BaseCommand(() => this.ShowAllView<WszyscyRezyserzyViewModel>())),
+                   new CommandViewModel(
+                     "Nowy reżyser",
+                     new BaseCommand(() => this.CreateView(new AddDirectorViewModel()))),
 
             };
         }
@@ -269,86 +274,92 @@ namespace PDABProjekt.ViewModels
             switch (name)
             {
                 case "FilmyAdd": {
-                        CreateView(new AddMovieViewModel()); //otwiera okno do dodawania filmu
+                        CreateView(new AddMovieViewModel());
                         break;
                 }
 
                 case "DystrybutorzyAdd":
                     {
-                        CreateView(new NowyDystrybutorViewModel()); 
+                        CreateView(new AddDistributorViewModel()); 
                         break;
                     }
 
                 case "SaleAdd":
                     {
-                        CreateView(new NowaSalaViewModel()); //otwiera okno do dodawania filmu
+                        CreateView(new AddHallViewModel());
                         break;
                     }
 
                 case "Gatunki filmoweAdd":
                     {
-                        CreateView(new NowyGatunekViewModel()); //otwiera okno do dodawania gatunku
+                        CreateView(new AddGenreViewModel());
                         break;
                     }
 
                 case "SeanseAdd":
                     {
-                        CreateView(new NowySeansViewModel()); //otwiera okno do dodawania seansu
+                        CreateView(new AddScreeningViewModel());
                         break;
                     }
 
                 case "ProducenciAdd":
                     {
-                        CreateView(new NowyProducentViewModel()); 
+                        CreateView(new AddProducerViewModel()); 
+                        break;
+                    }
+
+                case "ReżyserzyAdd":
+                    {
+                        CreateView(new AddDirectorViewModel());
                         break;
                     }
                 case "KrajeAdd":
                     {
-                        CreateView(new NowyKrajViewModel()); 
+                        CreateView(new AddCountryViewModel()); 
                         break;
                     }
                 case "JezykiAdd":
                     {
-                        CreateView(new NowyJezykViewModel());
+                        CreateView(new AddLanguageViewModel());
                         break;
                     }
 
                 case "Kategorie wiekoweAdd":
                     {
-                        CreateView(new NowaKategoriaWiekowaViewModel());
+                        CreateView(new AddAgeCategoryViewModel());
                         break;
                     }
 
                 case "Statusy dla filmuAdd":
                     {
-                        CreateView(new NowyStatusFilmuViewModel());
+                        CreateView(new AddMovieStatusViewModel());
                         break;
                     }
 
                 case "Statusy dla seansuAdd":
                     {
-                        CreateView(new NowyStatusSeansuViewModel());
+                        CreateView(new AddScreeningStatusViewModel());
                         break;
                     }
                 case "Typy biletówAdd":
                     {
-                        CreateView(new NowyTypBiletuViewModel());
+                        CreateView(new AddTicketTypeViewModel());
                         break;
                     }
                 case "Typy ekranu saliAdd":
                     {
-                        CreateView(new NowyTypEkranuViewModel());
+                        CreateView(new AddScreenTypeViewModel());
                         break;
                     }
                 case "Typy naglosnienia saliAdd":
                     {
-                        CreateView(new NowyTypNaglosnieniaViewModel());
+                        CreateView(new AddSoundSystemTypeViewModel());
                         break;
                     }
 
                 case "Typy saliAdd":
                     {
-                        CreateView(new NowyTypSaliViewModel());
+                        CreateView(new AddHallTypeViewModel());
                         break;
                     }
 
