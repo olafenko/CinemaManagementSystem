@@ -1,4 +1,5 @@
 ﻿using PDABProjekt.Models;
+using PDABProjekt.Models.EntitiesForView;
 using PDABProjekt.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,17 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Llist
+        #region List
         public override void Load()
         {
-            List = new ObservableCollection<KategoriaWiekowa>(
-                kinoEntities.KategoriaWiekowa.ToList()
-                );
+            IQueryable <KategoriaWiekowa> query = kinoEntities.KategoriaWiekowa;
+
+
+            query = ApplySort(query);
+            query = ApplyFilter(query);
+
+            List = new ObservableCollection<KategoriaWiekowa>(query.ToList());
+
         }
 
         #endregion
@@ -42,17 +48,17 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        public override void Sort()
+        private IQueryable<KategoriaWiekowa> ApplySort(IQueryable<KategoriaWiekowa> query)
         {
+
             switch (SortField)
             {
-                case "Nazwa":
-                    {
-                        List = new ObservableCollection<KategoriaWiekowa>(List.OrderBy(k => k.NazwaKategorii));
-                        break;
-                    }
+                case "Nazwa": return query.OrderBy(k => k.NazwaKategorii);
+
+                default: return query;
 
             }
+
         }
 
         public override List<string> GetComboBoxFindList()
@@ -63,26 +69,19 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        public override void Find()
+        private IQueryable<KategoriaWiekowa> ApplyFilter(IQueryable<KategoriaWiekowa> query)
         {
-            if (String.IsNullOrWhiteSpace(FindTextBox))
+
+            if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
+
+
+            switch (FindField)
             {
-                Load();
+                case "Nazwa": return query.Where(k => k.NazwaKategorii.Contains(FindTextBox));
+
+                default: return query;
             }
 
-            else
-            {
-                switch (FindField)
-                {
-                    case "Nazwa":
-                        {
-                            List = new ObservableCollection<KategoriaWiekowa>(List.Where(k => k.NazwaKategorii.StartsWith(FindTextBox)));
-                            break;
-                        }
-                }
-
-
-            }
         }
 
 
