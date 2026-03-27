@@ -30,7 +30,7 @@
     <DataTemplate DataType="{x:Type vm:AllCountriesViewModel}">
         <vw:WszystkieKrajeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieStatusyFilmuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllMovieStatusesViewModel}">
         <vw:WszystkieStatusyFilmuView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieStatusySeansuViewModel}">
@@ -57,7 +57,7 @@
     <DataTemplate DataType="{x:Type vm:WszystkieBiletyViewModel}">
         <vw:WszystkieBiletyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieSaleViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllHallsViewModel}">
         <vw:WszystkieSaleView/>
     </DataTemplate>
     

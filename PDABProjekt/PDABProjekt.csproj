@@ -251,9 +251,9 @@
     <Compile Include="ViewModels\DisplayViewModels\AllLanguagesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllAgeCategoriesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllCountriesViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieSaleViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllHallsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusyFilmuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllMovieStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusySeansuViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyBiletuViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyEkranuViewModel.cs" />

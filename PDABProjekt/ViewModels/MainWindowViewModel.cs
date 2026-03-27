@@ -135,7 +135,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddCountryViewModel()))),
                  new CommandViewModel(
                     "Statusy filmu",
-                    new BaseCommand(() => this.ShowAllView<WszystkieStatusyFilmuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllMovieStatusesViewModel>())),
                   new CommandViewModel(
                      "Nowy status filmu",
                      new BaseCommand(() => this.CreateView(new AddMovieStatusViewModel()))),
