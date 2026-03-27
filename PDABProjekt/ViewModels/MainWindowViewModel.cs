@@ -153,7 +153,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddTicketTypeViewModel()))),
                   new CommandViewModel(
                     "Typy ekranów",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyEkranuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreenTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ ekranu",
                      new BaseCommand(() => this.CreateView(new AddScreenTypeViewModel()))),

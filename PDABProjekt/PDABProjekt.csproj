@@ -256,7 +256,7 @@
     <Compile Include="ViewModels\DisplayViewModels\AllMovieStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllScreeningStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllTicketTypesViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyEkranuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllScreenTypesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypySaliViewModel.cs" />
     <Compile Include="Views\Abstract\JedenViewBase.cs" />

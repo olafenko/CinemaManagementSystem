@@ -39,7 +39,7 @@
     <DataTemplate DataType="{x:Type vm:AllTicketTypesViewModel}">
         <vw:WszystkieTypyBiletuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieTypyEkranuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreenTypesViewModel}">
         <vw:WszystkieTypyEkranuView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieTypyNaglosnieniaViewModel}">
