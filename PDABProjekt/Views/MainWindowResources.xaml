@@ -9,7 +9,7 @@
     <DataTemplate DataType="{x:Type vm:AddMovieViewModel}">
         <vw:AddMovieView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreeningsViewModel}">
         <vw:WszystkieSeanseView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddScreeningViewModel}">
@@ -54,7 +54,7 @@
     <DataTemplate DataType="{x:Type vm:AllDirectorsViewModel}">
         <vw:WszyscyRezyserzyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieBiletyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllTicketsViewModel}">
         <vw:WszystkieBiletyView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AllHallsViewModel}">

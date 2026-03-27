@@ -245,14 +245,14 @@
     <Compile Include="ViewModels\DisplayViewModels\AllDistributorsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllProducersViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllDirectorsViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllTicketsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllGenresViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllLanguagesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllAgeCategoriesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllCountriesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllHallsViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllScreeningsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMovieStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllScreeningStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllTicketTypesViewModel.cs" />

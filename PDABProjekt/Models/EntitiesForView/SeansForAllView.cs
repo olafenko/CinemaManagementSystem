@@ -19,7 +19,7 @@ namespace PDABProjekt.Models.EntitiesForView
 
         public string TypSali { get; set; }
 
-        public string DataSeansu{ get; set; }
+        public DateTime DataSeansu{ get; set; }
         public TimeSpan GodzinaOd { get; set; }
         public TimeSpan GodzinaDo { get; set; }
 

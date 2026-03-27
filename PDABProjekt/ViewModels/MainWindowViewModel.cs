@@ -82,7 +82,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.CreateView(new AddMovieViewModel()))),
                 new CommandViewModel(
                     "Wszystkie seanse",
-                    new BaseCommand(() => this.ShowAllView<WszystkieSeanseViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreeningsViewModel>())),
                 new CommandViewModel(
                     "Nowy Seans",
                     new BaseCommand(() => this.CreateView(new AddScreeningViewModel()))),
