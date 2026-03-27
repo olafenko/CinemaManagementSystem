@@ -165,7 +165,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddSoundSystemTypeViewModel()))),
                   new CommandViewModel(
                     "Typy sal",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypySaliViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllHallTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ sali",
                      new BaseCommand(() => this.CreateView(new AddHallTypeViewModel()))),
