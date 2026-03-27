@@ -13,7 +13,7 @@ namespace PDABProjekt.Models.EntitiesForView
 
         public int Id { get; set; }
         public string NazwaSeansu { get; set; }
-        public string DataSeansu { get; set; }
+        public DateTime DataSeansu { get; set; }
         public TimeSpan SeansOd { get; set; }
         public TimeSpan SeansDo { get; set; }
         public int NumerSali { get; set; }
@@ -21,8 +21,8 @@ namespace PDABProjekt.Models.EntitiesForView
         public int NumerMiejsca { get; set; }
         public string TypMiejsca { get; set; }
         public string TypBiletu { get; set; }        
-        public string Rabat { get; set; }
-        public string CenaFinalna { get; set; }
+        public decimal Rabat { get; set; }
+        public decimal CenaFinalna { get; set; }
         public DateTime DataSprzedazy { get; set; }
         public string CzyAnulowany { get; set; }
 

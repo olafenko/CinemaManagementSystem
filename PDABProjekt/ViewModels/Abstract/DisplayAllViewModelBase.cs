@@ -110,7 +110,9 @@ namespace PDABProjekt.ViewModels.Abstract
 
         }
 
-        public abstract void Sort(); 
+        public virtual void Sort() {
+            Load();
+        }
 
         public abstract List<string> GetComboBoxSortList();
 
@@ -143,7 +145,9 @@ namespace PDABProjekt.ViewModels.Abstract
 
         }
 
-        public abstract void Find(); 
+        public virtual void Find() {
+            Load();
+        }
         public abstract List<string> GetComboBoxFindList(); 
 
         #endregion

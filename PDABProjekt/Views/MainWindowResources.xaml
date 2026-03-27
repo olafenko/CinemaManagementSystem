@@ -9,55 +9,55 @@
     <DataTemplate DataType="{x:Type vm:AddMovieViewModel}">
         <vw:AddMovieView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieSeanseViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreeningsViewModel}">
         <vw:WszystkieSeanseView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddScreeningViewModel}">
         <vw:AddScreeningView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllGenresViewModel}">
         <vw:WszystkieGatunkiView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyDystrybutorzyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllDistributorsViewModel}">
         <vw:WszyscyDystrybutorzyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllLanguagesViewModel}">
         <vw:WszystkieJezykiView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AllAgeCategoriesViewModel}">
         <vw:AllAgeCategoriesView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieKrajeViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllCountriesViewModel}">
         <vw:WszystkieKrajeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieStatusyFilmuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllMovieStatusesViewModel}">
         <vw:WszystkieStatusyFilmuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieStatusySeansuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreeningStatusesViewModel}">
         <vw:WszystkieStatusySeansuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieTypyBiletuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllTicketTypesViewModel}">
         <vw:WszystkieTypyBiletuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieTypyEkranuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreenTypesViewModel}">
         <vw:WszystkieTypyEkranuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieTypyNaglosnieniaViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllSoundSystemTypesViewModel}">
         <vw:WszystkieTypyNaglosnieniaView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieTypySaliViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllHallTypesViewModel}">
         <vw:WszystkieTypySaliView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyProducenciViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllProducersViewModel}">
         <vw:WszyscyProducenciView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyRezyserzyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllDirectorsViewModel}">
         <vw:WszyscyRezyserzyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieBiletyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllTicketsViewModel}">
         <vw:WszystkieBiletyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieSaleViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllHallsViewModel}">
         <vw:WszystkieSaleView/>
     </DataTemplate>
     

@@ -82,25 +82,25 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.CreateView(new AddMovieViewModel()))),
                 new CommandViewModel(
                     "Wszystkie seanse",
-                    new BaseCommand(() => this.ShowAllView<WszystkieSeanseViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreeningsViewModel>())),
                 new CommandViewModel(
                     "Nowy Seans",
                     new BaseCommand(() => this.CreateView(new AddScreeningViewModel()))),
                 new CommandViewModel(
                     "Dystrybutorzy",
-                    new BaseCommand(() => this.ShowAllView<WszyscyDystrybutorzyViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllDistributorsViewModel>())),
                 new CommandViewModel(
                     "Nowy Dystrybutor",
                     new BaseCommand(() => this.CreateView(new AddDistributorViewModel()))),
                  new CommandViewModel(
                     "Sale",
-                    new BaseCommand(() => this.ShowAllView<WszystkieSaleViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllHallsViewModel>())),
                    new CommandViewModel(
                     "Nowa Sala",
                     new BaseCommand(() => this.CreateView(new AddHallViewModel()))),
                  new CommandViewModel(
                     "Bilety",
-                    new BaseCommand(() => this.ShowAllView<WszystkieBiletyViewModel>())),                            
+                    new BaseCommand(() => this.ShowAllView<AllTicketsViewModel>())),                            
             };
         }
 
@@ -111,13 +111,13 @@ namespace PDABProjekt.ViewModels
             {
                 new CommandViewModel(
                     "Gatunki",
-                    new BaseCommand(() => this.ShowAllView<WszystkieGatunkiViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllGenresViewModel>())),
                 new CommandViewModel(
                     "Nowy gatunek",
                     new BaseCommand(() => this.CreateView(new AddGenreViewModel()))),
                  new CommandViewModel(
                     "Języki",
-                    new BaseCommand(() => this.ShowAllView<WszystkieJezykiViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllLanguagesViewModel>())),
                  new CommandViewModel(
                      "Nowy język",
                      new BaseCommand(() => this.CreateView(new AddLanguageViewModel()))),
@@ -129,55 +129,55 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddAgeCategoryViewModel()))),
                  new CommandViewModel(
                     "Kraje",
-                    new BaseCommand(() => this.ShowAllView<WszystkieKrajeViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllCountriesViewModel>())),
                  new CommandViewModel(
                      "Nowy kraj",
                      new BaseCommand(() => this.CreateView(new AddCountryViewModel()))),
                  new CommandViewModel(
                     "Statusy filmu",
-                    new BaseCommand(() => this.ShowAllView<WszystkieStatusyFilmuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllMovieStatusesViewModel>())),
                   new CommandViewModel(
                      "Nowy status filmu",
                      new BaseCommand(() => this.CreateView(new AddMovieStatusViewModel()))),
                   new CommandViewModel(
                     "Statusy seansu",
-                    new BaseCommand(() => this.ShowAllView<WszystkieStatusySeansuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreeningStatusesViewModel>())),
                   new CommandViewModel(
                      "Nowy status seansu",
                      new BaseCommand(() => this.CreateView(new AddScreeningStatusViewModel()))),
                   new CommandViewModel(
                     "Typy biletów",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyBiletuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllTicketTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ biletu",
                      new BaseCommand(() => this.CreateView(new AddTicketTypeViewModel()))),
                   new CommandViewModel(
                     "Typy ekranów",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyEkranuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreenTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ ekranu",
                      new BaseCommand(() => this.CreateView(new AddScreenTypeViewModel()))),
                   new CommandViewModel(
                     "Typy nagłośnienia",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyNaglosnieniaViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllSoundSystemTypesViewModel>())),
                    new CommandViewModel(
                      "Nowy typ nagłośnienia",
                      new BaseCommand(() => this.CreateView(new AddSoundSystemTypeViewModel()))),
                   new CommandViewModel(
                     "Typy sal",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypySaliViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllHallTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ sali",
                      new BaseCommand(() => this.CreateView(new AddHallTypeViewModel()))),
                    new CommandViewModel(
                     "Producenci",
-                    new BaseCommand(() => this.ShowAllView<WszyscyProducenciViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllProducersViewModel>())),
                    new CommandViewModel(
                      "Nowy producent",
                      new BaseCommand(() => this.CreateView(new AddProducerViewModel()))),
                    new CommandViewModel(
                     "Reżyserzy",
-                    new BaseCommand(() => this.ShowAllView<WszyscyRezyserzyViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllDirectorsViewModel>())),
                    new CommandViewModel(
                      "Nowy reżyser",
                      new BaseCommand(() => this.CreateView(new AddDirectorViewModel()))),
@@ -365,7 +365,7 @@ namespace PDABProjekt.ViewModels
 
                 case "DystrybutorzyShow":
                     {
-                        CreateView(new WszyscyDystrybutorzyViewModel());
+                        CreateView(new AllDistributorsViewModel());
                         break;
                     }
 
@@ -376,7 +376,7 @@ namespace PDABProjekt.ViewModels
                     }
                 case "SaleShow":
                     {
-                        CreateView(new WszystkieSaleViewModel());
+                        CreateView(new AllHallsViewModel());
                         break;
                     }
 

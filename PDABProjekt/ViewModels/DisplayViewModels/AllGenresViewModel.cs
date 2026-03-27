@@ -7,18 +7,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllAgeCategoriesViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
+    public class AllGenresViewModel : DisplayAllViewModelBase<GatunekFilmu>
     {
 
 
         #region Constructor
 
-        public AllAgeCategoriesViewModel()
+        public AllGenresViewModel()
         {
-            base.DisplayName = "Kategorie wiekowe";
+            base.DisplayName = "Gatunki filmowe";
         }
 
         #endregion
@@ -26,39 +27,24 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
-            IQueryable <KategoriaWiekowa> query = kinoEntities.KategoriaWiekowa;
+            IQueryable<GatunekFilmu> query = kinoEntities.GatunekFilmu.Where(t => t.CzyAktywny).AsQueryable();
 
-
-            query = ApplySort(query);
             query = ApplyFilter(query);
 
-            List = new ObservableCollection<KategoriaWiekowa>(query.ToList());
 
+            List = new ObservableCollection<GatunekFilmu>(query.ToList());
         }
 
         #endregion
 
-        #region Sorting and filtering
+        #region Sort and filter
 
         public override List<string> GetComboBoxSortList()
         {
             return new List<string>
             {
-                "Nazwa"
+                "brak"
             };
-        }
-
-        private IQueryable<KategoriaWiekowa> ApplySort(IQueryable<KategoriaWiekowa> query)
-        {
-
-            switch (SortField)
-            {
-                case "Nazwa": return query.OrderBy(k => k.NazwaKategorii);
-
-                default: return query;
-
-            }
-
         }
 
         public override List<string> GetComboBoxFindList()
@@ -69,7 +55,7 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        private IQueryable<KategoriaWiekowa> ApplyFilter(IQueryable<KategoriaWiekowa> query)
+        private IQueryable<GatunekFilmu> ApplyFilter(IQueryable<GatunekFilmu> query)
         {
 
             if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
@@ -77,7 +63,7 @@ namespace PDABProjekt.ViewModels
 
             switch (FindField)
             {
-                case "Nazwa": return query.Where(k => k.NazwaKategorii.Contains(FindTextBox));
+                case "Nazwa": return query.Where(g => g.NazwaGatunku.Contains(FindTextBox));
 
                 default: return query;
             }

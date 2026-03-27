@@ -1,5 +1,4 @@
 ﻿using PDABProjekt.Models;
-using PDABProjekt.Models.EntitiesForView;
 using PDABProjekt.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -10,15 +9,13 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllAgeCategoriesViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
+    public class AllScreeningStatusesViewModel : DisplayAllViewModelBase<StatusSeansu>
     {
-
-
         #region Constructor
 
-        public AllAgeCategoriesViewModel()
+        public AllScreeningStatusesViewModel()
         {
-            base.DisplayName = "Kategorie wiekowe";
+            base.DisplayName = "Statusy dla seansu";
         }
 
         #endregion
@@ -26,34 +23,34 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
-            IQueryable <KategoriaWiekowa> query = kinoEntities.KategoriaWiekowa;
-
+            IQueryable<StatusSeansu> query = kinoEntities.StatusSeansu.Where(t => t.CzyAktywny).AsQueryable();
 
             query = ApplySort(query);
             query = ApplyFilter(query);
 
-            List = new ObservableCollection<KategoriaWiekowa>(query.ToList());
-
+            List = new ObservableCollection<StatusSeansu>(query.ToList());
         }
 
         #endregion
 
-        #region Sorting and filtering
+        #region Sort and filter
 
         public override List<string> GetComboBoxSortList()
         {
             return new List<string>
             {
-                "Nazwa"
+                "Nazwa","Sprzedaż biletów"
             };
         }
 
-        private IQueryable<KategoriaWiekowa> ApplySort(IQueryable<KategoriaWiekowa> query)
+        private IQueryable<StatusSeansu> ApplySort(IQueryable<StatusSeansu> query)
         {
 
             switch (SortField)
             {
-                case "Nazwa": return query.OrderBy(k => k.NazwaKategorii);
+                case "Nazwa": return query.OrderBy(s => s.Nazwa);
+
+                case "Sprzedaż biletów": return query.OrderBy(s => s.CzySprzedawacBilety);
 
                 default: return query;
 
@@ -69,7 +66,8 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        private IQueryable<KategoriaWiekowa> ApplyFilter(IQueryable<KategoriaWiekowa> query)
+
+        private IQueryable<StatusSeansu> ApplyFilter(IQueryable<StatusSeansu> query)
         {
 
             if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
@@ -77,15 +75,14 @@ namespace PDABProjekt.ViewModels
 
             switch (FindField)
             {
-                case "Nazwa": return query.Where(k => k.NazwaKategorii.Contains(FindTextBox));
+                case "Nazwa": return query.Where(s => s.Nazwa.Contains(FindTextBox));
 
                 default: return query;
             }
 
-        }
-
 
         #endregion
 
+        }
     }
 }

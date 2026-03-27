@@ -1,5 +1,4 @@
 ﻿using PDABProjekt.Models;
-using PDABProjekt.Models.EntitiesForView;
 using PDABProjekt.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -10,15 +9,14 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllAgeCategoriesViewModel : DisplayAllViewModelBase<KategoriaWiekowa>
+    public class AllScreenTypesViewModel : DisplayAllViewModelBase<TypEkranu>
     {
-
 
         #region Constructor
 
-        public AllAgeCategoriesViewModel()
+        public AllScreenTypesViewModel()
         {
-            base.DisplayName = "Kategorie wiekowe";
+            base.DisplayName = "Typy ekranu sali";
         }
 
         #endregion
@@ -26,40 +24,41 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
-            IQueryable <KategoriaWiekowa> query = kinoEntities.KategoriaWiekowa;
-
+            IQueryable<TypEkranu> query = kinoEntities.TypEkranu.Where(t => t.CzyAktywny).AsQueryable();
 
             query = ApplySort(query);
             query = ApplyFilter(query);
 
-            List = new ObservableCollection<KategoriaWiekowa>(query.ToList());
-
+            List = new ObservableCollection<TypEkranu>(query.ToList());
         }
 
         #endregion
 
-        #region Sorting and filtering
+        #region Sort and filter
 
         public override List<string> GetComboBoxSortList()
         {
             return new List<string>
             {
-                "Nazwa"
+                "Maksymalna rozdzielczość","Wymagane okulary"
             };
         }
 
-        private IQueryable<KategoriaWiekowa> ApplySort(IQueryable<KategoriaWiekowa> query)
+        private IQueryable<TypEkranu> ApplySort(IQueryable<TypEkranu> query)
         {
 
             switch (SortField)
             {
-                case "Nazwa": return query.OrderBy(k => k.NazwaKategorii);
+                case "Maksymalna rozdzielczość": return query.OrderBy(e => e.MaksymalnaRozdzielczosc);
+
+                case "Wymagane okulary": return query.OrderBy(e => e.CzyWymaganeOkulary3D);
 
                 default: return query;
 
             }
 
         }
+
 
         public override List<string> GetComboBoxFindList()
         {
@@ -69,7 +68,7 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        private IQueryable<KategoriaWiekowa> ApplyFilter(IQueryable<KategoriaWiekowa> query)
+        private IQueryable<TypEkranu> ApplyFilter(IQueryable<TypEkranu> query)
         {
 
             if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
@@ -77,13 +76,12 @@ namespace PDABProjekt.ViewModels
 
             switch (FindField)
             {
-                case "Nazwa": return query.Where(k => k.NazwaKategorii.Contains(FindTextBox));
+                case "Nazwa": return query.Where(t => t.Nazwa.Contains(FindTextBox));
 
                 default: return query;
             }
 
         }
-
 
         #endregion
 

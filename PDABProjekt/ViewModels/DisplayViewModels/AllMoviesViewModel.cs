@@ -28,9 +28,7 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
-            List = new ObservableCollection<FilmForAllView>(
-
-                kinoEntities.Film.Where(film => film.CzyAktywny == true)
+            IQueryable<FilmForAllView> query = kinoEntities.Film.Where(film => film.CzyAktywny)
                 .Select(film => new FilmForAllView
                 {
                     Id = film.IdFilmu,
@@ -51,8 +49,14 @@ namespace PDABProjekt.ViewModels
                     Opis = film.Opis
 
                 }
-                ).ToList()
-            );
+                ).AsQueryable();
+
+            query = ApplySort(query);
+            query = ApplyFilter(query);
+
+            List = new ObservableCollection<FilmForAllView>(query.ToList());
+
+
         }
 
         #endregion
@@ -92,32 +96,23 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        public override void Sort()
-        {          
+        private IQueryable<FilmForAllView> ApplySort(IQueryable<FilmForAllView> query)
+        {
 
             switch (SortField)
             {
-                case "Czas trwania" :
-                    {
-                        List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.CzasTrwania));
-                        break;
-                    }
-                case "Rok produkcji":
-                    {
-                        List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.RokProdukcji));
-                        break;
-                    }
-                case "Status":
-                    {
-                        List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.Status));
-                        break;
-                    }
-                case "Kategoria wiekowa":
-                    {
-                        List = new ObservableCollection<FilmForAllView>(List.OrderBy(f => f.KategoriaWiekowa));
-                        break;
-                    }
+                case "Czas trwania": return query.OrderBy(f => f.CzasTrwania);
+
+                case "Rok produkcji": return query.OrderBy(f => f.RokProdukcji);
+
+                case "Status": return query.OrderBy(f => f.Status);
+
+                case "Kategoria wiekowa": return query.OrderBy(f => f.KategoriaWiekowa);
+
+                default: return query;
+
             }
+
         }
 
         public override List<string> GetComboBoxFindList()
@@ -128,74 +123,48 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        public override void Find()
+
+        private IQueryable<FilmForAllView> ApplyFilter(IQueryable<FilmForAllView> query)
         {
 
-            if (String.IsNullOrWhiteSpace(FindTextBox))
+            if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
+
+
+            switch (FindField)
             {
-                Load();
+                case "Tytuł": return query.Where(f => f.Tytul != null && f.Tytul.Contains(FindTextBox));
+
+                case "Gatunek": return query.Where(f => f.NazwaGatunku != null && f.NazwaGatunku.Contains(FindTextBox));
+
+                case "Kategoria wiekowa": return query.Where(f => f.KategoriaWiekowa != null && f.KategoriaWiekowa.Contains(FindTextBox));
+
+                case "Rok produkcji":
+                    {
+                        if (int.TryParse(FindTextBox, out int searchedYear))
+                        {
+                            return query.Where(f => f.RokProdukcji != null && f.RokProdukcji == searchedYear);
+                        }
+                        else
+                        {
+                            return query;
+                        }
+                    
+                    }
+                   
+
+                case "Język": return query.Where(f => f.JezykOryginalny != null && f.JezykOryginalny.Contains(FindTextBox));
+
+                case "Kraj produkcji": return query.Where(f => f.KrajProdukcji != null && f.KrajProdukcji.Contains(FindTextBox));
+
+                case "Producent": return query.Where(f => f.NazwaProducenta != null && f.NazwaProducenta.Contains(FindTextBox));
+
+                case "Reżyser": return query.Where(f => f.NazwaRezysera != null && f.NazwaRezysera.Contains(FindTextBox));
+
+
+                default: return query;
             }
-            else
-            {
-                switch (FindField)
-                {
 
-                    case "Tytuł":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.Tytul != null && f.Tytul.StartsWith(FindTextBox)));
-                            break;
-                        }
-                    case "Gatunek":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.NazwaGatunku != null && f.NazwaGatunku.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) != -1));
-                            break;
-                        }
-                    case "Kategoria wiekowa":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.KategoriaWiekowa != null && f.KategoriaWiekowa.StartsWith(FindTextBox)));
-                            break;
-                        }
-                    case "Rok produkcji":
-                        {
-
-                            if (int.TryParse(FindTextBox, out int searchedYear))
-                            {
-                                List = new ObservableCollection<FilmForAllView>(List.Where(f => f.RokProdukcji != null && f.RokProdukcji == searchedYear));
-                            } else
-                            {
-                                List = new ObservableCollection<FilmForAllView>();
-                            }
-
-                           
-                            break;
-                        }
-                    case "Język":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.JezykOryginalny != null && f.JezykOryginalny.StartsWith(FindTextBox)));
-                            break;
-                        }
-                    case "Kraj produkcji":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.KrajProdukcji != null && f.KrajProdukcji.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) != -1));
-                            break;
-                        }
-                    case "Producent":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.NazwaProducenta != null && f.NazwaProducenta.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) != -1));
-                            break;
-                        }
-                    case "Reżyser":
-                        {
-                            List = new ObservableCollection<FilmForAllView>(List.Where(f => f.NazwaRezysera != null && f.NazwaRezysera.IndexOf(FindTextBox, StringComparison.OrdinalIgnoreCase) != -1));
-                            break;
-                        }
-
-                }
-
-               
-            }
         }
-
 
         #endregion
 
