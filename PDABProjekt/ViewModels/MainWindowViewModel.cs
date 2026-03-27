@@ -162,7 +162,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyNaglosnieniaViewModel>())),
                    new CommandViewModel(
                      "Nowy typ nagłośnienia",
-                     new BaseCommand(() => this.CreateView(new NowyTypNaglosnieniaViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddSoundSystemTypeViewModel()))),
                   new CommandViewModel(
                     "Typy sal",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypySaliViewModel>())),
@@ -353,7 +353,7 @@ namespace PDABProjekt.ViewModels
                     }
                 case "Typy naglosnienia saliAdd":
                     {
-                        CreateView(new NowyTypNaglosnieniaViewModel());
+                        CreateView(new AddSoundSystemTypeViewModel());
                         break;
                     }
 

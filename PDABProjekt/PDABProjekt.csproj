@@ -233,7 +233,7 @@
     <Compile Include="ViewModels\AddViewModels\AddScreeningStatusViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddTicketTypeViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddScreenTypeViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyTypNaglosnieniaViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddSoundSystemTypeViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypSaliViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
@@ -305,8 +305,8 @@
     <Compile Include="Views\AddViews\AddScreenTypeView.xaml.cs">
       <DependentUpon>AddScreenTypeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyTypNaglosnieniaView.xaml.cs">
-      <DependentUpon>NowyTypNaglosnieniaView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddSoundSystemTypeView.xaml.cs">
+      <DependentUpon>AddSoundSystemTypeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyTypSaliView.xaml.cs">
       <DependentUpon>NowyTypSaliView.xaml</DependentUpon>
@@ -479,7 +479,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyTypNaglosnieniaView.xaml">
+    <Page Include="Views\AddViews\AddSoundSystemTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

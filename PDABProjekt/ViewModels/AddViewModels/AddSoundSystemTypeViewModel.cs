@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyTypNaglosnieniaViewModel : AddViewModelBase<TypNaglosnienia>
+    public class AddSoundSystemTypeViewModel : AddViewModelBase<TypNaglosnienia>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyTypNaglosnieniaViewModel() : base()
+        public AddSoundSystemTypeViewModel() : base()
         {
             base.DisplayName = "Nowy typ naglosnienia";
             item = new TypNaglosnienia();
@@ -23,9 +23,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -36,12 +36,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
      
-        public string Opis
+        public string Description
         {
             get
             {
@@ -52,21 +52,24 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
-       
+
         #endregion
 
+
+        #region Helpers
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.TypNaglosnienia.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 
 

@@ -87,8 +87,8 @@
     <DataTemplate DataType="{x:Type vm:AddScreenTypeViewModel}">
         <vw:AddScreenTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypNaglosnieniaViewModel}">
-        <vw:NowyTypNaglosnieniaView/>
+    <DataTemplate DataType="{x:Type vm:AddSoundSystemTypeViewModel}">
+        <vw:AddSoundSystemTypeView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyTypSaliViewModel}">
         <vw:NowyTypSaliView/>

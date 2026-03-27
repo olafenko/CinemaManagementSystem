@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyTypNaglosnieniaView.xaml
     /// </summary>
-    public partial class NowyTypNaglosnieniaView : JedenViewBase
+    public partial class AddSoundSystemTypeView : JedenViewBase
     {
-        public NowyTypNaglosnieniaView()
+        public AddSoundSystemTypeView()
         {
             InitializeComponent();
         }
