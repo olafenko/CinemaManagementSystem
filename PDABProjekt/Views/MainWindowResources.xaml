@@ -18,7 +18,7 @@
     <DataTemplate DataType="{x:Type vm:WszystkieGatunkiViewModel}">
         <vw:WszystkieGatunkiView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyDystrybutorzyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllDistributorsViewModel}">
         <vw:WszyscyDystrybutorzyView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">

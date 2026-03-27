@@ -238,11 +238,11 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\RaportZapelnieniaSeansowViewModel.cs" />
-    <Compile Include="ViewModels\RaportSprzedazyBiletowViewModel.cs" />
+    <Compile Include="ViewModels\BusinessViewModels\RaportZapelnieniaSeansowViewModel.cs" />
+    <Compile Include="ViewModels\BusinessViewModels\RaportSprzedazyBiletowViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
-    <Compile Include="ViewModels\StatystykiOgolneViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszyscyDystrybutorzyViewModel.cs" />
+    <Compile Include="ViewModels\BusinessViewModels\StatystykiOgolneViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllDistributorsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszyscyProducenciViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszyscyRezyserzyViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />

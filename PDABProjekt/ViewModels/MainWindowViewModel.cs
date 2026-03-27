@@ -88,7 +88,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.CreateView(new AddScreeningViewModel()))),
                 new CommandViewModel(
                     "Dystrybutorzy",
-                    new BaseCommand(() => this.ShowAllView<WszyscyDystrybutorzyViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllDistributorsViewModel>())),
                 new CommandViewModel(
                     "Nowy Dystrybutor",
                     new BaseCommand(() => this.CreateView(new AddDistributorViewModel()))),
@@ -365,7 +365,7 @@ namespace PDABProjekt.ViewModels
 
                 case "DystrybutorzyShow":
                     {
-                        CreateView(new WszyscyDystrybutorzyViewModel());
+                        CreateView(new AllDistributorsViewModel());
                         break;
                     }
 
