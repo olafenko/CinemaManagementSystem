@@ -177,7 +177,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddProducerViewModel()))),
                    new CommandViewModel(
                     "Reżyserzy",
-                    new BaseCommand(() => this.ShowAllView<WszyscyRezyserzyViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllDirectorsViewModel>())),
                    new CommandViewModel(
                      "Nowy reżyser",
                      new BaseCommand(() => this.CreateView(new AddDirectorViewModel()))),

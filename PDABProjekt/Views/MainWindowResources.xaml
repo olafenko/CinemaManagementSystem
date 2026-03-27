@@ -51,7 +51,7 @@
     <DataTemplate DataType="{x:Type vm:AllProducersViewModel}">
         <vw:WszyscyProducenciView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyRezyserzyViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllDirectorsViewModel}">
         <vw:WszyscyRezyserzyView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieBiletyViewModel}">

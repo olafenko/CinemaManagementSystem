@@ -1,5 +1,4 @@
-﻿using PDABProjekt.Models;
-using PDABProjekt.Models.EntitiesForView;
+﻿using PDABProjekt.Models.EntitiesForView;
 using PDABProjekt.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -8,18 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Documents;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllProducersViewModel : DisplayAllViewModelBase<ProducentForAllView>
+    public class AllDirectorsViewModel : DisplayAllViewModelBase<RezyserForAllView>
     {
 
         #region Constructor
 
-        public AllProducersViewModel()
+        public AllDirectorsViewModel()
         {
-            base.DisplayName = "Producenci";
+            base.DisplayName = "Reżyserzy";
         }
 
         #endregion
@@ -27,21 +25,22 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
+            IQueryable<RezyserForAllView> query = kinoEntities.Rezyser.Where(r => r.CzyAktywny).Select(r => new RezyserForAllView
+            { 
 
-            IQueryable<ProducentForAllView> query = kinoEntities.Producent.Where(p => p.CzyAktywny).Select(p => new ProducentForAllView
-            {
-
-                ID = p.IdProducenta,
-                Nazwa = p.Nazwa,
-                Kraj = p.Kraj.Nazwa,
-                Opis = p.Opis
+                ID = r.IdRezysera,
+                Imie = r.Imie,
+                Nazwisko = r.Nazwisko,
+                Kraj = r.Kraj.Nazwa,
 
             }).AsQueryable();
 
             query = ApplySort(query);
             query = ApplyFilter(query);
 
-            List = new ObservableCollection<ProducentForAllView>(query.ToList());
+            List = new ObservableCollection<RezyserForAllView>(query.ToList());
+
+
         }
 
         #endregion
@@ -56,7 +55,7 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        private IQueryable<ProducentForAllView> ApplySort(IQueryable<ProducentForAllView> query)
+        private IQueryable<RezyserForAllView> ApplySort(IQueryable<RezyserForAllView> query)
         {
 
             switch (SortField)
@@ -69,16 +68,17 @@ namespace PDABProjekt.ViewModels
 
         }
 
+    
 
         public override List<string> GetComboBoxFindList()
         {
             return new List<string>
             {
-                "Nazwa"
-            };
+                "Imie","Nazwisko"
+            }; 
         }
 
-        private IQueryable<ProducentForAllView> ApplyFilter(IQueryable<ProducentForAllView> query)
+        private IQueryable<RezyserForAllView> ApplyFilter(IQueryable<RezyserForAllView> query)
         {
 
             if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
@@ -86,15 +86,14 @@ namespace PDABProjekt.ViewModels
 
             switch (FindField)
             {
-                case "Nazwa": return query.Where(k => k.Nazwa.Contains(FindTextBox));
+                case "Imie": return query.Where(d => d.Imie.Contains(FindTextBox));
+
+                case "Nazwisko": return query.Where(d => d.Nazwisko.Contains(FindTextBox));
 
                 default: return query;
             }
 
         }
-
-
         #endregion
-
     }
 }

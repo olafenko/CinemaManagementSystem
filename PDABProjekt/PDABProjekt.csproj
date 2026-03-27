@@ -244,7 +244,7 @@
     <Compile Include="ViewModels\BusinessViewModels\StatystykiOgolneViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllDistributorsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllProducersViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszyscyRezyserzyViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllDirectorsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieGatunkiViewModel.cs" />
