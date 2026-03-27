@@ -243,7 +243,7 @@
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="ViewModels\BusinessViewModels\StatystykiOgolneViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllDistributorsViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszyscyProducenciViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllProducersViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszyscyRezyserzyViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />

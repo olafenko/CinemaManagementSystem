@@ -171,7 +171,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddHallTypeViewModel()))),
                    new CommandViewModel(
                     "Producenci",
-                    new BaseCommand(() => this.ShowAllView<WszyscyProducenciViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllProducersViewModel>())),
                    new CommandViewModel(
                      "Nowy producent",
                      new BaseCommand(() => this.CreateView(new AddProducerViewModel()))),

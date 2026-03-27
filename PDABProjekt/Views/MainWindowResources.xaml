@@ -48,7 +48,7 @@
     <DataTemplate DataType="{x:Type vm:WszystkieTypySaliViewModel}">
         <vw:WszystkieTypySaliView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszyscyProducenciViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllProducersViewModel}">
         <vw:WszyscyProducenciView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszyscyRezyserzyViewModel}">
