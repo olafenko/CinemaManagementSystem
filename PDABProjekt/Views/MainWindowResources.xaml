@@ -21,13 +21,13 @@
     <DataTemplate DataType="{x:Type vm:AllDistributorsViewModel}">
         <vw:WszyscyDystrybutorzyView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieJezykiViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllLanguagesViewModel}">
         <vw:WszystkieJezykiView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AllAgeCategoriesViewModel}">
         <vw:AllAgeCategoriesView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieKrajeViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllCountriesViewModel}">
         <vw:WszystkieKrajeView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieStatusyFilmuViewModel}">

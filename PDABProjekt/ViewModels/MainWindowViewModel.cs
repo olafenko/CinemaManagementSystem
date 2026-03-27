@@ -129,7 +129,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddAgeCategoryViewModel()))),
                  new CommandViewModel(
                     "Kraje",
-                    new BaseCommand(() => this.ShowAllView<WszystkieKrajeViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllCountriesViewModel>())),
                  new CommandViewModel(
                      "Nowy kraj",
                      new BaseCommand(() => this.CreateView(new AddCountryViewModel()))),

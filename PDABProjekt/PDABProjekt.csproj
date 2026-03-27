@@ -248,9 +248,9 @@
     <Compile Include="ViewModels\DisplayViewModels\WszystkieBiletyViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMoviesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllGenresViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieJezykiViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllLanguagesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllAgeCategoriesViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieKrajeViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllCountriesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSaleViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusyFilmuViewModel.cs" />

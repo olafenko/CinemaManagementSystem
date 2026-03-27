@@ -1,5 +1,4 @@
 ﻿using PDABProjekt.Models;
-using PDABProjekt.Models.EntitiesForView;
 using PDABProjekt.ViewModels.Abstract;
 using System;
 using System.Collections.Generic;
@@ -10,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class AllLanguagesViewModel : DisplayAllViewModelBase<Jezyk>
+    public class AllCountriesViewModel : DisplayAllViewModelBase<Kraj>
     {
 
         #region Constructor
 
-        public AllLanguagesViewModel()
+        public AllCountriesViewModel()
         {
-            base.DisplayName = "Jezyki";
+            base.DisplayName = "Kraje";
         }
 
         #endregion
@@ -25,12 +24,14 @@ namespace PDABProjekt.ViewModels
         #region List
         public override void Load()
         {
-            IQueryable<Jezyk> query = kinoEntities.Jezyk.Where(t => t.CzyAktywny).AsQueryable();
+
+            IQueryable<Kraj> query = kinoEntities.Kraj.AsQueryable();
 
             query = ApplySort(query);
             query = ApplyFilter(query);
 
-            List = new ObservableCollection<Jezyk>(query.ToList());
+
+            List = new ObservableCollection<Kraj>(query.ToList());
         }
 
         #endregion
@@ -45,12 +46,12 @@ namespace PDABProjekt.ViewModels
             };
         }
 
-        private IQueryable<Jezyk> ApplySort(IQueryable<Jezyk> query)
+        private IQueryable<Kraj> ApplySort(IQueryable<Kraj> query)
         {
 
             switch (SortField)
             {
-                case "Nazwa": return query.OrderBy(j => j.Nazwa);
+                case "Nazwa": return query.OrderBy(k => k.Nazwa);
 
                 default: return query;
 
@@ -62,11 +63,11 @@ namespace PDABProjekt.ViewModels
         {
             return new List<string>
             {
-                "Nazwa", "Kod ISO"
+                "Nazwa"
             };
         }
 
-        private IQueryable<Jezyk> ApplyFilter(IQueryable<Jezyk> query)
+        private IQueryable<Kraj> ApplyFilter(IQueryable<Kraj> query)
         {
 
             if (String.IsNullOrWhiteSpace(FindTextBox)) return query;
@@ -74,9 +75,7 @@ namespace PDABProjekt.ViewModels
 
             switch (FindField)
             {
-                case "Nazwa": return query.Where(j => j.Nazwa.Contains(FindTextBox));
-
-                case "Kod ISO": return query.Where(j => j.KodISO.Contains(FindTextBox));
+                case "Nazwa": return query.Where(k => k.Nazwa.Contains(FindTextBox));
 
                 default: return query;
             }
