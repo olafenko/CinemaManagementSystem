@@ -147,7 +147,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddScreeningStatusViewModel()))),
                   new CommandViewModel(
                     "Typy biletów",
-                    new BaseCommand(() => this.ShowAllView<WszystkieTypyBiletuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllTicketTypesViewModel>())),
                   new CommandViewModel(
                      "Nowy typ biletu",
                      new BaseCommand(() => this.CreateView(new AddTicketTypeViewModel()))),
