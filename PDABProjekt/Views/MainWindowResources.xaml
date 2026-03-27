@@ -75,11 +75,11 @@
     <DataTemplate DataType="{x:Type vm:AddCountryViewModel}">
         <vw:AddCountryView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyStatusFilmuViewModel}">
-        <vw:NowyStatusFilmuView/>
+    <DataTemplate DataType="{x:Type vm:AddMovieStatusViewModel}">
+        <vw:AddMovieStatusView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyStatusSeansuViewModel}">
-        <vw:NowyStatusSeansuView/>
+    <DataTemplate DataType="{x:Type vm:AddScreeningStatusViewModel}">
+        <vw:AddScreeningStatusView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyTypBiletuViewModel}">
         <vw:NowyTypBiletuView/>

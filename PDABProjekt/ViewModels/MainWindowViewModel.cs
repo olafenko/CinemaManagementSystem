@@ -138,13 +138,13 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieStatusyFilmuViewModel>())),
                   new CommandViewModel(
                      "Nowy status filmu",
-                     new BaseCommand(() => this.CreateView(new NowyStatusFilmuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddMovieStatusViewModel()))),
                   new CommandViewModel(
                     "Statusy seansu",
                     new BaseCommand(() => this.ShowAllView<WszystkieStatusySeansuViewModel>())),
                   new CommandViewModel(
                      "Nowy status seansu",
-                     new BaseCommand(() => this.CreateView(new NowyStatusSeansuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddScreeningStatusViewModel()))),
                   new CommandViewModel(
                     "Typy biletów",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyBiletuViewModel>())),
@@ -332,13 +332,13 @@ namespace PDABProjekt.ViewModels
 
                 case "Statusy dla filmuAdd":
                     {
-                        CreateView(new NowyStatusFilmuViewModel());
+                        CreateView(new AddMovieStatusViewModel());
                         break;
                     }
 
                 case "Statusy dla seansuAdd":
                     {
-                        CreateView(new NowyStatusSeansuViewModel());
+                        CreateView(new AddScreeningStatusViewModel());
                         break;
                     }
                 case "Typy biletówAdd":

@@ -229,8 +229,8 @@
     <Compile Include="ViewModels\AddViewModels\AddProducerViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddDirectorViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddScreeningViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyStatusFilmuViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyStatusSeansuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddMovieStatusViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddScreeningStatusViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypBiletuViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypEkranuViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypNaglosnieniaViewModel.cs" />
@@ -293,11 +293,11 @@
     <Compile Include="Views\AddViews\AddScreeningView.xaml.cs">
       <DependentUpon>AddScreeningView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyStatusFilmuView.xaml.cs">
-      <DependentUpon>NowyStatusFilmuView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddMovieStatusView.xaml.cs">
+      <DependentUpon>AddMovieStatusView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyStatusSeansuView.xaml.cs">
-      <DependentUpon>NowyStatusSeansuView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddScreeningStatusView.xaml.cs">
+      <DependentUpon>AddScreeningStatusView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyTypBiletuView.xaml.cs">
       <DependentUpon>NowyTypBiletuView.xaml</DependentUpon>
@@ -463,11 +463,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyStatusFilmuView.xaml">
+    <Page Include="Views\AddViews\AddMovieStatusView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyStatusSeansuView.xaml">
+    <Page Include="Views\AddViews\AddScreeningStatusView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

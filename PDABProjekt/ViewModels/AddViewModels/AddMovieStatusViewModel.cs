@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyStatusFilmuViewModel : AddViewModelBase<StatusFilmu>
+    public class AddMovieStatusViewModel : AddViewModelBase<StatusFilmu>
     {
 
-        #region Konstruktor
-        public NowyStatusFilmuViewModel() : base()
+        #region Constructor
+        public AddMovieStatusViewModel() : base()
         {
 
             base.DisplayName = "Nowy status filmu";
@@ -24,9 +24,9 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string NazwaStatusu
+        public string Name
         {
             get
             {
@@ -37,12 +37,12 @@ namespace PDABProjekt.ViewModels
                 if (item.NazwaStatusu != value)
                 {
                     item.NazwaStatusu = value;
-                    OnPropertyChanged(() => NazwaStatusu);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -53,7 +53,7 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
@@ -61,13 +61,16 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
+
+        #region Helpers
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.StatusFilmu.Add(item);
             kinoEntities.SaveChanges();
         }
+        #endregion
+
+
     }
 }

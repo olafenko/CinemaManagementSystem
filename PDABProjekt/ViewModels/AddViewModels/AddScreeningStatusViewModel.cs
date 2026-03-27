@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyStatusSeansuViewModel : AddViewModelBase<StatusSeansu>
+    public class AddScreeningStatusViewModel : AddViewModelBase<StatusSeansu>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyStatusSeansuViewModel() : base()
+        public AddScreeningStatusViewModel() : base()
         {
             base.DisplayName = "Nowy status seansu";
             item = new StatusSeansu();
@@ -24,9 +24,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string NazwaStatusu
+        public string Name
         {
             get
             {
@@ -37,12 +37,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => NazwaStatusu);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -53,12 +53,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
-        public bool CzySprzedawacBilety
+        public bool IsSellingTicketsAllowed
         {
             get
             {
@@ -69,18 +69,23 @@ namespace PDABProjekt.ViewModels
                 if (item.CzySprzedawacBilety != value)
                 {
                     item.CzySprzedawacBilety = value;
-                    OnPropertyChanged(() => CzySprzedawacBilety);
+                    OnPropertyChanged(() => IsSellingTicketsAllowed);
                 }
             }
         }
 
         #endregion
 
+        #region Helpers
+
         public override void Save()
         {
-            item.CzyAktywny = true;            
             kinoEntities.StatusSeansu.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 }
