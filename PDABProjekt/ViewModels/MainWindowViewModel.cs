@@ -156,7 +156,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyEkranuViewModel>())),
                   new CommandViewModel(
                      "Nowy typ ekranu",
-                     new BaseCommand(() => this.CreateView(new NowyTypEkranuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddScreenTypeViewModel()))),
                   new CommandViewModel(
                     "Typy nagłośnienia",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyNaglosnieniaViewModel>())),
@@ -348,7 +348,7 @@ namespace PDABProjekt.ViewModels
                     }
                 case "Typy ekranu saliAdd":
                     {
-                        CreateView(new NowyTypEkranuViewModel());
+                        CreateView(new AddScreenTypeViewModel());
                         break;
                     }
                 case "Typy naglosnienia saliAdd":

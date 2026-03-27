@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyTypEkranuView.xaml
     /// </summary>
-    public partial class NowyTypEkranuView : JedenViewBase
+    public partial class AddScreenTypeView : JedenViewBase
     {
-        public NowyTypEkranuView()
+        public AddScreenTypeView()
         {
             InitializeComponent();
         }

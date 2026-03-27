@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyTypEkranuViewModel : AddViewModelBase<TypEkranu>
+    public class AddScreenTypeViewModel : AddViewModelBase<TypEkranu>
     {
 
         #region Konstruktor
 
-        public NowyTypEkranuViewModel() : base()
+        public AddScreenTypeViewModel() : base()
         {
             base.DisplayName = "Nowy typ ekranu";
             item = new TypEkranu();        
@@ -23,9 +23,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -36,12 +36,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string MaksymalnaRozdzielczosc
+        public string MaxResolution
         {
             get
             {
@@ -52,12 +52,12 @@ namespace PDABProjekt.ViewModels
                 if (item.MaksymalnaRozdzielczosc != value)
                 {
                     item.MaksymalnaRozdzielczosc = value;
-                    OnPropertyChanged(() => MaksymalnaRozdzielczosc);
+                    OnPropertyChanged(() => MaxResolution);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -68,12 +68,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
-        public bool CzyWymaganeOkulary3D
+        public bool Glasses3DRequired
         {
             get
             {
@@ -84,20 +84,24 @@ namespace PDABProjekt.ViewModels
                 if (item.CzyWymaganeOkulary3D != value)
                 {
                     item.CzyWymaganeOkulary3D = value;
-                    OnPropertyChanged(() => CzyWymaganeOkulary3D);
+                    OnPropertyChanged(() => Glasses3DRequired);
                 }
             }
         }
 
         #endregion
 
+        #region Helpers
+
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.TypEkranu.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 }
