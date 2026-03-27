@@ -254,7 +254,7 @@
     <Compile Include="ViewModels\DisplayViewModels\AllHallsViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieSeanseViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\AllMovieStatusesViewModel.cs" />
-    <Compile Include="ViewModels\DisplayViewModels\WszystkieStatusySeansuViewModel.cs" />
+    <Compile Include="ViewModels\DisplayViewModels\AllScreeningStatusesViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyBiletuViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyEkranuViewModel.cs" />
     <Compile Include="ViewModels\DisplayViewModels\WszystkieTypyNaglosnieniaViewModel.cs" />

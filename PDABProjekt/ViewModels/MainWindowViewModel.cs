@@ -141,7 +141,7 @@ namespace PDABProjekt.ViewModels
                      new BaseCommand(() => this.CreateView(new AddMovieStatusViewModel()))),
                   new CommandViewModel(
                     "Statusy seansu",
-                    new BaseCommand(() => this.ShowAllView<WszystkieStatusySeansuViewModel>())),
+                    new BaseCommand(() => this.ShowAllView<AllScreeningStatusesViewModel>())),
                   new CommandViewModel(
                      "Nowy status seansu",
                      new BaseCommand(() => this.CreateView(new AddScreeningStatusViewModel()))),

@@ -33,7 +33,7 @@
     <DataTemplate DataType="{x:Type vm:AllMovieStatusesViewModel}">
         <vw:WszystkieStatusyFilmuView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:WszystkieStatusySeansuViewModel}">
+    <DataTemplate DataType="{x:Type vm:AllScreeningStatusesViewModel}">
         <vw:WszystkieStatusySeansuView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:WszystkieTypyBiletuViewModel}">
