@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyTypSaliView.xaml
     /// </summary>
-    public partial class NowyTypSaliView : JedenViewBase
+    public partial class AddHallTypeView : JedenViewBase
     {
-        public NowyTypSaliView()
+        public AddHallTypeView()
         {
             InitializeComponent();
         }

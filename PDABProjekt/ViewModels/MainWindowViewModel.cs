@@ -168,7 +168,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieTypySaliViewModel>())),
                   new CommandViewModel(
                      "Nowy typ sali",
-                     new BaseCommand(() => this.CreateView(new NowyTypSaliViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddHallTypeViewModel()))),
                    new CommandViewModel(
                     "Producenci",
                     new BaseCommand(() => this.ShowAllView<WszyscyProducenciViewModel>())),
@@ -359,7 +359,7 @@ namespace PDABProjekt.ViewModels
 
                 case "Typy saliAdd":
                     {
-                        CreateView(new NowyTypSaliViewModel());
+                        CreateView(new AddHallTypeViewModel());
                         break;
                     }
 

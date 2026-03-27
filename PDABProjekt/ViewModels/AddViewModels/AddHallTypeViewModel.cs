@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyTypSaliViewModel : AddViewModelBase<TypSali>
+    public class AddHallTypeViewModel : AddViewModelBase<TypSali>
     {
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyTypSaliViewModel() : base()
+        public AddHallTypeViewModel() : base()
         {
             base.DisplayName = "Nowy typ sali";
             item = new TypSali();
@@ -23,9 +23,9 @@ namespace PDABProjekt.ViewModels
         #endregion
 
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string Nazwa
+        public string Name
         {
             get
             {
@@ -36,12 +36,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => Nazwa);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -52,21 +52,24 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
         #endregion
 
+        #region Helpers
+
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
             kinoEntities.TypSali.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 
 }

@@ -90,8 +90,8 @@
     <DataTemplate DataType="{x:Type vm:AddSoundSystemTypeViewModel}">
         <vw:AddSoundSystemTypeView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypSaliViewModel}">
-        <vw:NowyTypSaliView/>
+    <DataTemplate DataType="{x:Type vm:AddHallTypeViewModel}">
+        <vw:AddHallTypeView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:AddDistributorViewModel}">
         <vw:AddDistributorView/>

@@ -234,7 +234,7 @@
     <Compile Include="ViewModels\AddViewModels\AddTicketTypeViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddScreenTypeViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddSoundSystemTypeViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyTypSaliViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddHallTypeViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -308,8 +308,8 @@
     <Compile Include="Views\AddViews\AddSoundSystemTypeView.xaml.cs">
       <DependentUpon>AddSoundSystemTypeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyTypSaliView.xaml.cs">
-      <DependentUpon>NowyTypSaliView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddHallTypeView.xaml.cs">
+      <DependentUpon>AddHallTypeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Abstract\RaportViewBase.cs" />
     <Compile Include="Views\BusinessViews\RaportZapelnieniaSeansowView.xaml.cs">
@@ -483,7 +483,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyTypSaliView.xaml">
+    <Page Include="Views\AddViews\AddHallTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
