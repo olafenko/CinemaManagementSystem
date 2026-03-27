@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace PDABProjekt.ViewModels
 {
-    public class NowyTypBiletuViewModel : AddViewModelBase<TypBiletu>
+    public class AddTicketTypeViewModel : AddViewModelBase<TypBiletu>
     {
 
 
 
 
-        #region Konstruktor
+        #region Constructor
 
-        public NowyTypBiletuViewModel() :base()
+        public AddTicketTypeViewModel() :base()
         {
 
             base.DisplayName = "Nowy typ biletu";
@@ -27,9 +27,9 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-        #region Wlasciwosci
+        #region Properties
 
-        public string NazwaTypuBiletu
+        public string Name
         {
             get
             {
@@ -40,12 +40,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Nazwa != value)
                 {
                     item.Nazwa = value;
-                    OnPropertyChanged(() => NazwaTypuBiletu);
+                    OnPropertyChanged(() => Name);
                 }
             }
         }
 
-        public decimal? Cena
+        public decimal? BasePrice
         {
             get
             {
@@ -56,12 +56,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Cena != value)
                 {
                     item.Cena = value;
-                    OnPropertyChanged(() => Cena);
+                    OnPropertyChanged(() => BasePrice);
                 }
             }
         }
 
-        public string Opis
+        public string Description
         {
             get
             {
@@ -72,12 +72,12 @@ namespace PDABProjekt.ViewModels
                 if (item.Opis != value)
                 {
                     item.Opis = value;
-                    OnPropertyChanged(() => Opis);
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
 
-        public bool CzyPodlegaPromocji
+        public bool IsSubjectToPromotion
         {
             get
             {
@@ -88,21 +88,23 @@ namespace PDABProjekt.ViewModels
                 if (item.CzyPodlegaPromocji != value)
                 {
                     item.CzyPodlegaPromocji = value;
-                    OnPropertyChanged(() => CzyPodlegaPromocji);
+                    OnPropertyChanged(() => IsSubjectToPromotion);
                 }
             }
         }
 
         #endregion
 
-
+        #region Helpers
         public override void Save()
         {
-            item.CzyAktywny = true;
-            item.KtoDodal = "admin";
-            item.KiedyDodal = DateTime.Now;
+
             kinoEntities.TypBiletu.Add(item);
             kinoEntities.SaveChanges();
         }
+
+        #endregion
+
+
     }
 }

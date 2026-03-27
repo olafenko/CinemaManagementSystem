@@ -81,8 +81,8 @@
     <DataTemplate DataType="{x:Type vm:AddScreeningStatusViewModel}">
         <vw:AddScreeningStatusView/>
     </DataTemplate>
-    <DataTemplate DataType="{x:Type vm:NowyTypBiletuViewModel}">
-        <vw:NowyTypBiletuView/>
+    <DataTemplate DataType="{x:Type vm:AddTicketTypeViewModel}">
+        <vw:AddTicketTypeView/>
     </DataTemplate>
     <DataTemplate DataType="{x:Type vm:NowyTypEkranuViewModel}">
         <vw:NowyTypEkranuView/>

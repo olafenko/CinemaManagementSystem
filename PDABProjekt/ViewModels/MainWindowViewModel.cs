@@ -150,7 +150,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyBiletuViewModel>())),
                   new CommandViewModel(
                      "Nowy typ biletu",
-                     new BaseCommand(() => this.CreateView(new NowyTypBiletuViewModel()))),
+                     new BaseCommand(() => this.CreateView(new AddTicketTypeViewModel()))),
                   new CommandViewModel(
                     "Typy ekranów",
                     new BaseCommand(() => this.ShowAllView<WszystkieTypyEkranuViewModel>())),
@@ -343,7 +343,7 @@ namespace PDABProjekt.ViewModels
                     }
                 case "Typy biletówAdd":
                     {
-                        CreateView(new NowyTypBiletuViewModel());
+                        CreateView(new AddTicketTypeViewModel());
                         break;
                     }
                 case "Typy ekranu saliAdd":

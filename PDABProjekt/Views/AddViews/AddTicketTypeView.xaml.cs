@@ -18,9 +18,9 @@ namespace PDABProjekt.Views
     /// <summary>
     /// Interaction logic for NowyTypBiletuView.xaml
     /// </summary>
-    public partial class NowyTypBiletuView : JedenViewBase
+    public partial class AddTicketTypeView : JedenViewBase
     {
-        public NowyTypBiletuView()
+        public AddTicketTypeView()
         {
             InitializeComponent();
         }

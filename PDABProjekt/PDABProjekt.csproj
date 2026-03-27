@@ -231,7 +231,7 @@
     <Compile Include="ViewModels\AddViewModels\AddScreeningViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddMovieStatusViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\AddScreeningStatusViewModel.cs" />
-    <Compile Include="ViewModels\AddViewModels\NowyTypBiletuViewModel.cs" />
+    <Compile Include="ViewModels\AddViewModels\AddTicketTypeViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypEkranuViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypNaglosnieniaViewModel.cs" />
     <Compile Include="ViewModels\AddViewModels\NowyTypSaliViewModel.cs" />
@@ -299,8 +299,8 @@
     <Compile Include="Views\AddViews\AddScreeningStatusView.xaml.cs">
       <DependentUpon>AddScreeningStatusView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddViews\NowyTypBiletuView.xaml.cs">
-      <DependentUpon>NowyTypBiletuView.xaml</DependentUpon>
+    <Compile Include="Views\AddViews\AddTicketTypeView.xaml.cs">
+      <DependentUpon>AddTicketTypeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddViews\NowyTypEkranuView.xaml.cs">
       <DependentUpon>NowyTypEkranuView.xaml</DependentUpon>
@@ -471,7 +471,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddViews\NowyTypBiletuView.xaml">
+    <Page Include="Views\AddViews\AddTicketTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
