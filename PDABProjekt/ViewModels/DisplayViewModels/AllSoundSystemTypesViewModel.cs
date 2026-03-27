@@ -34,7 +34,7 @@ namespace PDABProjekt.ViewModels
 
         #endregion
 
-            #region Sort and filter
+        #region Sort and filter
 
         public override List<string> GetComboBoxSortList()
         {

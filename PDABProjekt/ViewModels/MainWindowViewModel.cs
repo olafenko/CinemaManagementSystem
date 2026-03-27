@@ -100,7 +100,7 @@ namespace PDABProjekt.ViewModels
                     new BaseCommand(() => this.CreateView(new AddHallViewModel()))),
                  new CommandViewModel(
                     "Bilety",
-                    new BaseCommand(() => this.ShowAllView<WszystkieBiletyViewModel>())),                            
+                    new BaseCommand(() => this.ShowAllView<AllTicketsViewModel>())),                            
             };
         }
 
